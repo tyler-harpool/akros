@@ -19,7 +19,7 @@ async function getNbaOdds() {
   const regions = 'us';
   const bookmakers = 'fanduel,draftkings,betmgm,caesars,pointsbet,wynn';
 
-  const url = `https://api.the-odds-api.com/v4/sports/basketball_nba/odds/?regions=${regions}&markets=${marketTypes.join(',')}&oddsFormat=american&apiKey=${process.env.ODDS_API_KEY}&bookmakers=${bookmakers}`;
+  const url = `https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=${regions}&markets=${marketTypes.join(',')}&oddsFormat=american&apiKey=${process.env.ODDS_API_KEY}&bookmakers=${bookmakers}`;
 
   try {
     const res = await axios.get(url);
