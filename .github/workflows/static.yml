@@ -1,4 +1,4 @@
-name: Deploy Docs to GitHub Pages
+name: Deploy Reports to GitHub Pages
 
 on:
   # Run after the NBA edge detection workflow
@@ -7,10 +7,9 @@ on:
     types:
       - completed
 
-  # Run when docs or reports are updated directly
+  # Run when reports are updated directly
   push:
     paths:
-      - 'docs/**'
       - 'reports/**'
 
   # Allows you to run this workflow manually from the Actions tab
@@ -28,85 +27,164 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Build job to process markdown files
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-      - name: Update index.html with latest reports
+      - name: Install Marked (Markdown renderer)
+        run: npm install marked
+
+      - name: Process reports and create site
         run: |
-          # Ensure docs directory exists
-          mkdir -p docs
+          # Create site directory
+          mkdir -p site
 
-          # If index.html doesn't exist, create a base version
-          if [ ! -f docs/index.html ]; then
-            cat > docs/index.html << 'EOL'
+          # Create a stylesheet
+          cat > site/style.css << 'EOL'
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+          }
+          .header {
+            background-color: #052c65;
+            color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.3rem;
+          }
+          h1, h2, h3 {
+            color: #0a0a0a;
+          }
+          .header h1, .header p {
+            color: white;
+          }
+          a {
+            color: #0366d6;
+            text-decoration: none;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+          .report-date {
+            background-color: #f1f8ff;
+            padding: 10px 15px;
+            margin: 20px 0 10px 0;
+            border-radius: 4px;
+            border-left: 5px solid #0366d6;
+            font-weight: bold;
+          }
+          .report-list {
+            margin-left: 20px;
+            list-style-type: none;
+            padding-left: 10px;
+          }
+          .report-list li {
+            margin-bottom: 8px;
+          }
+          table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+          }
+          th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+          }
+          th {
+            background-color: #f6f8fa;
+          }
+          tr:nth-child(even) {
+            background-color: #f9f9f9;
+          }
+          .unit-1, .unit-2, .unit-3, .unit-4, .unit-5 {
+            display: inline-block;
+            padding: 3px 6px;
+            border-radius: 3px;
+            color: white;
+            font-weight: bold;
+          }
+          .unit-1 { background-color: #6c757d; }
+          .unit-2 { background-color: #0d6efd; }
+          .unit-3 { background-color: #198754; }
+          .unit-4 { background-color: #dc3545; }
+          .unit-5 { background-color: #6f42c1; }
+          code {
+            background-color: #f6f8fa;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+          }
+          pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 6px;
+            overflow: auto;
+          }
+          footer {
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 14px;
+          }
+          EOL
+
+          # Create a script to handle markdown parsing for browser
+          cat > site/markdown-viewer.js << 'EOL'
+          document.addEventListener('DOMContentLoaded', function() {
+            // Check if this is a markdown page
+            const content = document.getElementById('markdown-content');
+            if (!content) return;
+
+            // Format unit badges
+            const html = content.innerHTML;
+            const formattedHtml = html.replace(/(\d+)\s*Units?/gi, function(match, units) {
+              const unitNum = parseInt(units);
+              if (unitNum >= 1 && unitNum <= 5) {
+                return `<span class="unit-${unitNum}">${unitNum} Units</span>`;
+              }
+              return match;
+            });
+
+            content.innerHTML = formattedHtml;
+          });
+          EOL
+
+          # Create a .nojekyll file to bypass Jekyll processing
+          touch site/.nojekyll
+
+          # Create the main index.html
+          cat > site/index.html << 'EOL'
           <!DOCTYPE html>
           <html lang="en">
           <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>NBA Betting Recommendations</title>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-            <style>
-              body {
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-                line-height: 1.6;
-                padding: 20px;
-                max-width: 1200px;
-                margin: 0 auto;
-              }
-              .jumbotron {
-                padding: 2rem;
-                margin-bottom: 2rem;
-                background-color: #e9ecef;
-                border-radius: 0.3rem;
-              }
-              .report-item {
-                margin-bottom: 10px;
-                padding: 10px;
-                border-left: 5px solid #0366d6;
-                background-color: #f6f8fa;
-              }
-              .report-date {
-                font-weight: bold;
-              }
-              .report-links {
-                margin-left: 20px;
-              }
-              footer {
-                margin-top: 30px;
-                padding-top: 20px;
-                border-top: 1px solid #eee;
-                color: #777;
-                font-size: 14px;
-              }
-            </style>
+            <link rel="stylesheet" href="style.css">
           </head>
           <body>
-            <div class="jumbotron">
+            <div class="header">
               <h1>NBA Betting Recommendations</h1>
-              <p class="lead">Statistical edge detection for NBA betting markets</p>
-              <p>Last updated: <span id="last-updated">DATE_PLACEHOLDER</span></p>
+              <p>Statistical edge detection for NBA betting markets</p>
+              <p>Last updated: LAST_UPDATED_DATE</p>
             </div>
 
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <h2>Latest Reports</h2>
-                  <div id="reports-list">
-                    <!-- Reports will be listed here -->
-                  </div>
-                </div>
-              </div>
+            <h2>Latest Reports</h2>
+            <div id="reports-container">
+              <!-- Report list will be inserted here -->
             </div>
 
             <footer>
@@ -116,55 +194,140 @@ jobs:
           </body>
           </html>
           EOL
-          fi
 
-          # Create .nojekyll file
-          touch docs/.nojekyll
+          # Use Node.js to process markdown files
+          node -e '
+          const fs = require("fs");
+          const path = require("path");
+          const marked = require("marked");
 
-          # Update the last updated date in index.html
-          current_date=$(date '+%B %d, %Y at %H:%M')
-          sed -i "s|<span id=\"last-updated\">.*</span>|<span id=\"last-updated\">$current_date</span>|" docs/index.html
+          // Get all date directories
+          const reportsDir = path.join(__dirname, "reports");
+          const dates = fs.readdirSync(reportsDir)
+            .filter(item => fs.statSync(path.join(reportsDir, item)).isDirectory())
+            .sort()
+            .reverse();
 
-          # Generate reports list HTML
-          reports_html=""
+          // Initialize report list HTML
+          let reportsHtml = "";
 
-          # Loop through each date folder and add it to the reports list
-          for date_dir in $(find reports -mindepth 1 -maxdepth 1 -type d | sort -r); do
-            date_name=$(basename "$date_dir")
+          // Process each date directory
+          for (const dateDir of dates) {
+            const fullDatePath = path.join(reportsDir, dateDir);
+            const files = fs.readdirSync(fullDatePath)
+              .filter(file => file.endsWith(".md"))
+              .sort()
+              .reverse();
 
-            # Format the date for display
-            if [[ $date_name =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-              display_date=$(date -d "$date_name" "+%A, %B %d, %Y" 2>/dev/null || echo "$date_name")
-            else
-              display_date="$date_name"
-            fi
+            if (files.length === 0) continue;
 
-            reports_html+="<div class=\"report-item\">"
-            reports_html+="  <div class=\"report-date\">$display_date</div>"
-            reports_html+="  <div class=\"report-links\">"
+            // Format date for display
+            let displayDate = dateDir;
+            if (/^\d{4}-\d{2}-\d{2}$/.test(dateDir)) {
+              const dateObj = new Date(dateDir);
+              if (!isNaN(dateObj)) {
+                displayDate = dateObj.toLocaleDateString("en-US", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric"
+                });
+              }
+            }
 
-            # Loop through each report file in this date directory
-            for report_file in $(find "$date_dir" -name "*.md" | sort -r); do
-              file_name=$(basename "$report_file")
-              file_path="../$report_file"
+            reportsHtml += `<div class="report-date">${displayDate}</div>`;
+            reportsHtml += `<ul class="report-list">`;
 
-              # Clean up the file name for display
-              display_name=$(echo "$file_name" | sed 's/\.md$//' | sed 's/_/ /g')
+            // Process each file in this date directory
+            for (const file of files) {
+              const fullFilePath = path.join(fullDatePath, file);
+              const relativePath = `${dateDir}/${file}`;
 
-              reports_html+="    <div><a href=\"$file_path\" target=\"_blank\">$display_name</a></div>"
-            done
+              // Create a nice display name
+              let displayName = file.replace(".md", "").replace(/_/g, " ");
 
-            reports_html+="  </div>"
-            reports_html+="</div>"
-          done
+              // Read the file content
+              const content = fs.readFileSync(fullFilePath, "utf-8");
 
-          # Update the reports list in index.html
-          sed -i "s|<div id=\"reports-list\">.*</div>|<div id=\"reports-list\">$reports_html</div>|" docs/index.html
+              // Create an HTML file for this report
+              const htmlFilePath = path.join("site", `${dateDir}_${file.replace(".md", ".html")}`);
+
+              // Ensure directory exists
+              const htmlDir = path.dirname(htmlFilePath);
+              if (!fs.existsSync(htmlDir)) {
+                fs.mkdirSync(htmlDir, { recursive: true });
+              }
+
+              // Convert markdown to HTML
+              const htmlContent = marked.parse(content);
+
+              // Create HTML file
+              const reportHtml = `
+              <!DOCTYPE html>
+              <html lang="en">
+              <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>${displayName} - NBA Betting Recommendations</title>
+                <link rel="stylesheet" href="style.css">
+                <script src="markdown-viewer.js"></script>
+              </head>
+              <body>
+                <div class="header">
+                  <h1>${displayName}</h1>
+                  <p>${displayDate}</p>
+                </div>
+                <div id="markdown-content">
+                  ${htmlContent}
+                </div>
+                <div>
+                  <a href="index.html">&larr; Back to all reports</a>
+                </div>
+                <footer>
+                  <p>NBA Edge Detection System &copy; 2025</p>
+                </footer>
+              </body>
+              </html>`;
+
+              fs.writeFileSync(htmlFilePath, reportHtml);
+
+              // Add to reports list
+              const htmlLink = `${dateDir}_${file.replace(".md", ".html")}`;
+              reportsHtml += `<li><a href="${htmlLink}">${displayName}</a></li>`;
+            }
+
+            reportsHtml += `</ul>`;
+          }
+
+          // Update the index.html with the reports list
+          let indexHtml = fs.readFileSync("site/index.html", "utf-8");
+          indexHtml = indexHtml.replace("<!-- Report list will be inserted here -->", reportsHtml);
+
+          // Update the last updated date
+          const now = new Date();
+          const lastUpdated = now.toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+          }) + " at " + now.toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit"
+          });
+
+          indexHtml = indexHtml.replace("LAST_UPDATED_DATE", lastUpdated);
+
+          fs.writeFileSync("site/index.html", indexHtml);
+
+          console.log("Processing complete!");
+          '
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'docs'
+          path: 'site'
 
       - name: Deploy to GitHub Pages
         id: deployment
