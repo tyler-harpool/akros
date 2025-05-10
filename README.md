@@ -22,7 +22,7 @@ This system automatically analyzes NBA betting markets to identify edges and val
 3. Create a `.env` file with your API keys:
    ```
    ODDS_API_KEY=your_odds_api_key
-   CLAUDE_API_KEY=your_claude_api_key
+   CLAUDE_API_KEY=your_claude_api_key!
    ```
 4. Run the script:
    ```
