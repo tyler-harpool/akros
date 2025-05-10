@@ -8,6 +8,9 @@ on:
   # Allow manual trigger
   workflow_dispatch:
 
+permissions:
+  contents: write  # This gives the workflow permission to write to the repository
+
 jobs:
   analyze-betting-edges:
     runs-on: ubuntu-latest
@@ -32,14 +35,7 @@ jobs:
         run: node index.js
 
       - name: Commit and push if there are new bet recommendations
-        run: |
-          # Configure git
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-
-          # Check if there are new files to commit
-          if [[ -n "$(git status --porcelain)" ]]; then
-            git add reports/
-            git commit -m "NBA Edge Analysis: $(date '+%Y-%m-%d')"
-            git push
-          fi
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "NBA Edge Analysis: ${{ github.event.repository.updated_at }}"
+          file_pattern: "reports/**/*"
