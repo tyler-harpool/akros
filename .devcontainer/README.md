@@ -41,3 +41,48 @@ This development container provides a consistent environment for working on the 
 - The container mounts your local SSH keys, so you can authenticate with GitHub/GitLab from inside the container.
 - Any changes made in the `/workspaces/app` directory will persist on your local machine.
 - `nodemon` is installed globally for easy development server restarting.
+name: NBA Edge Detection
+
+on:
+  # Run every day at 11:00 AM (before NBA games typically start)
+  schedule:
+    - cron: '0 11 * * *'
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  analyze-betting-edges:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run edge detection script
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+        run: node index.js
+
+      - name: Commit and push if there are new bet recommendations
+        run: |
+          # Configure git
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          # Check if there are new files to commit
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add reports/
+            git commit -m "NBA Edge Analysis: $(date '+%Y-%m-%d')"
+            git push
+          fi
