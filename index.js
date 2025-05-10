@@ -109,7 +109,22 @@ async function analyzeBettingOpportunities() {
 
   // Create a comprehensive prompt with all relevant data
   const completeAnalysis = createComprehensivePrompt(oddsData, injuryData, analyzer);
+  // Add these lines:
+  // Save the raw prompt for inspection
+  const now = new Date();
+  const dateStr = now.toISOString().split('T')[0]; // YYYY-MM-DD
+  const timeStr = now.toTimeString().split(' ')[0].replace(/:/g, '-'); // HH-MM-SS
+  const promptDir = path.join(__dirname, 'prompts');
+  const promptPath = path.join(promptDir, `claude_prompt_${dateStr}_${timeStr}.md`);
 
+  // Ensure directory exists
+  if (!fs.existsSync(promptDir)) {
+    fs.mkdirSync(promptDir, { recursive: true });
+  }
+
+  // Save the prompt
+  fs.writeFileSync(promptPath, completeAnalysis);
+  console.log(`📋 Claude's input prompt saved to ${promptPath}`);
   // Enhanced system prompt for Claude
   const systemPrompt = `You are BetAnalyst, an expert NBA betting analysis system with deep knowledge of basketball statistics, team dynamics, player performance metrics, and betting markets. Your analysis leverages Claude's extended thinking capabilities to provide transparent, step-by-step reasoning.
 
