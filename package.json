@@ -14,7 +14,8 @@
     "analytics",
     "sports",
     "edge",
-    "detection"
+    "detection",
+    "cheerio"
   ],
   "author": "",
   "license": "MIT",

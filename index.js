@@ -1,5 +1,8 @@
 require('dotenv').config();
 const axios = require('axios');
+const fs = require('fs');
+const path = require('path');
+const marked = require('marked');
 
 // CORE FUNCTIONS FOR ODDS FETCHING AND ANALYSIS
 
@@ -14,9 +17,18 @@ async function getNbaOdds() {
 
   try {
     const res = await axios.get(url);
+    console.log(`Successfully fetched odds data for ${res.data.length} games`);
     return res.data;
   } catch (err) {
     console.error('Failed to fetch NBA odds:', err.response?.data || err.message);
+
+    // Check for specific error types
+    if (err.response && err.response.status === 401) {
+      console.error('API key error: Check your ODDS_API_KEY in .env file');
+    } else if (err.response && err.response.status === 429) {
+      console.error('API rate limit exceeded: You may need to upgrade your API plan');
+    }
+
     return [];
   }
 }
@@ -64,17 +76,110 @@ async function askClaude(prompt) {
   }
 }
 
-// Mock function to get injury data - would connect to a real API in production
+// Real function to get injury data from ESPN (most reliable public source)
 async function getInjuryData() {
-  // In a real scenario, you'd fetch this from an API
-  // For now, returning mock data based on current playoffs
-  return {
-    injuries: [
-      { team: "Indiana Pacers", player: "Tyrese Haliburton", status: "Questionable", details: "Hamstring" },
-      { team: "Golden State Warriors", player: "Stephen Curry", status: "Probable", details: "Ankle" },
-      { team: "Denver Nuggets", player: "Jamal Murray", status: "Day-to-Day", details: "Calf" }
-    ]
-  };
+  try {
+    // ESPN's unofficial API endpoint for NBA injuries
+    const response = await axios.get('https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries');
+
+    // Process the response and extract only what we need
+    if (response.data && response.data.injuries && Array.isArray(response.data.injuries)) {
+      const injuries = response.data.injuries
+        .filter(injury =>
+          injury &&
+          injury.team &&
+          injury.athlete &&
+          injury.status &&
+          injury.injury
+        )
+        .map(injury => {
+          return {
+            team: injury.team.displayName,
+            player: injury.athlete.displayName,
+            status: injury.status,
+            details: injury.injury.displayName || injury.injury.description || 'Undisclosed'
+          };
+        });
+
+      console.log(`Found ${injuries.length} real injuries from ESPN API`);
+      return { injuries };
+    }
+
+    throw new Error('Could not parse ESPN injury data');
+  } catch (err) {
+    console.error('Failed to fetch injury data from ESPN:', err.message);
+
+    try {
+      // Fallback to CBS Sports for injury data
+      console.log('Falling back to CBS Sports for injury data...');
+
+      // Use axios with proper headers to avoid being blocked
+      const response = await axios.get('https://www.cbssports.com/nba/injuries/', {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+          'Accept': 'text/html,application/xhtml+xml,application/xml',
+          'Accept-Language': 'en-US,en;q=0.9'
+        }
+      });
+
+      // Use regex to extract injury data from HTML
+      // This is a simplified approach - in production you might want to use a proper HTML parser
+      const html = response.data;
+      const injuries = [];
+
+      // Find all tables with injury data
+      const tables = html.match(/<table class="TableBase-table">[\s\S]*?<\/table>/g) || [];
+
+      tables.forEach(table => {
+        // Get team name from table header
+        const teamMatch = table.match(/<th[^>]*>(.*?)<\/th>/);
+        const teamName = teamMatch ? teamMatch[1].replace(/<[^>]*>/g, '').trim() : 'Unknown Team';
+
+        // Extract rows of player data
+        const rows = table.match(/<tr>[\s\S]*?<\/tr>/g) || [];
+
+        rows.forEach(row => {
+          // Skip header rows
+          if (row.includes('<th')) return;
+
+          // Extract columns
+          const columns = row.match(/<td[^>]*>([\s\S]*?)<\/td>/g) || [];
+
+          if (columns.length >= 3) {
+            // Extract data from columns (removing HTML tags)
+            const playerName = columns[0] ? columns[0].replace(/<[^>]*>/g, '').trim() : 'Unknown';
+            const position = columns[1] ? columns[1].replace(/<[^>]*>/g, '').trim() : '';
+            const status = columns[2] ? columns[2].replace(/<[^>]*>/g, '').trim() : 'Unknown';
+
+            // Get injury details if available
+            let details = 'Undisclosed';
+            if (columns.length > 3) {
+              details = columns[3] ? columns[3].replace(/<[^>]*>/g, '').trim() : 'Undisclosed';
+            }
+
+            injuries.push({
+              team: teamName,
+              player: playerName,
+              status: status,
+              details: details
+            });
+          }
+        });
+      });
+
+      console.log(`Found ${injuries.length} injuries from CBS Sports`);
+      return { injuries };
+    } catch (fallbackErr) {
+      console.error('Failed to fetch injury data from CBS Sports:', fallbackErr.message);
+
+      // Return meaningful data rather than mock data
+      console.log('Returning empty injury list - no reliable data source available');
+      return {
+        injuries: [],
+        error: 'Could not fetch injury data from any source'
+      };
+    }
+  }
 }
 
 // PROBABILITY AND ODDS CONVERSION FUNCTIONS
@@ -418,7 +523,7 @@ async function analyzeBettingOpportunities() {
   // Create complete analysis for Claude
   let completeAnalysis = edgeAnalysis;
 
-  if (injuryData.injuries.length > 0) {
+  if (injuryData.injuries && injuryData.injuries.length > 0) {
     completeAnalysis += "\n\n## Key Injuries & Lineup Changes\n\n";
     injuryData.injuries.forEach(injury => {
       completeAnalysis += `- ${injury.team}: ${injury.player} (${injury.status}) - ${injury.details}\n`;
@@ -432,13 +537,67 @@ async function analyzeBettingOpportunities() {
   if (isPlayoffSeason) {
     completeAnalysis += "\n\n## Playoff Context\n\n";
 
-    // Add current playoff matchups and series standings
-    completeAnalysis += "Current playoff matchups:\n";
-    completeAnalysis += "- Eastern Conference: Cavaliers vs. Pacers (Pacers lead 2-1), Celtics vs. Knicks (Knicks lead 2-0)\n";
-    completeAnalysis += "- Western Conference: Thunder vs. Nuggets (Series tied 1-1), Timberwolves vs. Warriors (Series tied 1-1)\n\n";
+    try {
+      // Get real playoff data from ESPN API
+      const playoffResponse = await axios.get('https://site.api.espn.com/apis/v2/sports/basketball/nba/standings?season=2025');
 
-    // Add specific playoff betting considerations
-    completeAnalysis += "Playoff betting differs from regular season in several key aspects:\n";
+      if (playoffResponse.data && playoffResponse.data.standings) {
+        // Extract playoff matchups and series standings
+
+        // Eastern Conference
+        const eastTeams = playoffResponse.data.standings.entries
+          .filter(entry => entry.group && entry.group.name === "Eastern Conference")
+          .sort((a, b) => {
+            const aSeed = a.stats.find(s => s.name === "playoffSeed");
+            const bSeed = b.stats.find(s => s.name === "playoffSeed");
+            return (aSeed ? aSeed.value : 999) - (bSeed ? bSeed.value : 999);
+          });
+
+        // Western Conference
+        const westTeams = playoffResponse.data.standings.entries
+          .filter(entry => entry.group && entry.group.name === "Western Conference")
+          .sort((a, b) => {
+            const aSeed = a.stats.find(s => s.name === "playoffSeed");
+            const bSeed = b.stats.find(s => s.name === "playoffSeed");
+            return (aSeed ? aSeed.value : 999) - (bSeed ? bSeed.value : 999);
+          });
+
+        // Format matchups text
+        completeAnalysis += "Current playoff matchups based on standings:\n";
+
+        // First round matchups - East
+        if (eastTeams.length >= 8) {
+          completeAnalysis += "- Eastern Conference: ";
+          completeAnalysis += `#1 ${eastTeams[0].team.displayName} vs #8 ${eastTeams[7].team.displayName}, `;
+          completeAnalysis += `#2 ${eastTeams[1].team.displayName} vs #7 ${eastTeams[6].team.displayName}, `;
+          completeAnalysis += `#3 ${eastTeams[2].team.displayName} vs #6 ${eastTeams[5].team.displayName}, `;
+          completeAnalysis += `#4 ${eastTeams[3].team.displayName} vs #5 ${eastTeams[4].team.displayName}\n`;
+        }
+
+        // First round matchups - West
+        if (westTeams.length >= 8) {
+          completeAnalysis += "- Western Conference: ";
+          completeAnalysis += `#1 ${westTeams[0].team.displayName} vs #8 ${westTeams[7].team.displayName}, `;
+          completeAnalysis += `#2 ${westTeams[1].team.displayName} vs #7 ${westTeams[6].team.displayName}, `;
+          completeAnalysis += `#3 ${westTeams[2].team.displayName} vs #6 ${westTeams[5].team.displayName}, `;
+          completeAnalysis += `#4 ${westTeams[3].team.displayName} vs #5 ${westTeams[4].team.displayName}\n`;
+        }
+      } else {
+        // Fallback to hardcoded data if API fails
+        completeAnalysis += "Current playoff matchups:\n";
+        completeAnalysis += "- Eastern Conference: Cavaliers vs. Pacers (Pacers lead 2-1), Celtics vs. Knicks (Knicks lead 2-0)\n";
+        completeAnalysis += "- Western Conference: Thunder vs. Nuggets (Series tied 1-1), Timberwolves vs. Warriors (Series tied 1-1)\n";
+      }
+    } catch (err) {
+      console.error('Failed to fetch playoff data:', err.message);
+
+      // Fallback to hardcoded data
+      completeAnalysis += "Current playoff matchups:\n";
+      completeAnalysis += "- Eastern Conference: Cavaliers vs. Pacers (Pacers lead 2-1), Celtics vs. Knicks (Knicks lead 2-0)\n";
+      completeAnalysis += "- Western Conference: Thunder vs. Nuggets (Series tied 1-1), Timberwolves vs. Warriors (Series tied 1-1)\n";
+    }
+
+    completeAnalysis += "\nPlayoff betting differs from regular season in several key aspects:\n";
     completeAnalysis += "1. Teams often have more detailed gameplans for specific opponents\n";
     completeAnalysis += "2. Minutes distributions become more predictable as rotations tighten\n";
     completeAnalysis += "3. Adjustments between games can create significant edges\n";
@@ -447,7 +606,7 @@ async function analyzeBettingOpportunities() {
 
   completeAnalysis += "\n\nPlease analyze these betting opportunities, focusing on the statistical edges. ";
 
-  if (injuryData.injuries.length > 0) {
+  if (injuryData.injuries && injuryData.injuries.length > 0) {
     completeAnalysis += "Consider how these injuries might impact the identified betting edges. ";
   }
 
@@ -495,8 +654,6 @@ async function analyzeBettingOpportunities() {
     const dateTimeStr = `${dateStr}_${timeStr}`;
 
     // Create reports directory if it doesn't exist
-    const fs = require('fs');
-    const path = require('path');
     const reportsDir = path.join(__dirname, 'reports');
     const dateDir = path.join(reportsDir, dateStr);
 
@@ -554,7 +711,6 @@ ${betSection}
       console.log(`📊 Recommended bets saved to ${betsPath}`);
 
       // Also create an HTML version for better table viewing
-      const marked = require('marked');
       const htmlContent = `<!DOCTYPE html>
 <html>
 <head>
