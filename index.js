@@ -264,20 +264,81 @@ function analyzeEdges(games) {
   } else {
     formatted += `Found ${edges.reduce((total, game) => total + game.edges.length, 0)} potential edges across ${edges.length} games:\n\n`;
 
+    // Add table of all available games and odds
+    formatted += "## Available Games and Odds\n\n";
+    formatted += "| Game | Moneyline Home | Moneyline Away | Spread | Total |\n";
+    formatted += "|------|---------------|---------------|--------|-------|\n";
+
+    games.forEach(game => {
+      const homeTeam = game.home_team;
+      const awayTeam = game.away_team;
+      let moneylineHome = "N/A";
+      let moneylineAway = "N/A";
+      let spread = "N/A";
+      let total = "N/A";
+
+      // Get best available odds for each market
+      if (game.bookmakers && game.bookmakers.length > 0) {
+        // Find moneyline
+        const h2hMarket = game.bookmakers.find(bookie =>
+          bookie.markets.some(m => m.key === 'h2h')
+        )?.markets.find(m => m.key === 'h2h');
+
+        if (h2hMarket) {
+          const homeOdds = h2hMarket.outcomes.find(o => o.name === homeTeam)?.price;
+          const awayOdds = h2hMarket.outcomes.find(o => o.name === awayTeam)?.price;
+          moneylineHome = homeOdds !== undefined ? homeOdds : "N/A";
+          moneylineAway = awayOdds !== undefined ? awayOdds : "N/A";
+        }
+
+        // Find spread
+        const spreadMarket = game.bookmakers.find(bookie =>
+          bookie.markets.some(m => m.key === 'spreads')
+        )?.markets.find(m => m.key === 'spreads');
+
+        if (spreadMarket) {
+          const homeSpread = spreadMarket.outcomes.find(o => o.name === homeTeam);
+          if (homeSpread) {
+            spread = `${homeTeam} ${homeSpread.point} (${homeSpread.price})`;
+          }
+        }
+
+        // Find total
+        const totalMarket = game.bookmakers.find(bookie =>
+          bookie.markets.some(m => m.key === 'totals')
+        )?.markets.find(m => m.key === 'totals');
+
+        if (totalMarket && totalMarket.outcomes.length > 0) {
+          const overOutcome = totalMarket.outcomes.find(o => o.name === 'Over');
+          if (overOutcome) {
+            total = `O/U ${overOutcome.point} (${overOutcome.price})`;
+          }
+        }
+      }
+
+      formatted += `| ${homeTeam} vs ${awayTeam} | ${moneylineHome} | ${moneylineAway} | ${spread} | ${total} |\n`;
+    });
+
+    formatted += "\n## Detected Edges\n\n";
+
     edges.forEach(gameEdge => {
-      formatted += `## ${gameEdge.game}\n\n`;
+      formatted += `### ${gameEdge.game}\n\n`;
+
+      // Table format for edges
+      formatted += "| Market | Selection | Best Odds | Best Book | Edge | Expected Value | Projected CLV |\n";
+      formatted += "|--------|-----------|-----------|-----------|------|----------------|---------------|\n";
 
       gameEdge.edges.forEach(edge => {
-        let edgeDesc = `### ${edge.type.toUpperCase()}: ${edge.team}`;
+        let marketDesc = edge.type.toUpperCase();
+        let selection = edge.team;
         if (edge.point !== '') {
-          edgeDesc += ` @ ${edge.point}`;
+          selection += ` @ ${edge.point}`;
         }
-        formatted += edgeDesc + '\n';
-        formatted += `- Best Odds: ${edge.bestOdds} (${edge.bestBookmaker})\n`;
-        formatted += `- Edge: ${edge.edge} (Market: ${edge.marketProbability} vs. Implied: ${edge.impliedProbability})\n`;
-        formatted += `- Expected Value: ${edge.expectedValue}\n`;
-        formatted += `- Projected CLV: ${edge.clv.expectedClv}\n\n`;
+
+        formatted += `| ${marketDesc} | ${selection} | ${edge.bestOdds} | ${edge.bestBookmaker} | ${edge.edge} | ${edge.expectedValue} | ${edge.clv.expectedClv} |\n`;
       });
+
+      formatted += "\n";
     });
 
     formatted += "## Recommendation\n\n";
@@ -379,8 +440,8 @@ async function analyzeBettingOpportunities() {
 
   completeAnalysis += "Identify which markets (moneyline, spread, totals, player props) currently show the greatest inefficiencies based on the data. ";
 
-  // Request specific bet recommendations
-  completeAnalysis += "IMPORTANT: After your analysis, provide exactly 3-5 concrete bet recommendations in a section called \"RECOMMENDED BETS\". For each bet, include: the game, bet type, selection, odds, recommended stake (1-5 units), and a brief explanation of why this bet has value. Format each recommendation as \"BET #1: [Game] - [Selection] @ [Odds] (Stake: X units) - [Reason]\".";
+  // Request specific bet recommendations with exact table formatting
+  completeAnalysis += "IMPORTANT: After your analysis, provide exactly 3-5 concrete bet recommendations in a section called \"RECOMMENDED BETS\". Format these recommendations as a markdown table with these columns: Game/Series, Bet Type, Selection, Odds, Stake (1-5 units), and Reasoning. Include REAL ODDS from the data (not XXX placeholders). For each bet, provide a short but clear explanation of why this specific bet has value. Make sure to consider current injuries and playoff dynamics in your selections.";
 
   // Send to Claude for analysis
   const claudeAnalysis = await askClaude(completeAnalysis);
@@ -439,8 +500,9 @@ async function analyzeBettingOpportunities() {
     if (completeAnalysis.includes('RECOMMENDED BETS')) {
       console.log('\n🎯 RECOMMENDED BETS FOUND');
 
-      const betSection = completeAnalysis.split('RECOMMENDED BETS')[1];
-      const endMarkers = ['##', '\n\n\n'];
+      // Extract the table section from RECOMMENDED BETS to the next header or end
+      let betSection = completeAnalysis.split('RECOMMENDED BETS')[1];
+      const endMarkers = ['##', '\n\n\n', '\n---'];
       let endPos = betSection.length;
 
       for (const marker of endMarkers) {
@@ -450,7 +512,7 @@ async function analyzeBettingOpportunities() {
         }
       }
 
-      const betsOnly = betSection.substring(0, endPos).trim();
+      betSection = betSection.substring(0, endPos).trim();
 
       // Create a pretty markdown document with bets
       const todayStr = now.toLocaleDateString('en-US', {
@@ -463,15 +525,99 @@ async function analyzeBettingOpportunities() {
       const betsMd = `# NBA Betting Recommendations
 ## ${todayStr}
 
-${betsOnly}
+## RECOMMENDED BETS
+${betSection}
 
 ---
-*Generated by NBA Edge Detection System on ${dateTimeStr}*
+*Generated by NBA Edge Detection System on ${dateStr} at ${timeStr.replace(/-/g, ':')}*
 `;
 
       const betsPath = path.join(dateDir, `recommended_bets_${dateTimeStr}.md`);
       fs.writeFileSync(betsPath, betsMd);
       console.log(`📊 Recommended bets saved to ${betsPath}`);
+
+      // Also create an HTML version for better table viewing
+      const marked = require('marked');
+      const htmlContent = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBA Betting Recommendations - ${dateStr}</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #222;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #777;
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+    }
+    .unit-1 { background-color: #f0f8ff; }
+    .unit-2 { background-color: #e6f2ff; }
+    .unit-3 { background-color: #cce5ff; }
+    .unit-4 { background-color: #b3d7ff; }
+    .unit-5 { background-color: #99c9ff; }
+  </style>
+</head>
+<body>
+  ${marked.parse(betsMd)}
+  <script>
+    // Highlight rows based on unit size
+    document.addEventListener('DOMContentLoaded', function() {
+      const tables = document.querySelectorAll('table');
+      tables.forEach(table => {
+        const rows = table.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+          const cells = row.querySelectorAll('td');
+          if (cells.length >= 5) {
+            const stakeCell = cells[4]; // The stake column (assuming it's the 5th column)
+            const stakeText = stakeCell.textContent.trim();
+            const units = parseInt(stakeText.match(/\\d+/));
+            if (!isNaN(units) && units >= 1 && units <= 5) {
+              row.classList.add('unit-' + units);
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>`;
+
+      const htmlPath = path.join(dateDir, `recommended_bets_${dateTimeStr}.html`);
+      fs.writeFileSync(htmlPath, htmlContent);
+      console.log(`🌐 HTML version saved to ${htmlPath}`);
 
       // Display the bets in the console
       console.log('\n' + betsMd);
