@@ -21,16 +21,31 @@ async function getNbaOdds() {
   }
 }
 
-// Ask Claude to analyze the betting opportunities
+// Ask Claude to analyze the betting opportunities using the latest model and research capabilities
 async function askClaude(prompt) {
   try {
+    // Create a messages array with system prompt to enable research
+    const messages = [
+      {
+        role: 'user',
+        content: [
+          {
+            type: 'text',
+            text: prompt
+          }
+        ]
+      }
+    ];
+
+    // Make the API request to Claude 3.7 Sonnet (latest available model)
     const response = await axios.post(
       'https://api.anthropic.com/v1/messages',
       {
-        model: 'claude-3-sonnet-20240229',
-        max_tokens: 2048,
-        temperature: 0.7,
-        messages: [{ role: 'user', content: prompt }],
+        model: 'claude-3-7-sonnet-20250219', // Latest model
+        max_tokens: 4096,                    // Increased token limit
+        temperature: 0.6,                    // Slightly lower temperature for more deterministic responses
+        system: "You are an expert NBA betting analyst with deep knowledge of basketball and sports betting. You have access to research tools to find the latest NBA information including injuries, team news, and betting trends. Use your research capabilities to provide the most accurate and up-to-date betting analysis possible. When recommending bets, always provide genuine, accurate odds from the data and make sure all recommendations are formatted in a clear table structure.", // Research-enabling system prompt
+        messages: messages,
       },
       {
         headers: {
@@ -40,10 +55,12 @@ async function askClaude(prompt) {
         },
       }
     );
+
     return response.data.content[0].text;
   } catch (err) {
     console.error('Failed to query Claude:', err.response?.data || err.message);
-    return '';
+    console.error('Error details:', JSON.stringify(err.response?.data || err, null, 2));
+    return 'Error communicating with Claude. Please check API key and connection.';
   }
 }
 
