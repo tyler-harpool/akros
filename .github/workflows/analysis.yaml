@@ -1,0 +1,60 @@
+name: NBA Betting Analysis
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # Run daily at 9 AM UTC
+  workflow_dispatch:     # Allow manual trigger
+
+# Give the workflow necessary permissions to push to the repository
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for all branches
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run NBA betting analysis
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+        run: node index.js
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and Push
+        run: |
+          # Add only report files
+          git add reports/
+
+          # Check if there are changes to commit
+          if ! git diff --cached --quiet; then
+            # Create a nice commit message with the date
+            COMMIT_DATE=$(date +'%Y-%m-%d')
+            git commit -m "NBA Edge Analysis: $COMMIT_DATE"
+
+            # Get current branch name
+            BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+
+            # Push changes
+            git push origin $BRANCH_NAME
+            echo "Successfully pushed changes to $BRANCH_NAME"
+          else
+            echo "No changes to commit"
+          fi

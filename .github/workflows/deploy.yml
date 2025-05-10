@@ -1,9 +1,9 @@
 name: Deploy Reports to GitHub Pages
 
 on:
-  # Run after the NBA edge detection workflow
+  # Run after the NBA betting analysis workflow
   workflow_run:
-    workflows: ["NBA Edge Detection"]
+    workflows: ["NBA Betting Analysis"]
     types:
       - completed
 
@@ -204,28 +204,177 @@ jobs:
           </html>
           EOL
 
-          # Use Node.js to process markdown files
+          # Use Node.js to process markdown files - fixed script
           node -e '
           const fs = require("fs");
           const path = require("path");
           const marked = require("marked");
 
-          // Look for reports directory
-          const reportsDir = path.join(__dirname, "reports");
+          // Main function to process all reports
+          function processReports() {
+            // Look for reports directory
+            const reportsDir = path.join(__dirname, "reports");
 
-          if (!fs.existsSync(reportsDir)) {
-            console.log("Reports directory not found!");
+            if (!fs.existsSync(reportsDir)) {
+              console.log("Reports directory not found!");
 
-            // Update the index.html with a message
-            let indexHtml = fs.readFileSync("site/index.html", "utf-8");
-            indexHtml = indexHtml.replace(
-              "<!-- Report list will be inserted here -->",
-              `<div class="no-reports">
+              // Update the index.html with a message
+              let indexHtml = fs.readFileSync("site/index.html", "utf-8");
+              indexHtml = indexHtml.replace(
+                "<!-- Report list will be inserted here -->",
+                `<div class="no-reports">
+                  <h3>No Reports Available Yet</h3>
+                  <p>The betting edge detection system has not generated any reports yet.</p>
+                  <p>Reports will appear here once the NBA Edge Detection system runs and generates recommendations.</p>
+                </div>`
+              );
+
+              // Update the last updated date
+              const now = new Date();
+              const lastUpdated = now.toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric"
+              }) + " at " + now.toLocaleTimeString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit"
+              });
+
+              indexHtml = indexHtml.replace("LAST_UPDATED_DATE", lastUpdated);
+              fs.writeFileSync("site/index.html", indexHtml);
+              return;
+            }
+
+            // Get all date directories
+            let dates = [];
+            try {
+              dates = fs.readdirSync(reportsDir)
+                .filter(item => {
+                  const fullPath = path.join(reportsDir, item);
+                  return fs.existsSync(fullPath) && fs.statSync(fullPath).isDirectory();
+                })
+                .sort()
+                .reverse();
+            } catch (err) {
+              console.error("Error reading reports directory:", err);
+            }
+
+            // Initialize report list HTML
+            let reportsHtml = "";
+            let reportCount = 0;
+
+            if (dates.length === 0) {
+              reportsHtml = `<div class="no-reports">
                 <h3>No Reports Available Yet</h3>
                 <p>The betting edge detection system has not generated any reports yet.</p>
                 <p>Reports will appear here once the NBA Edge Detection system runs and generates recommendations.</p>
-              </div>`
-            );
+              </div>`;
+            } else {
+              // Process each date directory
+              for (const dateDir of dates) {
+                const fullDatePath = path.join(reportsDir, dateDir);
+
+                let files = [];
+                try {
+                  files = fs.readdirSync(fullDatePath)
+                    .filter(file => file.endsWith(".md"))
+                    .sort()
+                    .reverse();
+                } catch (err) {
+                  console.error(`Error reading directory ${dateDir}:`, err);
+                  continue;
+                }
+
+                if (files.length === 0) continue;
+
+                // Format date for display
+                let displayDate = dateDir;
+                if (/^\d{4}-\d{2}-\d{2}$/.test(dateDir)) {
+                  const dateObj = new Date(dateDir);
+                  if (!isNaN(dateObj)) {
+                    displayDate = dateObj.toLocaleDateString("en-US", {
+                      weekday: "long",
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric"
+                    });
+                  }
+                }
+
+                reportsHtml += `<div class="report-date">${displayDate}</div>`;
+                reportsHtml += `<ul class="report-list">`;
+
+                // Process each file in this date directory
+                for (const file of files) {
+                  const fullFilePath = path.join(fullDatePath, file);
+                  reportCount++;
+
+                  // Create a nice display name
+                  let displayName = file.replace(".md", "").replace(/_/g, " ");
+
+                  // Read the file content
+                  let content = "";
+                  try {
+                    content = fs.readFileSync(fullFilePath, "utf-8");
+                  } catch (err) {
+                    console.error(`Error reading file ${fullFilePath}:`, err);
+                    continue;
+                  }
+
+                  // Create an HTML file for this report
+                  const htmlFilePath = path.join("site", `${dateDir}_${file.replace(".md", ".html")}`);
+
+                  // Ensure directory exists
+                  const htmlDir = path.dirname(htmlFilePath);
+                  if (!fs.existsSync(htmlDir)) {
+                    fs.mkdirSync(htmlDir, { recursive: true });
+                  }
+
+                  // Convert markdown to HTML
+                  const htmlContent = marked.parse(content);
+
+                  // Create HTML file
+                  const reportHtml = `
+                  <!DOCTYPE html>
+                  <html lang="en">
+                  <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>${displayName} - NBA Betting Recommendations</title>
+                    <link rel="stylesheet" href="style.css">
+                    <script src="markdown-viewer.js"></script>
+                  </head>
+                  <body>
+                    <div class="header">
+                      <h1>${displayName}</h1>
+                      <p>${displayDate}</p>
+                    </div>
+                    <div id="markdown-content">
+                      ${htmlContent}
+                    </div>
+                    <div>
+                      <a href="index.html">&larr; Back to all reports</a>
+                    </div>
+                    <footer>
+                      <p>NBA Edge Detection System &copy; 2025</p>
+                    </footer>
+                  </body>
+                  </html>`;
+
+                  fs.writeFileSync(htmlFilePath, reportHtml);
+
+                  // Add to reports list
+                  const htmlLink = `${dateDir}_${file.replace(".md", ".html")}`;
+                  reportsHtml += `<li><a href="${htmlLink}">${displayName}</a></li>`;
+                }
+
+                reportsHtml += `</ul>`;
+              }
+            }
+
+            // Update the index.html with the reports list
+            let indexHtml = fs.readFileSync("site/index.html", "utf-8");
+            indexHtml = indexHtml.replace("<!-- Report list will be inserted here -->", reportsHtml);
 
             // Update the last updated date
             const now = new Date();
@@ -239,158 +388,14 @@ jobs:
             });
 
             indexHtml = indexHtml.replace("LAST_UPDATED_DATE", lastUpdated);
+
             fs.writeFileSync("site/index.html", indexHtml);
 
-            return;
+            console.log(`Processing complete! ${reportCount} reports processed.`);
           }
 
-          // Get all date directories
-          let dates = [];
-          try {
-            dates = fs.readdirSync(reportsDir)
-              .filter(item => {
-                const fullPath = path.join(reportsDir, item);
-                return fs.existsSync(fullPath) && fs.statSync(fullPath).isDirectory();
-              })
-              .sort()
-              .reverse();
-          } catch (err) {
-            console.error("Error reading reports directory:", err);
-          }
-
-          // Initialize report list HTML
-          let reportsHtml = "";
-          let reportCount = 0;
-
-          if (dates.length === 0) {
-            reportsHtml = `<div class="no-reports">
-              <h3>No Reports Available Yet</h3>
-              <p>The betting edge detection system has not generated any reports yet.</p>
-              <p>Reports will appear here once the NBA Edge Detection system runs and generates recommendations.</p>
-            </div>`;
-          } else {
-            // Process each date directory
-            for (const dateDir of dates) {
-              const fullDatePath = path.join(reportsDir, dateDir);
-
-              let files = [];
-              try {
-                files = fs.readdirSync(fullDatePath)
-                  .filter(file => file.endsWith(".md"))
-                  .sort()
-                  .reverse();
-              } catch (err) {
-                console.error(`Error reading directory ${dateDir}:`, err);
-                continue;
-              }
-
-              if (files.length === 0) continue;
-
-              // Format date for display
-              let displayDate = dateDir;
-              if (/^\d{4}-\d{2}-\d{2}$/.test(dateDir)) {
-                const dateObj = new Date(dateDir);
-                if (!isNaN(dateObj)) {
-                  displayDate = dateObj.toLocaleDateString("en-US", {
-                    weekday: "long",
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric"
-                  });
-                }
-              }
-
-              reportsHtml += `<div class="report-date">${displayDate}</div>`;
-              reportsHtml += `<ul class="report-list">`;
-
-              // Process each file in this date directory
-              for (const file of files) {
-                const fullFilePath = path.join(fullDatePath, file);
-                reportCount++;
-
-                // Create a nice display name
-                let displayName = file.replace(".md", "").replace(/_/g, " ");
-
-                // Read the file content
-                let content = "";
-                try {
-                  content = fs.readFileSync(fullFilePath, "utf-8");
-                } catch (err) {
-                  console.error(`Error reading file ${fullFilePath}:`, err);
-                  continue;
-                }
-
-                // Create an HTML file for this report
-                const htmlFilePath = path.join("site", `${dateDir}_${file.replace(".md", ".html")}`);
-
-                // Ensure directory exists
-                const htmlDir = path.dirname(htmlFilePath);
-                if (!fs.existsSync(htmlDir)) {
-                  fs.mkdirSync(htmlDir, { recursive: true });
-                }
-
-                // Convert markdown to HTML
-                const htmlContent = marked.parse(content);
-
-                // Create HTML file
-                const reportHtml = `
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>${displayName} - NBA Betting Recommendations</title>
-                  <link rel="stylesheet" href="style.css">
-                  <script src="markdown-viewer.js"></script>
-                </head>
-                <body>
-                  <div class="header">
-                    <h1>${displayName}</h1>
-                    <p>${displayDate}</p>
-                  </div>
-                  <div id="markdown-content">
-                    ${htmlContent}
-                  </div>
-                  <div>
-                    <a href="index.html">&larr; Back to all reports</a>
-                  </div>
-                  <footer>
-                    <p>NBA Edge Detection System &copy; 2025</p>
-                  </footer>
-                </body>
-                </html>`;
-
-                fs.writeFileSync(htmlFilePath, reportHtml);
-
-                // Add to reports list
-                const htmlLink = `${dateDir}_${file.replace(".md", ".html")}`;
-                reportsHtml += `<li><a href="${htmlLink}">${displayName}</a></li>`;
-              }
-
-              reportsHtml += `</ul>`;
-            }
-          }
-
-          // Update the index.html with the reports list
-          let indexHtml = fs.readFileSync("site/index.html", "utf-8");
-          indexHtml = indexHtml.replace("<!-- Report list will be inserted here -->", reportsHtml);
-
-          // Update the last updated date
-          const now = new Date();
-          const lastUpdated = now.toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric"
-          }) + " at " + now.toLocaleTimeString("en-US", {
-            hour: "2-digit",
-            minute: "2-digit"
-          });
-
-          indexHtml = indexHtml.replace("LAST_UPDATED_DATE", lastUpdated);
-
-          fs.writeFileSync("site/index.html", indexHtml);
-
-          console.log(`Processing complete! ${reportCount} reports processed.`);
+          // Execute the main function
+          processReports();
           '
 
       - name: Setup Pages
