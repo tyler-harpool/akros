@@ -1,0 +1,22 @@
+{
+  "lastRun": "2025-05-10T21-14-24-911Z",
+  "runs": [
+    {
+      "timestamp": "2025-05-10T21-14-24-911Z",
+      "numGames": 0,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-05-10/nba_edge_analysis_2025-05-10T21-14-24-911Z.md",
+        "bets": "reports/2025-05-10/recommended_bets_2025-05-10T21-14-24-911Z.md",
+        "html": "reports/2025-05-10/recommended_bets_2025-05-10T21-14-24-911Z.html",
+        "prompt": "prompts/2025-05-10/claude_prompt_2025-05-10T21-14-24-911Z.md",
+        "thinking": "reports/2025-05-10/claude_reasoning_2025-05-10T21-14-24-911Z.md"
+      }
+    }
+  ],
+  "timestamp": "2025-05-10T21-14-24-911Z",
+  "numGames": 0,
+  "betsFound": true,
+  "numBets": 23
+}

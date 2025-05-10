@@ -96,6 +96,7 @@ async function askClaudeStandard(prompt, options = {}) {
 }
 
 // Main analysis function
+// Main analysis function
 async function analyzeBettingOpportunities() {
   // Get odds data
   const oddsData = await getNbaOdds();
@@ -109,22 +110,23 @@ async function analyzeBettingOpportunities() {
 
   // Create a comprehensive prompt with all relevant data
   const completeAnalysis = createComprehensivePrompt(oddsData, injuryData, analyzer);
-  // Add these lines:
+
   // Save the raw prompt for inspection
   const now = new Date();
+  const timestamp = now.toISOString().replace(/[:.]/g, '-');
   const dateStr = now.toISOString().split('T')[0]; // YYYY-MM-DD
-  const timeStr = now.toTimeString().split(' ')[0].replace(/:/g, '-'); // HH-MM-SS
-  const promptDir = path.join(__dirname, 'prompts');
-  const promptPath = path.join(promptDir, `claude_prompt_${dateStr}_${timeStr}.md`);
 
-  // Ensure directory exists
+  // Create prompt directory if it doesn't exist
+  const promptDir = path.join('prompts', dateStr);
   if (!fs.existsSync(promptDir)) {
     fs.mkdirSync(promptDir, { recursive: true });
   }
 
   // Save the prompt
+  const promptPath = path.join(promptDir, `claude_prompt_${timestamp}.md`);
   fs.writeFileSync(promptPath, completeAnalysis);
   console.log(`📋 Claude's input prompt saved to ${promptPath}`);
+
   // Enhanced system prompt for Claude
   const systemPrompt = `You are BetAnalyst, an expert NBA betting analysis system with deep knowledge of basketball statistics, team dynamics, player performance metrics, and betting markets. Your analysis leverages Claude's extended thinking capabilities to provide transparent, step-by-step reasoning.
 
@@ -153,27 +155,46 @@ FORMATTING REQUIREMENTS:
 
   // If available, log Claude's thinking process for debugging
   if (claudeResponse.thinking) {
-    // Save Claude's reasoning to a file for later inspection
-    const now = new Date();
-    const dateStr = now.toISOString().split('T')[0]; // YYYY-MM-DD
-    const timeStr = now.toTimeString().split(' ')[0].replace(/:/g, '-'); // HH-MM-SS
-    const thinkingPath = path.join(__dirname, 'reports', dateStr, `claude_reasoning_${timeStr}.md`);
+    // Create reports directory
+    const reportsDir = path.join('reports');
+    const dateDir = path.join(reportsDir, dateStr);
 
-    try {
-      // Ensure directory exists
-      const dirPath = path.join(__dirname, 'reports', dateStr);
-      if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
-      }
-
-      fs.writeFileSync(thinkingPath, claudeResponse.thinking);
-      console.log(`Claude's reasoning process saved to ${thinkingPath}`);
-    } catch (err) {
-      console.error('Error saving Claude reasoning:', err.message);
+    // Ensure directories exist
+    if (!fs.existsSync(reportsDir)) {
+      fs.mkdirSync(reportsDir, { recursive: true });
     }
+
+    if (!fs.existsSync(dateDir)) {
+      fs.mkdirSync(dateDir, { recursive: true });
+    }
+
+    // Save Claude's reasoning to a file
+    const thinkingPath = path.join(dateDir, `claude_reasoning_${timestamp}.md`);
+    fs.writeFileSync(thinkingPath, claudeResponse.thinking);
+    console.log(`🧠 Claude's reasoning process saved to ${thinkingPath}`);
+
+    // Create a latest directory for easy access to most recent files
+    const latestDir = path.join(reportsDir, 'latest');
+    if (!fs.existsSync(latestDir)) {
+      fs.mkdirSync(latestDir, { recursive: true });
+    }
+
+    // Copy thinking to latest
+    fs.copyFileSync(thinkingPath, path.join(latestDir, 'latest_thinking.md'));
+    fs.copyFileSync(promptPath, path.join(latestDir, 'latest_prompt.md'));
   }
 
-  return claudeAnalysis;
+  // Create a variable to store the thinking path for the return value
+  const finalThinkingPath = claudeResponse.thinking ?
+    path.join(path.join('reports', dateStr), `claude_reasoning_${timestamp}.md`) :
+    null;
+
+  return {
+    analysis: claudeAnalysis,
+    timestamp: timestamp,
+    promptPath: promptPath,
+    thinkingPath: finalThinkingPath
+  };
 }
 
 // MAIN EXECUTION
@@ -198,30 +219,40 @@ FORMATTING REQUIREMENTS:
   try {
     console.log('Beginning analysis with Claude extended thinking...');
 
-    const analysis = await analyzeBettingOpportunities();
+    // Get analysis results and metadata
+    const result = await analyzeBettingOpportunities();
+    const { analysis, timestamp, promptPath } = result;
 
-    // Format date for file naming
+    // Get current date for directories
     const now = new Date();
     const dateStr = now.toISOString().split('T')[0]; // YYYY-MM-DD
-    const timeStr = now.toTimeString().split(' ')[0].replace(/:/g, '-'); // HH-MM-SS
-    const dateTimeStr = `${dateStr}_${timeStr}`;
 
-    // Create reports directory if it doesn't exist
-    const reportsDir = path.join(__dirname, 'reports');
-    const dateDir = path.join(reportsDir, dateStr);
+    // Setup directory structure
+    const baseDir = path.join('reports');
+    const dateDir = path.join(baseDir, dateStr);
 
-    if (!fs.existsSync(reportsDir)) {
-      fs.mkdirSync(reportsDir);
+    // Ensure directories exist (redundant but safe)
+    if (!fs.existsSync(baseDir)) {
+      fs.mkdirSync(baseDir, { recursive: true });
     }
 
     if (!fs.existsSync(dateDir)) {
-      fs.mkdirSync(dateDir);
+      fs.mkdirSync(dateDir, { recursive: true });
+    }
+
+    // Create latest directory if needed
+    const latestDir = path.join(baseDir, 'latest');
+    if (!fs.existsSync(latestDir)) {
+      fs.mkdirSync(latestDir, { recursive: true });
     }
 
     // Save complete analysis as markdown
-    const fullReportPath = path.join(dateDir, `nba_edge_analysis_${dateTimeStr}.md`);
+    const fullReportPath = path.join(dateDir, `nba_edge_analysis_${timestamp}.md`);
     fs.writeFileSync(fullReportPath, analysis);
     console.log(`\n📝 Full analysis saved to ${fullReportPath}`);
+
+    // Copy to latest directory
+    fs.copyFileSync(fullReportPath, path.join(latestDir, 'latest_analysis.md'));
 
     // Extract and save just the recommended bets section
     if (analysis.includes('RECOMMENDED BETS')) {
@@ -258,12 +289,15 @@ FORMATTING REQUIREMENTS:
 ${betSection}
 
 ---
-*Generated by NBA Edge Detection System with Claude Extended Thinking on ${dateStr} at ${timeStr.replace(/-/g, ':')}*
+*Generated by NBA Edge Detection System with Claude Extended Thinking on ${dateStr} at ${timestamp}*
 `;
 
-        const betsPath = path.join(dateDir, `recommended_bets_${dateTimeStr}.md`);
+        const betsPath = path.join(dateDir, `recommended_bets_${timestamp}.md`);
         fs.writeFileSync(betsPath, betsMd);
         console.log(`📊 Recommended bets saved to ${betsPath}`);
+
+        // Copy to latest directory
+        fs.copyFileSync(betsPath, path.join(latestDir, 'latest_bets.md'));
 
         // Create HTML version
         const htmlContent = `<!DOCTYPE html>
@@ -343,21 +377,122 @@ ${betSection}
 </body>
 </html>`;
 
-        const htmlPath = path.join(dateDir, `recommended_bets_${dateTimeStr}.html`);
+        const htmlPath = path.join(dateDir, `recommended_bets_${timestamp}.html`);
         fs.writeFileSync(htmlPath, htmlContent);
         console.log(`🌐 HTML version saved to ${htmlPath}`);
 
+        // Copy HTML to latest directory
+        fs.copyFileSync(htmlPath, path.join(latestDir, 'latest_bets.html'));
+
         // Display the bets in the console
         console.log('\n' + betsMd);
+
+        // Create/update summary JSON
+        createSummaryFile(baseDir, {
+          timestamp: timestamp,
+          numGames: 0, // You would get this from oddsData.length
+          betsFound: true,
+          numBets: (betSection.match(/\|\s*[^|]+\s*\|/g) || []).length - 1, // Subtract header row
+          files: {
+            analysis: fullReportPath,
+            bets: betsPath,
+            html: htmlPath,
+            prompt: promptPath,
+            thinking: result.thinkingPath
+          }
+        });
       } else {
         console.log('\n⚠️ "RECOMMENDED BETS" section found but no table of bets included');
         console.log('This likely indicates a formatting issue with Claude\'s response.');
+
+        createSummaryFile(baseDir, {
+          timestamp: timestamp,
+          betsFound: false,
+          error: "RECOMMENDED BETS section found but no table included",
+          files: {
+            analysis: fullReportPath,
+            prompt: promptPath,
+            thinking: result.thinkingPath
+          }
+        });
       }
     } else {
       console.log('\n⚠️ No recommended bets found in analysis');
       console.log('Consider adjusting the threshold for edge detection or running the analysis at a different time when more betting opportunities may be available.');
+
+      createSummaryFile(baseDir, {
+        timestamp: timestamp,
+        betsFound: false,
+        error: "No RECOMMENDED BETS section found in analysis",
+        files: {
+          analysis: fullReportPath,
+          prompt: promptPath,
+          thinking: result.thinkingPath
+        }
+      });
     }
   } catch (error) {
     console.error('An error occurred during analysis:', error);
+
+    // Try to record error in summary
+    try {
+      const now = new Date();
+      const timestamp = now.toISOString().replace(/[:.]/g, '-');
+      const baseDir = path.join('reports');
+
+      createSummaryFile(baseDir, {
+        timestamp: timestamp,
+        error: error.message || "Unknown error",
+        stack: error.stack,
+        success: false
+      });
+    } catch (e) {
+      console.error('Could not record error in summary file:', e);
+    }
   }
 })();
+
+// Helper function to create/update summary file
+function createSummaryFile(baseDir, runData) {
+  const summaryPath = path.join(baseDir, 'summary.json');
+  let summary = {
+    lastRun: runData.timestamp,
+    runs: []
+  };
+
+  // Add top-level data
+  Object.keys(runData).forEach(key => {
+    if (key !== 'files') {
+      summary[key] = runData[key];
+    }
+  });
+
+  // Load existing summary if it exists and append the new run
+  if (fs.existsSync(summaryPath)) {
+    try {
+      const existingSummary = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
+      if (existingSummary.runs) {
+        // Keep existing runs but add new one at the start
+        summary.runs = [runData, ...existingSummary.runs.slice(0, 19)];
+      } else {
+        summary.runs = [runData];
+      }
+
+      // Preserve any other existing summary fields
+      Object.keys(existingSummary).forEach(key => {
+        if (key !== 'runs' && key !== 'lastRun' && !runData.hasOwnProperty(key)) {
+          summary[key] = existingSummary[key];
+        }
+      });
+    } catch (err) {
+      console.error('Error reading summary file:', err.message);
+      summary.runs = [runData];
+    }
+  } else {
+    summary.runs = [runData];
+  }
+
+  // Write the summary file
+  fs.writeFileSync(summaryPath, JSON.stringify(summary, null, 2));
+  console.log(`📊 Summary updated at ${summaryPath}`);
+}
