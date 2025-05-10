@@ -1,182 +1,406 @@
-name: Build and Deploy NBA Betting Analysis
+name: Deploy Reports to GitHub Pages
 
 on:
-  schedule:
-    - cron: '0 9 * * *'  # Run daily at 9 AM UTC
-  workflow_dispatch:     # Allow manual trigger
+  # Run after the NBA edge detection workflow
+  workflow_run:
+    workflows: ["NBA Edge Detection"]
+    types:
+      - completed
+
+  # Run when reports are updated directly
+  push:
+    paths:
+      - 'reports/**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build-and-analyze:
+  # Build job to process markdown files
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history to get all reports
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: |
-          npm install
+      - name: Install Marked (Markdown renderer)
+        run: npm install marked
 
-      - name: Create site directory
+      - name: Process reports and create site
         run: |
-          mkdir -p site/reports
+          # Create site directory
+          mkdir -p site
 
-      - name: Run NBA betting analysis
-        env:
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
-        run: |
-          node index.js
+          # Create a stylesheet
+          cat > site/style.css << 'EOL'
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+          }
+          .header {
+            background-color: #052c65;
+            color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.3rem;
+          }
+          h1, h2, h3 {
+            color: #0a0a0a;
+          }
+          .header h1, .header p {
+            color: white;
+          }
+          a {
+            color: #0366d6;
+            text-decoration: none;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+          .report-date {
+            background-color: #f1f8ff;
+            padding: 10px 15px;
+            margin: 20px 0 10px 0;
+            border-radius: 4px;
+            border-left: 5px solid #0366d6;
+            font-weight: bold;
+          }
+          .report-list {
+            margin-left: 20px;
+            list-style-type: none;
+            padding-left: 10px;
+          }
+          .report-list li {
+            margin-bottom: 8px;
+          }
+          table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+          }
+          th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+          }
+          th {
+            background-color: #f6f8fa;
+          }
+          tr:nth-child(even) {
+            background-color: #f9f9f9;
+          }
+          .unit-1, .unit-2, .unit-3, .unit-4, .unit-5 {
+            display: inline-block;
+            padding: 3px 6px;
+            border-radius: 3px;
+            color: white;
+            font-weight: bold;
+          }
+          .unit-1 { background-color: #6c757d; }
+          .unit-2 { background-color: #0d6efd; }
+          .unit-3 { background-color: #198754; }
+          .unit-4 { background-color: #dc3545; }
+          .unit-5 { background-color: #6f42c1; }
+          code {
+            background-color: #f6f8fa;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+          }
+          pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 6px;
+            overflow: auto;
+          }
+          .no-reports {
+            background-color: #fff4e5;
+            border-left: 5px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+          }
+          footer {
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 14px;
+          }
+          EOL
 
-      - name: Copy reports to site directory
-        run: |
-          cp -R reports/* site/reports/
+          # Create a script to handle markdown parsing for browser
+          cat > site/markdown-viewer.js << 'EOL'
+          document.addEventListener('DOMContentLoaded', function() {
+            // Check if this is a markdown page
+            const content = document.getElementById('markdown-content');
+            if (!content) return;
 
-      - name: Create index page
-        run: |
+            // Format unit badges
+            const html = content.innerHTML;
+            const formattedHtml = html.replace(/(\d+)\s*Units?/gi, function(match, units) {
+              const unitNum = parseInt(units);
+              if (unitNum >= 1 && unitNum <= 5) {
+                return `<span class="unit-${unitNum}">${unitNum} Units</span>`;
+              }
+              return match;
+            });
+
+            content.innerHTML = formattedHtml;
+          });
+          EOL
+
+          # Create a .nojekyll file to bypass Jekyll processing
+          touch site/.nojekyll
+
+          # Create the main index.html
+          cat > site/index.html << 'EOL'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>NBA Betting Recommendations</title>
+            <link rel="stylesheet" href="style.css">
+          </head>
+          <body>
+            <div class="header">
+              <h1>NBA Betting Recommendations</h1>
+              <p>Statistical edge detection for NBA betting markets</p>
+              <p>Last updated: LAST_UPDATED_DATE</p>
+            </div>
+
+            <h2>Latest Reports</h2>
+            <div id="reports-container">
+              <!-- Report list will be inserted here -->
+            </div>
+
+            <footer>
+              <p>NBA Edge Detection System &copy; 2025</p>
+              <p>Reports are generated daily using AI-powered edge detection algorithms.</p>
+            </footer>
+          </body>
+          </html>
+          EOL
+
+          # Use Node.js to process markdown files
           node -e '
-            const fs = require("fs");
-            const path = require("path");
+          const fs = require("fs");
+          const path = require("path");
+          const marked = require("marked");
 
-            // Function to create index.html
-            function createIndexHtml() {
-              const reportsDir = "./reports";
-              const dates = fs.readdirSync(reportsDir).filter(file =>
-                fs.statSync(path.join(reportsDir, file)).isDirectory()
-              );
+          // Look for reports directory
+          const reportsDir = path.join(__dirname, "reports");
 
-              // Sort dates in descending order (newest first)
-              dates.sort((a, b) => b.localeCompare(a));
+          if (!fs.existsSync(reportsDir)) {
+            console.log("Reports directory not found!");
 
-              let html = `
+            // Update the index.html with a message
+            let indexHtml = fs.readFileSync("site/index.html", "utf-8");
+            indexHtml = indexHtml.replace(
+              "<!-- Report list will be inserted here -->",
+              `<div class="no-reports">
+                <h3>No Reports Available Yet</h3>
+                <p>The betting edge detection system has not generated any reports yet.</p>
+                <p>Reports will appear here once the NBA Edge Detection system runs and generates recommendations.</p>
+              </div>`
+            );
+
+            // Update the last updated date
+            const now = new Date();
+            const lastUpdated = now.toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric"
+            }) + " at " + now.toLocaleTimeString("en-US", {
+              hour: "2-digit",
+              minute: "2-digit"
+            });
+
+            indexHtml = indexHtml.replace("LAST_UPDATED_DATE", lastUpdated);
+            fs.writeFileSync("site/index.html", indexHtml);
+
+            return;
+          }
+
+          // Get all date directories
+          let dates = [];
+          try {
+            dates = fs.readdirSync(reportsDir)
+              .filter(item => {
+                const fullPath = path.join(reportsDir, item);
+                return fs.existsSync(fullPath) && fs.statSync(fullPath).isDirectory();
+              })
+              .sort()
+              .reverse();
+          } catch (err) {
+            console.error("Error reading reports directory:", err);
+          }
+
+          // Initialize report list HTML
+          let reportsHtml = "";
+          let reportCount = 0;
+
+          if (dates.length === 0) {
+            reportsHtml = `<div class="no-reports">
+              <h3>No Reports Available Yet</h3>
+              <p>The betting edge detection system has not generated any reports yet.</p>
+              <p>Reports will appear here once the NBA Edge Detection system runs and generates recommendations.</p>
+            </div>`;
+          } else {
+            // Process each date directory
+            for (const dateDir of dates) {
+              const fullDatePath = path.join(reportsDir, dateDir);
+
+              let files = [];
+              try {
+                files = fs.readdirSync(fullDatePath)
+                  .filter(file => file.endsWith(".md"))
+                  .sort()
+                  .reverse();
+              } catch (err) {
+                console.error(`Error reading directory ${dateDir}:`, err);
+                continue;
+              }
+
+              if (files.length === 0) continue;
+
+              // Format date for display
+              let displayDate = dateDir;
+              if (/^\d{4}-\d{2}-\d{2}$/.test(dateDir)) {
+                const dateObj = new Date(dateDir);
+                if (!isNaN(dateObj)) {
+                  displayDate = dateObj.toLocaleDateString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                  });
+                }
+              }
+
+              reportsHtml += `<div class="report-date">${displayDate}</div>`;
+              reportsHtml += `<ul class="report-list">`;
+
+              // Process each file in this date directory
+              for (const file of files) {
+                const fullFilePath = path.join(fullDatePath, file);
+                reportCount++;
+
+                // Create a nice display name
+                let displayName = file.replace(".md", "").replace(/_/g, " ");
+
+                // Read the file content
+                let content = "";
+                try {
+                  content = fs.readFileSync(fullFilePath, "utf-8");
+                } catch (err) {
+                  console.error(`Error reading file ${fullFilePath}:`, err);
+                  continue;
+                }
+
+                // Create an HTML file for this report
+                const htmlFilePath = path.join("site", `${dateDir}_${file.replace(".md", ".html")}`);
+
+                // Ensure directory exists
+                const htmlDir = path.dirname(htmlFilePath);
+                if (!fs.existsSync(htmlDir)) {
+                  fs.mkdirSync(htmlDir, { recursive: true });
+                }
+
+                // Convert markdown to HTML
+                const htmlContent = marked.parse(content);
+
+                // Create HTML file
+                const reportHtml = `
                 <!DOCTYPE html>
-                <html>
+                <html lang="en">
                 <head>
                   <meta charset="UTF-8">
                   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>NBA Betting Analysis Reports</title>
-                  <style>
-                    body {
-                      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-                      line-height: 1.6;
-                      max-width: 1200px;
-                      margin: 0 auto;
-                      padding: 20px;
-                      color: #333;
-                    }
-                    h1, h2, h3 {
-                      color: #222;
-                    }
-                    a {
-                      color: #0366d6;
-                      text-decoration: none;
-                    }
-                    a:hover {
-                      text-decoration: underline;
-                    }
-                    .date-section {
-                      margin-bottom: 30px;
-                      border-bottom: 1px solid #eee;
-                      padding-bottom: 20px;
-                    }
-                    .report-list {
-                      list-style-type: none;
-                      padding-left: 20px;
-                    }
-                    .report-list li {
-                      margin-bottom: 10px;
-                    }
-                  </style>
+                  <title>${displayName} - NBA Betting Recommendations</title>
+                  <link rel="stylesheet" href="style.css">
+                  <script src="markdown-viewer.js"></script>
                 </head>
                 <body>
-                  <h1>NBA Betting Analysis Reports</h1>
-                  <p>Daily betting analysis and recommendations generated with Claude 3.7 Sonnet.</p>
-              `;
-
-              dates.forEach(date => {
-                const dateDir = path.join(reportsDir, date);
-                const files = fs.readdirSync(dateDir);
-
-                // Group files by type
-                const analysis = files.filter(f => f.includes("nba_edge_analysis"));
-                const mdRecommendations = files.filter(f => f.includes("recommended_bets") && f.endsWith(".md"));
-                const htmlRecommendations = files.filter(f => f.includes("recommended_bets") && f.endsWith(".html"));
-
-                if (analysis.length > 0 || mdRecommendations.length > 0 || htmlRecommendations.length > 0) {
-                  html += `
-                    <div class="date-section">
-                      <h2>${formatDate(date)}</h2>
-                      <ul class="report-list">
-                  `;
-
-                  // Add HTML recommendations first
-                  htmlRecommendations.forEach(file => {
-                    html += `
-                      <li>
-                        <a href="reports/${date}/${file}">Betting Recommendations (HTML)</a>
-                      </li>
-                    `;
-                  });
-
-                  // Add markdown recommendations
-                  mdRecommendations.forEach(file => {
-                    html += `
-                      <li>
-                        <a href="reports/${date}/${file}">Betting Recommendations (Markdown)</a>
-                      </li>
-                    `;
-                  });
-
-                  // Add full analysis
-                  analysis.forEach(file => {
-                    html += `
-                      <li>
-                        <a href="reports/${date}/${file}">Full Analysis</a>
-                      </li>
-                    `;
-                  });
-
-                  html += `
-                      </ul>
-                    </div>
-                  `;
-                }
-              });
-
-              html += `
+                  <div class="header">
+                    <h1>${displayName}</h1>
+                    <p>${displayDate}</p>
+                  </div>
+                  <div id="markdown-content">
+                    ${htmlContent}
+                  </div>
+                  <div>
+                    <a href="index.html">&larr; Back to all reports</a>
+                  </div>
                   <footer>
-                    <p>Generated using NBA Edge Detection System with Claude Extended Thinking</p>
+                    <p>NBA Edge Detection System &copy; 2025</p>
                   </footer>
                 </body>
-                </html>
-              `;
+                </html>`;
 
-              fs.writeFileSync("./site/index.html", html);
-              console.log("Created index.html");
+                fs.writeFileSync(htmlFilePath, reportHtml);
+
+                // Add to reports list
+                const htmlLink = `${dateDir}_${file.replace(".md", ".html")}`;
+                reportsHtml += `<li><a href="${htmlLink}">${displayName}</a></li>`;
+              }
+
+              reportsHtml += `</ul>`;
             }
+          }
 
-            // Helper function to format date
-            function formatDate(dateStr) {
-              const date = new Date(dateStr);
-              return date.toLocaleDateString("en-US", {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric"
-              });
-            }
+          // Update the index.html with the reports list
+          let indexHtml = fs.readFileSync("site/index.html", "utf-8");
+          indexHtml = indexHtml.replace("<!-- Report list will be inserted here -->", reportsHtml);
 
-            // Create the index.html file
-            createIndexHtml();
+          // Update the last updated date
+          const now = new Date();
+          const lastUpdated = now.toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+          }) + " at " + now.toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit"
+          });
+
+          indexHtml = indexHtml.replace("LAST_UPDATED_DATE", lastUpdated);
+
+          fs.writeFileSync("site/index.html", indexHtml);
+
+          console.log(`Processing complete! ${reportCount} reports processed.`);
           '
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          path: 'site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
