@@ -1,0 +1,41 @@
+name: Multi-Sport Edge Detection
+
+# Add these permissions to all your workflow files
+permissions:
+  contents: write  # This gives the workflow permission to push to the repository
+
+on:
+  schedule:
+    # Run daily at 10:00 AM UTC
+    - cron: '0 10 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run in-season sports analysis
+        run: node index.js
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+      
+      - name: Commit and push reports
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add reports/
+          git commit -m "Update multi-sport edge analysis reports [automated]" || echo "No changes to commit"
+          # Use GITHUB_TOKEN for authentication
+          git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
