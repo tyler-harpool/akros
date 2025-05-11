@@ -1,6 +1,20 @@
 {
-  "lastRun": "2025-05-11T20-56-51-349Z",
+  "lastRun": "2025-05-11T22-02-30-196Z",
   "runs": [
+    {
+      "timestamp": "2025-05-11T22-02-30-196Z",
+      "bettingMode": "pregame",
+      "numGames": 4,
+      "betsFound": true,
+      "numBets": 20,
+      "files": {
+        "analysis": "reports/2025-05-11/nba_edge_analysis_2025-05-11T22-02-30-196Z.md",
+        "bets": "reports/2025-05-11/recommended_bets_2025-05-11T22-02-30-196Z.md",
+        "html": "reports/2025-05-11/recommended_bets_2025-05-11T22-02-30-196Z.html",
+        "prompt": "prompts/2025-05-11/claude_prompt_2025-05-11T22-02-30-196Z.md",
+        "thinking": "reports/2025-05-11/claude_reasoning_2025-05-11T22-02-30-196Z.md"
+      }
+    },
     {
       "timestamp": "2025-05-11T20-56-51-349Z",
       "bettingMode": "pregame",
@@ -157,11 +171,11 @@
       }
     }
   ],
-  "timestamp": "2025-05-11T20-56-51-349Z",
+  "timestamp": "2025-05-11T22-02-30-196Z",
   "bettingMode": "pregame",
   "numGames": 4,
   "betsFound": true,
-  "numBets": 23,
+  "numBets": 20,
   "error": "oddsData is not defined",
   "stack": "ReferenceError: oddsData is not defined\n    at /Users/THarpool/Downloads/edges/index.js:474:21\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
   "success": false

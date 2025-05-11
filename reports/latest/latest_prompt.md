@@ -27,23 +27,23 @@ Game Start: 5/11/2025, 7:41:17 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 250 | -345 |
-| FanDuel | 300 | -430 |
-| BetMGM | 310 | -450 |
+| DraftKings | 520 | -850 |
+| FanDuel | 280 | -390 |
+| BetMGM | 625 | -1100 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 7.5 (-115) | -7.5 (-115) |
-| FanDuel | 8.5 (-130) | -8.5 (-102) |
-| BetMGM | 7.5 (-105) | -7.5 (-125) |
+| DraftKings | 5.5 (-120) | -5.5 (-110) |
+| FanDuel | 3.5 (-118) | -3.5 (-112) |
+| BetMGM | 5.5 (-115) | -5.5 (-115) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 193.5 | -115 | -115 |
-| FanDuel | 193.5 | -120 | -110 |
-| BetMGM | 194.5 | -110 | -118 |
+| DraftKings | 180.5 | -140 | 110 |
+| FanDuel | 183.5 | -132 | 100 |
+| BetMGM | 181.5 | -110 | -115 |
 
 
 ## Indiana Pacers vs Cleveland Cavaliers
@@ -52,7 +52,7 @@ Game Start: 5/12/2025, 12:00:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | 176 | -210 |
+| FanDuel | 188 | -225 |
 | DraftKings | 185 | -225 |
 | BetMGM | 180 | -220 |
 
@@ -67,7 +67,7 @@ Game Start: 5/12/2025, 12:00:00 AM
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | FanDuel | 231 | -110 | -110 |
-| DraftKings | 230.5 | -110 | -110 |
+| DraftKings | 231 | -108 | -112 |
 | BetMGM | 230.5 | -115 | -105 |
 
 
