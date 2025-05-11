@@ -2,40 +2,40 @@
 
 ## Games Being Analyzed
 
-- Denver Nuggets vs Oklahoma City Thunder (5/11/2025, 2:35:00 PM)
-- Indiana Pacers vs Cleveland Cavaliers (5/11/2025, 7:00:00 PM)
-- New York Knicks vs Boston Celtics (5/12/2025, 6:35:00 PM)
-- Golden State Warriors vs Minnesota Timberwolves (5/12/2025, 9:05:00 PM)
+- Denver Nuggets vs Oklahoma City Thunder (5/11/2025, 7:35:00 PM)
+- Indiana Pacers vs Cleveland Cavaliers (5/12/2025, 12:00:00 AM)
+- New York Knicks vs Boston Celtics (5/12/2025, 11:35:00 PM)
+- Golden State Warriors vs Minnesota Timberwolves (5/13/2025, 2:05:00 AM)
 
 # Available NBA Betting Lines
 
 ## Denver Nuggets vs Oklahoma City Thunder
-Game Start: 5/11/2025, 2:35:00 PM
+Game Start: 5/11/2025, 7:35:00 PM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 205 | -250 |
+| DraftKings | 225 | -278 |
 | FanDuel | 215 | -260 |
 | BetMGM | 220 | -275 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 6.5 (-110) | -6.5 (-110) |
+| DraftKings | 7 (-112) | -7 (-108) |
 | FanDuel | 7 (-112) | -7 (-108) |
 | BetMGM | 6.5 (-105) | -6.5 (-115) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 228.5 | -110 | -110 |
+| DraftKings | 228.5 | -108 | -112 |
 | FanDuel | 228 | -110 | -110 |
-| BetMGM | 228.5 | -110 | -110 |
+| BetMGM | 228.5 | -115 | -105 |
 
 
 ## Indiana Pacers vs Cleveland Cavaliers
-Game Start: 5/11/2025, 7:00:00 PM
+Game Start: 5/12/2025, 12:00:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
@@ -60,7 +60,7 @@ Game Start: 5/11/2025, 7:00:00 PM
 
 
 ## New York Knicks vs Boston Celtics
-Game Start: 5/12/2025, 6:35:00 PM
+Game Start: 5/12/2025, 11:35:00 PM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
@@ -85,7 +85,7 @@ Game Start: 5/12/2025, 6:35:00 PM
 
 
 ## Golden State Warriors vs Minnesota Timberwolves
-Game Start: 5/12/2025, 9:05:00 PM
+Game Start: 5/13/2025, 2:05:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
@@ -165,7 +165,7 @@ Game starts at 8:00 PM ET
 
 
 ## Boston Celtics @ New York Knicks
-Game starts at 5/12/2025, 6:35:00 PM
+Game starts at 5/12/2025, 11:35:00 PM
 *Projected Lineup*
 
 ### Boston Celtics Lineup
@@ -176,7 +176,7 @@ No lineup data available for this team.
 
 
 ## Minnesota Timberwolves @ Golden State Warriors
-Game starts at 5/12/2025, 9:05:00 PM
+Game starts at 5/13/2025, 2:05:00 AM
 *Projected Lineup*
 
 ### Minnesota Timberwolves Lineup
