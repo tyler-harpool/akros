@@ -1,37 +1,49 @@
 # NBA Betting Analysis for Sunday, May 11, 2025
 
+## Live Betting Context
+
+Some or all games in this analysis are currently in progress. When analyzing live betting opportunities:
+
+1. Consider the current game state and how it affects odds
+2. Look for overreactions to recent events (scoring runs, injuries, foul trouble)
+3. Pay special attention to momentum shifts that bookmakers might not have fully adjusted for
+4. Be more selective with recommendations, as live markets can be more efficient
+5. Consider game pace and time remaining when evaluating totals
+
 ## Games Being Analyzed
 
-- Denver Nuggets vs Oklahoma City Thunder (5/11/2025, 7:35:00 PM)
+- Denver Nuggets vs Oklahoma City Thunder (5/11/2025, 7:41:17 PM) (IN PROGRESS)
 - Indiana Pacers vs Cleveland Cavaliers (5/12/2025, 12:00:00 AM)
 - New York Knicks vs Boston Celtics (5/12/2025, 11:35:00 PM)
 - Golden State Warriors vs Minnesota Timberwolves (5/13/2025, 2:05:00 AM)
 
 # Available NBA Betting Lines
 
-## Denver Nuggets vs Oklahoma City Thunder
-Game Start: 5/11/2025, 7:35:00 PM
+> **LIVE BETTING ANALYSIS**: Some or all of these games are currently in progress. Odds are being actively updated based on game events.
+
+## Denver Nuggets vs Oklahoma City Thunder (IN PROGRESS)
+Game Start: 5/11/2025, 7:41:17 PM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 225 | -278 |
-| FanDuel | 215 | -260 |
-| BetMGM | 220 | -275 |
+| DraftKings | 325 | -475 |
+| FanDuel | 520 | -900 |
+| BetMGM | 450 | -700 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 7 (-112) | -7 (-108) |
-| FanDuel | 7 (-112) | -7 (-108) |
-| BetMGM | 6.5 (-105) | -6.5 (-115) |
+| DraftKings | 10.5 (-120) | -10.5 (-110) |
+| FanDuel | 11.5 (-122) | -11.5 (-108) |
+| BetMGM | 10.5 (-105) | -10.5 (-125) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 228.5 | -108 | -112 |
-| FanDuel | 228 | -110 | -110 |
-| BetMGM | 228.5 | -115 | -105 |
+| DraftKings | 193.5 | -110 | -120 |
+| FanDuel | 194.5 | -106 | -125 |
+| BetMGM | 194.5 | -118 | -110 |
 
 
 ## Indiana Pacers vs Cleveland Cavaliers
@@ -40,22 +52,22 @@ Game Start: 5/12/2025, 12:00:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | 180 | -215 |
-| DraftKings | 170 | -205 |
+| FanDuel | 190 | -230 |
+| DraftKings | 185 | -225 |
 | BetMGM | 180 | -220 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | 5.5 (-110) | -5.5 (-110) |
-| DraftKings | 5 (-110) | -5 (-110) |
+| FanDuel | 5.5 (-112) | -5.5 (-108) |
+| DraftKings | 5.5 (-112) | -5.5 (-108) |
 | BetMGM | 5.5 (-110) | -5.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| FanDuel | 231 | -112 | -108 |
-| DraftKings | 231 | -110 | -110 |
+| FanDuel | 231 | -114 | -106 |
+| DraftKings | 230.5 | -110 | -110 |
 | BetMGM | 230.5 | -115 | -105 |
 
 
@@ -65,7 +77,7 @@ Game Start: 5/12/2025, 11:35:00 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 205 | -250 |
+| DraftKings | 210 | -258 |
 | BetMGM | 200 | -250 |
 | FanDuel | 215 | -260 |
 
@@ -92,7 +104,7 @@ Game Start: 5/13/2025, 2:05:00 AM
 |-----------|-----------|----------|
 | DraftKings | 180 | -218 |
 | BetMGM | 170 | -210 |
-| FanDuel | 184 | -220 |
+| FanDuel | 188 | -225 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
@@ -106,10 +118,12 @@ Game Start: 5/13/2025, 2:05:00 AM
 |-----------|--------|------|-------|
 | DraftKings | 199.5 | -110 | -110 |
 | BetMGM | 199.5 | -115 | -105 |
-| FanDuel | 200.5 | -110 | -110 |
+| FanDuel | 200.5 | -108 | -112 |
 
 
 # Betting Edge Analysis
+
+> Note: Edge detection for live games may be less reliable due to rapidly changing odds. Use additional caution.
 
 No significant edges detected in the current betting markets.
 
@@ -117,7 +131,7 @@ No significant edges detected in the current betting markets.
 
 ## Oklahoma City Thunder @ Denver Nuggets
 Game starts at 3:30 PM ET
-*Projected Lineup*
+**CONFIRMED LINEUP**
 
 ### Thunder Lineup
 | Position | Player | Starter |
@@ -138,6 +152,7 @@ Game starts at 3:30 PM ET
 | PF | Aaron Gordon | ✓ |
 | C | Nikola Jokic | ✓ |
 | C | D. Holmes |  |
+| F | H. Tyson |  |
 
 
 ## Cleveland Cavaliers @ Indiana Pacers
@@ -194,10 +209,10 @@ No lineup data available for this team.
 
 Please analyze the provided betting opportunities, focusing on the following:
 
-1. Evaluate the statistical edges identified in the analysis
-2. Consider starting lineups and how they might affect each game's dynamics
-3. Factor in how injuries might impact these betting edges
-4. Consider any playoff or tournament dynamics if applicable
-5. Identify which markets (moneyline, spread, totals) show the greatest inefficiencies
+1. Evaluate the live betting opportunities, considering current game state
+2. Look for odds that haven't fully adjusted to game flow and momentum shifts
+3. Consider how fatigue and foul trouble may impact the remainder of the game
+4. Focus on total points markets that might not account for pace changes
+5. Be selective and only recommend high-confidence live opportunities
 
-IMPORTANT: After your analysis, provide exactly 3-5 concrete bet recommendations in a section called "RECOMMENDED BETS". Format these recommendations as a markdown table with these exact columns: Game/Series, Bet Type, Selection, Odds, Stake (1-5 units), and Reasoning. Include REAL ODDS from the data (not placeholders). For each bet, provide a short but clear explanation of why this specific bet has value.
+IMPORTANT: After your analysis, provide exactly 3-5 concrete bet recommendations in a section called "RECOMMENDED BETS". Format these recommendations as a markdown table with these exact columns: Game/Series, Bet Type, Selection, Odds, Stake (1-5 units), and Reasoning. Include REAL ODDS from the data (not placeholders). For each bet, provide a short but clear explanation of why this specific bet has value. For live bets, be sure to note that these are IN-GAME recommendations in the Reasoning column.
