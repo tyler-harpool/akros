@@ -1,7 +1,29 @@
+// Update at the top of your index.js
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
-const marked = require('marked');
+const { marked } = require('marked');
+const markedMangle = require('marked-mangle');
+const gfmHeadingId = require('marked-gfm-heading-id');
+
+// Configure marked with extensions to fix deprecation warnings
+marked.use(markedMangle);
+marked.use(gfmHeadingId);
+
+// Parse command line arguments
+const args = process.argv.slice(2);
+const debugMode = args.includes('--debug');
+const bettingMode = args.find(arg => arg.startsWith('--mode='))?.split('=')[1] || process.env.BETTING_MODE || 'pregame';
+
+// Set debug mode if needed
+if (debugMode) {
+  console.log('Running in DEBUG mode');
+  process.env.DEBUG = 'true';
+}
+
+// Set betting mode in environment
+process.env.BETTING_MODE = bettingMode;
+console.log(`Running in ${bettingMode.toUpperCase()} betting mode`);
 
 // Import modules
 const { getNbaOdds } = require('./lib/odds-api');
@@ -9,6 +31,7 @@ const { getInjuryData } = require('./lib/injury-data');
 const { createComprehensivePrompt } = require('./lib/formatter');
 const analyzer = require('./lib/analyzer');
 const NBABettingAnalyzer = require('./lib/NBABettingAnalyzer');
+// The lineup-data module is dynamically imported in formatter.js to avoid circular dependencies
 const { Anthropic } = require('@anthropic-ai/sdk');
 
 // Initialize the Anthropic client
@@ -96,10 +119,9 @@ async function askClaudeStandard(prompt, options = {}) {
 }
 
 // Main analysis function
-// Main analysis function
 async function analyzeBettingOpportunities() {
-  // Get odds data
-  const oddsData = await getNbaOdds();
+  // Get odds data with the current betting mode
+  const oddsData = await getNbaOdds({ mode: bettingMode });
   if (!oddsData.length) {
     console.error('No data available from The Odds API.');
     return 'No data available for analysis.';
@@ -109,7 +131,7 @@ async function analyzeBettingOpportunities() {
   const injuryData = await getInjuryData();
 
   // Create a comprehensive prompt with all relevant data
-  const completeAnalysis = createComprehensivePrompt(oddsData, injuryData, analyzer);
+  const completeAnalysis = await createComprehensivePrompt(oddsData, injuryData, analyzer);
 
   // Save the raw prompt for inspection
   const now = new Date();
@@ -122,15 +144,23 @@ async function analyzeBettingOpportunities() {
     fs.mkdirSync(promptDir, { recursive: true });
   }
 
-  // Save the prompt
-  const promptPath = path.join(promptDir, `claude_prompt_${timestamp}.md`);
+  // Add betting mode to filename - FIXED: Use bettingMode directly instead of undefined result
+  const modeIndicator = bettingMode === 'pregame' ? '' : `-${bettingMode}`;
+  const promptPath = path.join(promptDir, `claude_prompt${modeIndicator}_${timestamp}.md`);
   fs.writeFileSync(promptPath, completeAnalysis);
   console.log(`📋 Claude's input prompt saved to ${promptPath}`);
 
-  // Enhanced system prompt for Claude
-  const systemPrompt = `You are BetAnalyst, an expert NBA betting analysis system with deep knowledge of basketball statistics, team dynamics, player performance metrics, and betting markets. Your analysis leverages Claude's extended thinking capabilities to provide transparent, step-by-step reasoning.
+  // Enhanced system prompt for Claude with mode-specific instructions
+  let systemPrompt = `You are BetAnalyst, an expert NBA betting analysis system with deep knowledge of basketball statistics, team dynamics, player performance metrics, and betting markets. Your analysis leverages Claude's extended thinking capabilities to provide transparent, step-by-step reasoning.`;
 
-FORMATTING REQUIREMENTS:
+  // Add mode-specific instructions
+  if (bettingMode === 'live') {
+    systemPrompt += `\n\nYou are currently analyzing LIVE in-game betting opportunities. Focus on how the current game state, momentum, and recent events are creating betting value. Be more selective with recommendations as live markets move quickly.`;
+  } else if (bettingMode === 'all') {
+    systemPrompt += `\n\nYou are analyzing a mix of pre-game and live in-game betting opportunities. Clearly distinguish between recommendations for upcoming games and those currently in progress.`;
+  }
+
+  systemPrompt += `\n\nFORMATTING REQUIREMENTS:
 1. Always create a section called "RECOMMENDED BETS" with exactly 3-5 specific bet recommendations
 2. Format these recommendations in a properly structured markdown table with these exact columns:
    | Game/Series | Bet Type | Selection | Odds | Stake | Reasoning |
@@ -169,7 +199,7 @@ FORMATTING REQUIREMENTS:
     }
 
     // Save Claude's reasoning to a file
-    const thinkingPath = path.join(dateDir, `claude_reasoning_${timestamp}.md`);
+    const thinkingPath = path.join(dateDir, `claude_reasoning${modeIndicator}_${timestamp}.md`);
     fs.writeFileSync(thinkingPath, claudeResponse.thinking);
     console.log(`🧠 Claude's reasoning process saved to ${thinkingPath}`);
 
@@ -180,24 +210,75 @@ FORMATTING REQUIREMENTS:
     }
 
     // Copy thinking to latest
-    fs.copyFileSync(thinkingPath, path.join(latestDir, 'latest_thinking.md'));
-    fs.copyFileSync(promptPath, path.join(latestDir, 'latest_prompt.md'));
+    fs.copyFileSync(thinkingPath, path.join(latestDir, `latest${modeIndicator}_thinking.md`));
+    fs.copyFileSync(promptPath, path.join(latestDir, `latest${modeIndicator}_prompt.md`));
   }
 
   // Create a variable to store the thinking path for the return value
   const finalThinkingPath = claudeResponse.thinking ?
-    path.join(path.join('reports', dateStr), `claude_reasoning_${timestamp}.md`) :
+    path.join(path.join('reports', dateStr), `claude_reasoning${modeIndicator}_${timestamp}.md`) :
     null;
 
   return {
     analysis: claudeAnalysis,
     timestamp: timestamp,
     promptPath: promptPath,
-    thinkingPath: finalThinkingPath
+    thinkingPath: finalThinkingPath,
+    bettingMode: bettingMode,
+    oddsData: oddsData
   };
 }
 
 // MAIN EXECUTION
+// Helper function to create/update summary file
+function createSummaryFile(baseDir, runData) {
+  const summaryPath = path.join(baseDir, 'summary.json');
+  let summary = {
+    lastRun: runData.timestamp,
+    runs: []
+  };
+
+  // Add top-level data
+  Object.keys(runData).forEach(key => {
+    if (key !== 'files') {
+      summary[key] = runData[key];
+    }
+  });
+
+  // Load existing summary if it exists and append the new run
+  if (fs.existsSync(summaryPath)) {
+    try {
+      const existingSummary = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
+      if (existingSummary.runs) {
+        // Keep existing runs but add new one at the start
+        summary.runs = [runData, ...existingSummary.runs.slice(0, 19)];
+      } else {
+        summary.runs = [runData];
+      }
+
+      // Preserve any other existing summary fields
+      Object.keys(existingSummary).forEach(key => {
+        if (key !== 'runs' && key !== 'lastRun' && !runData.hasOwnProperty(key)) {
+          summary[key] = existingSummary[key];
+        }
+      });
+    } catch (err) {
+      console.error('Error reading summary file:', err.message);
+      summary.runs = [runData];
+    }
+  } else {
+    summary.runs = [runData];
+  }
+
+  // Write the summary file
+  try {
+    fs.writeFileSync(summaryPath, JSON.stringify(summary, null, 2));
+    console.log(`📊 Summary updated at ${summaryPath}`);
+  } catch (err) {
+    console.error(`Error writing summary file: ${err.message}`);
+  }
+}
+
 (async () => {
   console.log('🔍 Analyzing NBA betting opportunities with extended thinking...');
 
@@ -221,7 +302,7 @@ FORMATTING REQUIREMENTS:
 
     // Get analysis results and metadata
     const result = await analyzeBettingOpportunities();
-    const { analysis, timestamp, promptPath } = result;
+    const { analysis, timestamp, promptPath, bettingMode, oddsData } = result;
 
     // Get current date for directories
     const now = new Date();
@@ -246,13 +327,16 @@ FORMATTING REQUIREMENTS:
       fs.mkdirSync(latestDir, { recursive: true });
     }
 
+    // FIXED: Use bettingMode from result instead of undefined modeIndicator
+    const modeIndicator = bettingMode === 'pregame' ? '' : `-${bettingMode}`;
+
     // Save complete analysis as markdown
-    const fullReportPath = path.join(dateDir, `nba_edge_analysis_${timestamp}.md`);
+    const fullReportPath = path.join(dateDir, `nba_edge_analysis${modeIndicator}_${timestamp}.md`);
     fs.writeFileSync(fullReportPath, analysis);
     console.log(`\n📝 Full analysis saved to ${fullReportPath}`);
 
-    // Copy to latest directory
-    fs.copyFileSync(fullReportPath, path.join(latestDir, 'latest_analysis.md'));
+    // Copy to latest directory with mode indicator
+    fs.copyFileSync(fullReportPath, path.join(latestDir, `latest${modeIndicator}_analysis.md`));
 
     // Extract and save just the recommended bets section
     if (analysis.includes('RECOMMENDED BETS')) {
@@ -282,7 +366,10 @@ FORMATTING REQUIREMENTS:
           day: 'numeric'
         });
 
-        const betsMd = `# NBA Betting Recommendations
+        const modeLabelText = bettingMode === 'live' ? 'LIVE BETTING ' :
+                             (bettingMode === 'all' ? 'PRE-GAME & LIVE ' : '');
+
+        const betsMd = `# NBA ${modeLabelText}Betting Recommendations
 ## ${todayStr}
 
 ## RECOMMENDED BETS
@@ -292,12 +379,12 @@ ${betSection}
 *Generated by NBA Edge Detection System with Claude Extended Thinking on ${dateStr} at ${timestamp}*
 `;
 
-        const betsPath = path.join(dateDir, `recommended_bets_${timestamp}.md`);
+        const betsPath = path.join(dateDir, `recommended_bets${modeIndicator}_${timestamp}.md`);
         fs.writeFileSync(betsPath, betsMd);
         console.log(`📊 Recommended bets saved to ${betsPath}`);
 
-        // Copy to latest directory
-        fs.copyFileSync(betsPath, path.join(latestDir, 'latest_bets.md'));
+        // Copy to latest directory with mode indicator
+        fs.copyFileSync(betsPath, path.join(latestDir, `latest${modeIndicator}_bets.md`));
 
         // Create HTML version
         const htmlContent = `<!DOCTYPE html>
@@ -305,7 +392,7 @@ ${betSection}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NBA Betting Recommendations - ${dateStr}</title>
+  <title>NBA ${modeLabelText}Betting Recommendations - ${dateStr}</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -377,12 +464,12 @@ ${betSection}
 </body>
 </html>`;
 
-        const htmlPath = path.join(dateDir, `recommended_bets_${timestamp}.html`);
+        const htmlPath = path.join(dateDir, `recommended_bets${modeIndicator}_${timestamp}.html`);
         fs.writeFileSync(htmlPath, htmlContent);
         console.log(`🌐 HTML version saved to ${htmlPath}`);
 
-        // Copy HTML to latest directory
-        fs.copyFileSync(htmlPath, path.join(latestDir, 'latest_bets.html'));
+        // Copy HTML to latest directory with mode indicator
+        fs.copyFileSync(htmlPath, path.join(latestDir, `latest${modeIndicator}_bets.html`));
 
         // Display the bets in the console
         console.log('\n' + betsMd);
@@ -390,7 +477,8 @@ ${betSection}
         // Create/update summary JSON
         createSummaryFile(baseDir, {
           timestamp: timestamp,
-          numGames: 0, // You would get this from oddsData.length
+          bettingMode: bettingMode,
+          numGames: oddsData?.length || 0,
           betsFound: true,
           numBets: (betSection.match(/\|\s*[^|]+\s*\|/g) || []).length - 1, // Subtract header row
           files: {
@@ -407,6 +495,8 @@ ${betSection}
 
         createSummaryFile(baseDir, {
           timestamp: timestamp,
+          bettingMode: bettingMode,
+          numGames: oddsData?.length || 0,
           betsFound: false,
           error: "RECOMMENDED BETS section found but no table included",
           files: {
@@ -422,6 +512,8 @@ ${betSection}
 
       createSummaryFile(baseDir, {
         timestamp: timestamp,
+        bettingMode: bettingMode,
+        numGames: oddsData?.length || 0,
         betsFound: false,
         error: "No RECOMMENDED BETS section found in analysis",
         files: {
@@ -442,6 +534,7 @@ ${betSection}
 
       createSummaryFile(baseDir, {
         timestamp: timestamp,
+        bettingMode: bettingMode, // Include betting mode in error record
         error: error.message || "Unknown error",
         stack: error.stack,
         success: false
@@ -451,48 +544,3 @@ ${betSection}
     }
   }
 })();
-
-// Helper function to create/update summary file
-function createSummaryFile(baseDir, runData) {
-  const summaryPath = path.join(baseDir, 'summary.json');
-  let summary = {
-    lastRun: runData.timestamp,
-    runs: []
-  };
-
-  // Add top-level data
-  Object.keys(runData).forEach(key => {
-    if (key !== 'files') {
-      summary[key] = runData[key];
-    }
-  });
-
-  // Load existing summary if it exists and append the new run
-  if (fs.existsSync(summaryPath)) {
-    try {
-      const existingSummary = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
-      if (existingSummary.runs) {
-        // Keep existing runs but add new one at the start
-        summary.runs = [runData, ...existingSummary.runs.slice(0, 19)];
-      } else {
-        summary.runs = [runData];
-      }
-
-      // Preserve any other existing summary fields
-      Object.keys(existingSummary).forEach(key => {
-        if (key !== 'runs' && key !== 'lastRun' && !runData.hasOwnProperty(key)) {
-          summary[key] = existingSummary[key];
-        }
-      });
-    } catch (err) {
-      console.error('Error reading summary file:', err.message);
-      summary.runs = [runData];
-    }
-  } else {
-    summary.runs = [runData];
-  }
-
-  // Write the summary file
-  fs.writeFileSync(summaryPath, JSON.stringify(summary, null, 2));
-  console.log(`📊 Summary updated at ${summaryPath}`);
-}
