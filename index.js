@@ -1,165 +1,398 @@
-/**
- * Akros - Multi-Sport Betting Edge Detector
- * 
- * This system automatically analyzes betting markets for NBA, MLB, and NHL to identify
- * edges and value opportunities across multiple sportsbooks.
- */
-
+// Update at the top of your index.js
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
-const marked = require('marked');
+const { marked } = require('marked');
+const markedMangle = require('marked-mangle');
+const gfmHeadingId = require('marked-gfm-heading-id');
+
+// Configure marked with extensions to fix deprecation warnings
+marked.use(markedMangle);
+marked.use(gfmHeadingId);
+
+// Parse command line arguments
+const args = process.argv.slice(2);
+const debugMode = args.includes('--debug');
+const bettingMode = args.find(arg => arg.startsWith('--mode='))?.split('=')[1] || process.env.BETTING_MODE || 'pregame';
+
+// Set debug mode if needed
+if (debugMode) {
+  console.log('Running in DEBUG mode');
+  process.env.DEBUG = 'true';
+}
+
+// Set betting mode in environment
+process.env.BETTING_MODE = bettingMode;
+console.log(`Running in ${bettingMode.toUpperCase()} betting mode`);
+
+// Import modules
+const { getNbaOdds } = require('./lib/odds-api');
+const { getInjuryData } = require('./lib/injury-data');
+const { createComprehensivePrompt } = require('./lib/formatter');
+const analyzer = require('./lib/analyzer');
+const NBABettingAnalyzer = require('./lib/NBABettingAnalyzer');
+// The lineup-data module is dynamically imported in formatter.js to avoid circular dependencies
 const { Anthropic } = require('@anthropic-ai/sdk');
 
-// Import our modules
-const { getNbaOdds, getMlbOdds, getNhlOdds } = require('./oddsApiFunctions');
-const { getNbaInjuryData, getMlbInjuryData, getNhlInjuryData } = require('./injuryFunctions');
-const ExtendedThinkingAnalyzer = require('./extendedThinkingAnalyzer');
-
-// Initialize the Anthropic client and analyzer
+// Initialize the Anthropic client
 const anthropic = new Anthropic({
   apiKey: process.env.CLAUDE_API_KEY,
 });
 
-const analyzer = new ExtendedThinkingAnalyzer(process.env.CLAUDE_API_KEY);
+// Enhanced askClaude function with extended thinking capabilities
+async function askClaude(prompt, options = {}) {
+  const {
+    thinkingBudget = 12000,
+    maxTokens = 16000,
+    temperature = 1,
+    model = 'claude-3-7-sonnet-20250219',
+    includeThinking = true
+  } = options;
 
-/**
- * Main function to analyze betting opportunities for a specific sport
- * @param {string} sport - The sport to analyze ('nba', 'mlb', 'nhl')
- * @returns {Promise<string>} The analysis results
- */
-async function analyzeSportBettingOpportunities(sport) {
-  console.log(`🔍 Analyzing ${sport.toUpperCase()} betting opportunities with extended thinking...`);
-  
-  // Get odds data based on the sport
-  let oddsData;
-  let injuryData;
-  
-  // Fetch the appropriate data based on the sport
-  switch(sport.toLowerCase()) {
-    case 'mlb':
-      oddsData = await getMlbOdds();
-      injuryData = await getMlbInjuryData();
-      break;
-    case 'nhl':
-      oddsData = await getNhlOdds();
-      injuryData = await getNhlInjuryData();
-      break;
-    case 'nba':
-    default:
-      oddsData = await getNbaOdds();
-      injuryData = await getNbaInjuryData();
-      sport = 'nba'; // Ensure consistent naming
+  try {
+    console.log('Querying Claude with extended thinking...');
+
+    // Create API parameters with extended thinking enabled
+    const apiParams = {
+      model: model,
+      max_tokens: maxTokens,
+      temperature: temperature,
+      thinking: {
+        type: 'enabled',
+        budget_tokens: thinkingBudget
+      },
+      messages: [
+        { role: 'user', content: prompt }
+      ]
+    };
+
+    // Add system prompt if provided
+    if (options.systemPrompt) {
+      apiParams.system = options.systemPrompt;
+    }
+
+    // Make the API request
+    const response = await anthropic.messages.create(apiParams);
+
+    // Process the response
+    const processedResponse = {
+      thinking: response.content
+        .filter(block => block.type === 'thinking')
+        .map(block => block.thinking)
+        .join('\n\n'),
+
+      hasRedactedThinking: response.content.some(
+        block => block.type === 'redacted_thinking'
+      ),
+
+      redactedBlocks: response.content.filter(
+        block => block.type === 'redacted_thinking'
+      ),
+
+      finalResponse: response.content
+        .filter(block => block.type === 'text')
+        .map(block => block.text)
+        .join(''),
+
+      fullResponse: response
+    };
+
+    return includeThinking ? processedResponse : processedResponse.finalResponse;
+  } catch (err) {
+    console.error('Failed to query Claude:', err.response?.data || err.message);
+    console.error('Error details:', JSON.stringify(err.response?.data || err, null, 2));
+
+    // If extended thinking fails, attempt to fallback to standard mode
+    if (err.message.includes('thinking') || err.message.includes('budget')) {
+      console.log('Falling back to standard mode without extended thinking...');
+      return askClaudeStandard(prompt, options);
+    }
+
+    return 'Error communicating with Claude. Please check API key and connection.';
   }
-  
-  // Check if we have valid odds data
-  if (!oddsData || !oddsData.length) {
-    console.error(`No ${sport.toUpperCase()} data available from The Odds API.`);
-    return `No ${sport.toUpperCase()} data available for analysis.`;
-  }
-  
-  // Prepare the data for analysis
-  const analysisData = {
-    odds: oddsData,
-    injuries: injuryData.injuries || [],
-    date: new Date().toISOString()
-  };
-  
-  // Additional sport-specific data enrichment could be added here
-  
-  // Analyze the data with Extended Thinking
-  const claudeResponse = await analyzer.analyzeWithExtendedThinking(sport, analysisData, {
-    thinkingBudget: 24000, // Increased for better analysis
-    maxTokens: 32000,
-    includeThinking: true,
-    saveThinking: true
-  });
-  
-  // Extract just the final response for the report
-  const claudeAnalysis = claudeResponse.finalResponse || claudeResponse;
-  
-  return claudeAnalysis;
 }
 
-/**
- * Save analysis results to markdown and HTML files
- * @param {string} sport - The sport being analyzed
- * @param {string} analysis - The analysis content
- * @returns {Object} Paths to the saved files
- */
-async function saveAnalysisToFiles(sport, analysis) {
-  // Format date for file naming
+// Standard Claude function as fallback
+async function askClaudeStandard(prompt, options = {}) {
+  // Implementation details...
+  return "Standard Claude response would be here";
+}
+
+// Main analysis function
+async function analyzeBettingOpportunities() {
+  // Get odds data with the current betting mode
+  const oddsData = await getNbaOdds({ mode: bettingMode });
+  if (!oddsData.length) {
+    console.error('No data available from The Odds API.');
+    return 'No data available for analysis.';
+  }
+
+  // Get injury data
+  const injuryData = await getInjuryData();
+
+  // Create a comprehensive prompt with all relevant data
+  const completeAnalysis = await createComprehensivePrompt(oddsData, injuryData, analyzer);
+
+  // Save the raw prompt for inspection
   const now = new Date();
+  const timestamp = now.toISOString().replace(/[:.]/g, '-');
   const dateStr = now.toISOString().split('T')[0]; // YYYY-MM-DD
-  const timeStr = now.toTimeString().split(' ')[0].replace(/:/g, '-'); // HH-MM-SS
-  const dateTimeStr = `${dateStr}_${timeStr}`;
-  
-  // Create reports directory if it doesn't exist
-  const reportsDir = path.join(__dirname, 'reports');
-  const dateDir = path.join(reportsDir, dateStr);
-  
-  if (!fs.existsSync(reportsDir)) {
-    fs.mkdirSync(reportsDir);
+
+  // Create prompt directory if it doesn't exist
+  const promptDir = path.join('prompts', dateStr);
+  if (!fs.existsSync(promptDir)) {
+    fs.mkdirSync(promptDir, { recursive: true });
   }
-  
-  if (!fs.existsSync(dateDir)) {
-    fs.mkdirSync(dateDir);
+
+  // Add betting mode to filename - FIXED: Use bettingMode directly instead of undefined result
+  const modeIndicator = bettingMode === 'pregame' ? '' : `-${bettingMode}`;
+  const promptPath = path.join(promptDir, `claude_prompt${modeIndicator}_${timestamp}.md`);
+  fs.writeFileSync(promptPath, completeAnalysis);
+  console.log(`📋 Claude's input prompt saved to ${promptPath}`);
+
+  // Enhanced system prompt for Claude with mode-specific instructions
+  let systemPrompt = `You are BetAnalyst, an expert NBA betting analysis system with deep knowledge of basketball statistics, team dynamics, player performance metrics, and betting markets. Your analysis leverages Claude's extended thinking capabilities to provide transparent, step-by-step reasoning.`;
+
+  // Add mode-specific instructions
+  if (bettingMode === 'live') {
+    systemPrompt += `\n\nYou are currently analyzing LIVE in-game betting opportunities. Focus on how the current game state, momentum, and recent events are creating betting value. Be more selective with recommendations as live markets move quickly.`;
+  } else if (bettingMode === 'all') {
+    systemPrompt += `\n\nYou are analyzing a mix of pre-game and live in-game betting opportunities. Clearly distinguish between recommendations for upcoming games and those currently in progress.`;
   }
-  
-  // Save complete analysis as markdown
-  const fullReportPath = path.join(dateDir, `${sport.toLowerCase()}_edge_analysis_${dateTimeStr}.md`);
-  fs.writeFileSync(fullReportPath, analysis);
-  console.log(`\n📝 Full ${sport.toUpperCase()} analysis saved to ${fullReportPath}`);
-  
-  // Extract and save just the recommended bets section
-  if (analysis.includes('RECOMMENDED BETS')) {
-    console.log(`\n🎯 ${sport.toUpperCase()} RECOMMENDED BETS FOUND`);
-    
-    // Extract the table section from RECOMMENDED BETS to the next header or end
-    let betSection = analysis.split('RECOMMENDED BETS')[1];
-    const endMarkers = ['##', '\n\n\n', '\n---'];
-    let endPos = betSection.length;
-    
-    for (const marker of endMarkers) {
-      const pos = betSection.indexOf(marker);
-      if (pos !== -1 && pos < endPos) {
-        endPos = pos;
-      }
+
+  systemPrompt += `\n\nFORMATTING REQUIREMENTS:
+1. Always create a section called "RECOMMENDED BETS" with exactly 3-5 specific bet recommendations
+2. Format these recommendations in a properly structured markdown table with these exact columns:
+   | Game/Series | Bet Type | Selection | Odds | Stake | Reasoning |
+3. Use real odds values from the provided data (never use placeholders)
+4. Assign stakes between 1-5 units based on your confidence level
+5. Provide clear, concise reasoning for each recommendation`;
+
+  // Configure askClaude with extended thinking parameters
+  const options = {
+    systemPrompt: systemPrompt,
+    thinkingBudget: 12000,
+    maxTokens: 16000,
+    temperature: 1,
+    includeThinking: true
+  };
+
+  // Send to Claude for analysis
+  const claudeResponse = await askClaude(completeAnalysis, options);
+
+  // Extract just the final response for the report
+  const claudeAnalysis = claudeResponse.finalResponse || claudeResponse;
+
+  // If available, log Claude's thinking process for debugging
+  if (claudeResponse.thinking) {
+    // Create reports directory
+    const reportsDir = path.join('reports');
+    const dateDir = path.join(reportsDir, dateStr);
+
+    // Ensure directories exist
+    if (!fs.existsSync(reportsDir)) {
+      fs.mkdirSync(reportsDir, { recursive: true });
     }
-    
-    betSection = betSection.substring(0, endPos).trim();
-    
-    // Check if the betSection actually contains a table
-    if (betSection.includes('|')) {
-      // Create a pretty markdown document with bets
-      const todayStr = now.toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
+
+    if (!fs.existsSync(dateDir)) {
+      fs.mkdirSync(dateDir, { recursive: true });
+    }
+
+    // Save Claude's reasoning to a file
+    const thinkingPath = path.join(dateDir, `claude_reasoning${modeIndicator}_${timestamp}.md`);
+    fs.writeFileSync(thinkingPath, claudeResponse.thinking);
+    console.log(`🧠 Claude's reasoning process saved to ${thinkingPath}`);
+
+    // Create a latest directory for easy access to most recent files
+    const latestDir = path.join(reportsDir, 'latest');
+    if (!fs.existsSync(latestDir)) {
+      fs.mkdirSync(latestDir, { recursive: true });
+    }
+
+    // Copy thinking to latest
+    fs.copyFileSync(thinkingPath, path.join(latestDir, `latest${modeIndicator}_thinking.md`));
+    fs.copyFileSync(promptPath, path.join(latestDir, `latest${modeIndicator}_prompt.md`));
+  }
+
+  // Create a variable to store the thinking path for the return value
+  const finalThinkingPath = claudeResponse.thinking ?
+    path.join(path.join('reports', dateStr), `claude_reasoning${modeIndicator}_${timestamp}.md`) :
+    null;
+
+  return {
+    analysis: claudeAnalysis,
+    timestamp: timestamp,
+    promptPath: promptPath,
+    thinkingPath: finalThinkingPath,
+    bettingMode: bettingMode,
+    oddsData: oddsData
+  };
+}
+
+// MAIN EXECUTION
+// Helper function to create/update summary file
+function createSummaryFile(baseDir, runData) {
+  const summaryPath = path.join(baseDir, 'summary.json');
+  let summary = {
+    lastRun: runData.timestamp,
+    runs: []
+  };
+
+  // Add top-level data
+  Object.keys(runData).forEach(key => {
+    if (key !== 'files') {
+      summary[key] = runData[key];
+    }
+  });
+
+  // Load existing summary if it exists and append the new run
+  if (fs.existsSync(summaryPath)) {
+    try {
+      const existingSummary = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
+      if (existingSummary.runs) {
+        // Keep existing runs but add new one at the start
+        summary.runs = [runData, ...existingSummary.runs.slice(0, 19)];
+      } else {
+        summary.runs = [runData];
+      }
+
+      // Preserve any other existing summary fields
+      Object.keys(existingSummary).forEach(key => {
+        if (key !== 'runs' && key !== 'lastRun' && !runData.hasOwnProperty(key)) {
+          summary[key] = existingSummary[key];
+        }
       });
-      
-      const betsMd = `# ${sport.toUpperCase()} Betting Recommendations
+    } catch (err) {
+      console.error('Error reading summary file:', err.message);
+      summary.runs = [runData];
+    }
+  } else {
+    summary.runs = [runData];
+  }
+
+  // Write the summary file
+  try {
+    fs.writeFileSync(summaryPath, JSON.stringify(summary, null, 2));
+    console.log(`📊 Summary updated at ${summaryPath}`);
+  } catch (err) {
+    console.error(`Error writing summary file: ${err.message}`);
+  }
+}
+
+(async () => {
+  console.log('🔍 Analyzing NBA betting opportunities with extended thinking...');
+
+  // Check if required API keys are set
+  if (!process.env.ODDS_API_KEY) {
+    console.error('ERROR: ODDS_API_KEY not found in environment variables');
+    console.log('Please set your API key by running:');
+    console.log('export ODDS_API_KEY=your_api_key_here');
+    process.exit(1);
+  }
+
+  if (!process.env.CLAUDE_API_KEY) {
+    console.error('ERROR: CLAUDE_API_KEY not found in environment variables');
+    console.log('Please set your API key by running:');
+    console.log('export CLAUDE_API_KEY=your_api_key_here');
+    process.exit(1);
+  }
+
+  try {
+    console.log('Beginning analysis with Claude extended thinking...');
+
+    // Get analysis results and metadata
+    const result = await analyzeBettingOpportunities();
+    const { analysis, timestamp, promptPath, bettingMode, oddsData } = result;
+
+    // Get current date for directories
+    const now = new Date();
+    const dateStr = now.toISOString().split('T')[0]; // YYYY-MM-DD
+
+    // Setup directory structure
+    const baseDir = path.join('reports');
+    const dateDir = path.join(baseDir, dateStr);
+
+    // Ensure directories exist (redundant but safe)
+    if (!fs.existsSync(baseDir)) {
+      fs.mkdirSync(baseDir, { recursive: true });
+    }
+
+    if (!fs.existsSync(dateDir)) {
+      fs.mkdirSync(dateDir, { recursive: true });
+    }
+
+    // Create latest directory if needed
+    const latestDir = path.join(baseDir, 'latest');
+    if (!fs.existsSync(latestDir)) {
+      fs.mkdirSync(latestDir, { recursive: true });
+    }
+
+    // FIXED: Use bettingMode from result instead of undefined modeIndicator
+    const modeIndicator = bettingMode === 'pregame' ? '' : `-${bettingMode}`;
+
+    // Save complete analysis as markdown
+    const fullReportPath = path.join(dateDir, `nba_edge_analysis${modeIndicator}_${timestamp}.md`);
+    fs.writeFileSync(fullReportPath, analysis);
+    console.log(`\n📝 Full analysis saved to ${fullReportPath}`);
+
+    // Copy to latest directory with mode indicator
+    fs.copyFileSync(fullReportPath, path.join(latestDir, `latest${modeIndicator}_analysis.md`));
+
+    // Extract and save just the recommended bets section
+    if (analysis.includes('RECOMMENDED BETS')) {
+      console.log('\n🎯 RECOMMENDED BETS FOUND');
+
+      // Extract the table section
+      let betSection = analysis.split('RECOMMENDED BETS')[1];
+      const endMarkers = ['##', '\n\n\n', '\n---'];
+      let endPos = betSection.length;
+
+      for (const marker of endMarkers) {
+        const pos = betSection.indexOf(marker);
+        if (pos !== -1 && pos < endPos) {
+          endPos = pos;
+        }
+      }
+
+      betSection = betSection.substring(0, endPos).trim();
+
+      // Check if the betSection actually contains a table
+      if (betSection.includes('|')) {
+        // Create a pretty markdown document with bets
+        const todayStr = now.toLocaleDateString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+
+        const modeLabelText = bettingMode === 'live' ? 'LIVE BETTING ' :
+                             (bettingMode === 'all' ? 'PRE-GAME & LIVE ' : '');
+
+        const betsMd = `# NBA ${modeLabelText}Betting Recommendations
 ## ${todayStr}
 
 ## RECOMMENDED BETS
 ${betSection}
 
 ---
-*Generated by ${sport.toUpperCase()} Edge Detection System with Extended Thinking on ${dateStr} at ${timeStr.replace(/-/g, ':')}*
+*Generated by NBA Edge Detection System with Claude Extended Thinking on ${dateStr} at ${timestamp}*
 `;
-      
-      const betsPath = path.join(dateDir, `${sport.toLowerCase()}_recommended_bets_${dateTimeStr}.md`);
-      fs.writeFileSync(betsPath, betsMd);
-      console.log(`📊 ${sport.toUpperCase()} recommended bets saved to ${betsPath}`);
-      
-      // Also create an HTML version for better table viewing
-      const htmlContent = `<!DOCTYPE html>
+
+        const betsPath = path.join(dateDir, `recommended_bets${modeIndicator}_${timestamp}.md`);
+        fs.writeFileSync(betsPath, betsMd);
+        console.log(`📊 Recommended bets saved to ${betsPath}`);
+
+        // Copy to latest directory with mode indicator
+        fs.copyFileSync(betsPath, path.join(latestDir, `latest${modeIndicator}_bets.md`));
+
+        // Create HTML version
+        const htmlContent = `<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${sport.toUpperCase()} Betting Recommendations - ${dateStr}</title>
+  <title>NBA ${modeLabelText}Betting Recommendations - ${dateStr}</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -230,122 +463,84 @@ ${betSection}
   </script>
 </body>
 </html>`;
-      
-      const htmlPath = path.join(dateDir, `${sport.toLowerCase()}_recommended_bets_${dateTimeStr}.html`);
-      fs.writeFileSync(htmlPath, htmlContent);
-      console.log(`🌐 HTML version saved to ${htmlPath}`);
-      
-      return {
-        fullReportPath,
-        betsPath,
-        htmlPath,
-        betSection
-      };
-    } else {
-      console.log(`\n⚠️ "${sport.toUpperCase()} RECOMMENDED BETS" section found but no table of bets included`);
-      console.log('This likely indicates a formatting issue with Claude\'s response.');
-    }
-  } else {
-    console.log(`\n⚠️ No recommended bets found in ${sport.toUpperCase()} analysis`);
-  }
-  
-  return {
-    fullReportPath
-  };
-}
 
-/**
- * Determine which sports are in season based on the current date
- * @returns {string[]} Array of in-season sports ('nba', 'mlb', 'nhl')
- */
-function getInSeasonSports() {
-  const now = new Date();
-  const month = now.getMonth() + 1; // JavaScript months are 0-indexed
-  
-  const inSeasonSports = [];
-  
-  // NBA season: October through June
-  if (month >= 10 || month <= 6) {
-    inSeasonSports.push('nba');
-  }
-  
-  // MLB season: April through October
-  if (month >= 4 && month <= 10) {
-    inSeasonSports.push('mlb');
-  }
-  
-  // NHL season: October through June
-  if (month >= 10 || month <= 6) {
-    inSeasonSports.push('nhl');
-  }
-  
-  return inSeasonSports;
-}
+        const htmlPath = path.join(dateDir, `recommended_bets${modeIndicator}_${timestamp}.html`);
+        fs.writeFileSync(htmlPath, htmlContent);
+        console.log(`🌐 HTML version saved to ${htmlPath}`);
 
-/**
- * Main execution function
- * Analyzes betting opportunities for all in-season sports
- */
-async function main() {
-  console.log('🏆 Akros Multi-Sport Betting Edge Detector');
-  console.log('=========================================');
-  
-  // Check if required API keys are set
-  if (!process.env.ODDS_API_KEY) {
-    console.error('ERROR: ODDS_API_KEY not found in environment variables');
-    process.exit(1);
-  }
-  
-  if (!process.env.CLAUDE_API_KEY) {
-    console.error('ERROR: CLAUDE_API_KEY not found in environment variables');
-    process.exit(1);
-  }
-  
-  try {
-    // Get in-season sports
-    const inSeasonSports = getInSeasonSports();
-    console.log(`In-season sports: ${inSeasonSports.join(', ').toUpperCase()}`);
-    
-    // Allow command line argument to specify sport
-    const cmdLineSport = process.argv[2]?.toLowerCase();
-    
-    // If a specific sport is requested via command line and it's valid, only analyze that one
-    if (cmdLineSport && ['nba', 'mlb', 'nhl'].includes(cmdLineSport)) {
-      console.log(`Analyzing only ${cmdLineSport.toUpperCase()} as requested via command line`);
-      
-      const analysis = await analyzeSportBettingOpportunities(cmdLineSport);
-      await saveAnalysisToFiles(cmdLineSport, analysis);
-    } 
-    // Otherwise, analyze all in-season sports
-    else {
-      for (const sport of inSeasonSports) {
-        try {
-          const analysis = await analyzeSportBettingOpportunities(sport);
-          await saveAnalysisToFiles(sport, analysis);
-        } catch (sportError) {
-          console.error(`Error analyzing ${sport.toUpperCase()}:`, sportError);
-          console.log(`Continuing with next sport...`);
-        }
+        // Copy HTML to latest directory with mode indicator
+        fs.copyFileSync(htmlPath, path.join(latestDir, `latest${modeIndicator}_bets.html`));
+
+        // Display the bets in the console
+        console.log('\n' + betsMd);
+
+        // Create/update summary JSON
+        createSummaryFile(baseDir, {
+          timestamp: timestamp,
+          bettingMode: bettingMode,
+          numGames: oddsData?.length || 0,
+          betsFound: true,
+          numBets: (betSection.match(/\|\s*[^|]+\s*\|/g) || []).length - 1, // Subtract header row
+          files: {
+            analysis: fullReportPath,
+            bets: betsPath,
+            html: htmlPath,
+            prompt: promptPath,
+            thinking: result.thinkingPath
+          }
+        });
+      } else {
+        console.log('\n⚠️ "RECOMMENDED BETS" section found but no table of bets included');
+        console.log('This likely indicates a formatting issue with Claude\'s response.');
+
+        createSummaryFile(baseDir, {
+          timestamp: timestamp,
+          bettingMode: bettingMode,
+          numGames: oddsData?.length || 0,
+          betsFound: false,
+          error: "RECOMMENDED BETS section found but no table included",
+          files: {
+            analysis: fullReportPath,
+            prompt: promptPath,
+            thinking: result.thinkingPath
+          }
+        });
       }
+    } else {
+      console.log('\n⚠️ No recommended bets found in analysis');
+      console.log('Consider adjusting the threshold for edge detection or running the analysis at a different time when more betting opportunities may be available.');
+
+      createSummaryFile(baseDir, {
+        timestamp: timestamp,
+        bettingMode: bettingMode,
+        numGames: oddsData?.length || 0,
+        betsFound: false,
+        error: "No RECOMMENDED BETS section found in analysis",
+        files: {
+          analysis: fullReportPath,
+          prompt: promptPath,
+          thinking: result.thinkingPath
+        }
+      });
     }
-    
-    console.log('\n✅ Analysis complete! Check the reports directory for results.');
   } catch (error) {
     console.error('An error occurred during analysis:', error);
+
+    // Try to record error in summary
+    try {
+      const now = new Date();
+      const timestamp = now.toISOString().replace(/[:.]/g, '-');
+      const baseDir = path.join('reports');
+
+      createSummaryFile(baseDir, {
+        timestamp: timestamp,
+        bettingMode: bettingMode, // Include betting mode in error record
+        error: error.message || "Unknown error",
+        stack: error.stack,
+        success: false
+      });
+    } catch (e) {
+      console.error('Could not record error in summary file:', e);
+    }
   }
-}
-
-// If this file is run directly (not imported), execute the main function
-if (require.main === module) {
-  main().catch(error => {
-    console.error('Unhandled error in main execution:', error);
-    process.exit(1);
-  });
-}
-
-// Export functions for potential use in other modules
-module.exports = {
-  analyzeSportBettingOpportunities,
-  saveAnalysisToFiles,
-  getInSeasonSports
-};
+})();

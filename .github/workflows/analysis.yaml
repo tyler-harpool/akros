@@ -2,231 +2,206 @@ name: NBA Betting Analysis
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Run daily at 9 AM UTC
-  workflow_dispatch:     # Allow manual trigger
+    # Run multiple times daily to catch different market conditions
+    - cron: '0 9 * * *'    # 9 AM UTC (4-5 AM ET) - Morning lines
+    - cron: '0 15 * * *'   # 3 PM UTC (10-11 AM ET) - Midday updates
+    - cron: '0 22 * * *'   # 10 PM UTC (5-6 PM ET) - Pre-game final lines
+    - cron: '0 2 * * *'    # 2 AM UTC (9-10 PM ET) - Live in-game betting (East Coast games)
+    - cron: '0 5 * * *'    # 5 AM UTC (12-1 AM ET) - Live in-game betting (West Coast games)
+  workflow_dispatch:        # Allow manual trigger with optional parameters
+    inputs:
+      debug_mode:
+        description: 'Run with extra debugging information'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      betting_mode:
+        description: 'Type of betting analysis to run'
+        required: false
+        default: 'pregame'
+        type: choice
+        options:
+          - 'pregame'
+          - 'live'
+          - 'all'
+
 permissions:
-    contents: write
+  contents: write
+
 jobs:
   analyze:
     runs-on: ubuntu-latest
+    timeout-minutes: 15     # Set a timeout to prevent hung jobs
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Fetch all history for all branches
+          fetch-depth: 0    # Fetch all history for all branches
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
+          cache: 'npm'      # Cache npm dependencies for faster installation
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci         # Use ci instead of install for more reliable builds
+
+      - name: Install Cheerio and other web scraping dependencies
+        run: npm install cheerio axios
+
+      - name: Setup environment
+        run: |
+          # Create directories if they don't exist
+          mkdir -p reports/latest
+          mkdir -p prompts
+
+          # Set current time for filename
+          echo "RUN_TIMESTAMP=$(date +'%Y-%m-%dT%H-%M-%S')" >> $GITHUB_ENV
+          echo "RUN_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+          # Set debug flag
+          if [[ "${{ github.event.inputs.debug_mode }}" == "true" ]]; then
+            echo "DEBUG_FLAG=--debug" >> $GITHUB_ENV
+          else
+            echo "DEBUG_FLAG=" >> $GITHUB_ENV
+          fi
+
+          # Determine if this is a live betting run based on time or manual input
+          CURRENT_HOUR=$(date +'%H')
+          if [[ "${{ github.event.inputs.betting_mode }}" == "live" ]]; then
+            echo "BETTING_MODE=live" >> $GITHUB_ENV
+          elif [[ "${{ github.event.inputs.betting_mode }}" == "all" ]]; then
+            echo "BETTING_MODE=all" >> $GITHUB_ENV
+          elif [[ "$CURRENT_HOUR" == "02" || "$CURRENT_HOUR" == "05" || ("$CURRENT_HOUR" == "03" && "${{ github.event_name }}" == "schedule") ]]; then
+            echo "BETTING_MODE=live" >> $GITHUB_ENV
+          else
+            echo "BETTING_MODE=pregame" >> $GITHUB_ENV
+          fi
 
       - name: Run NBA betting analysis
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
-        run: node index.js
+          RUN_ID: ${{ env.RUN_TIMESTAMP }}
+          BETTING_MODE: ${{ env.BETTING_MODE }}
+        run: |
+          # Check environment variables
+          if [ -z "$ODDS_API_KEY" ]; then
+            echo "::error::ODDS_API_KEY is not set! Please add it to your repository secrets."
+            exit 1
+          fi
+
+          if [ -z "$CLAUDE_API_KEY" ]; then
+            echo "::error::CLAUDE_API_KEY is not set! Please add it to your repository secrets."
+            exit 1
+          fi
+
+          # Run analysis with timestamp for tracing
+          echo "Starting analysis run $RUN_ID in $BETTING_MODE mode"
+          node index.js $DEBUG_FLAG --mode=$BETTING_MODE
+        continue-on-error: true  # Continue workflow even if analysis fails
+
+      - name: Check for results
+        id: check_files
+        run: |
+          if [ -f "reports/latest/latest_analysis.md" ]; then
+            echo "analysis_exists=true" >> $GITHUB_OUTPUT
+            echo "Found analysis results"
+          else
+            echo "analysis_exists=false" >> $GITHUB_OUTPUT
+            echo "::warning::No analysis results found"
+          fi
+
+      - name: Configure Git
+        if: steps.check_files.outputs.analysis_exists == 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and Push
+        if: steps.check_files.outputs.analysis_exists == 'true'
+        run: |
+          # Get current timestamp for commit message
+          COMMIT_TIME=$(date +'%H:%M UTC')
+
+          # Add report files and summary file
+          git add reports/
+
+          # Check if there are changes to commit
+          if ! git diff --cached --quiet; then
+            # Create a nice commit message with the date and time
+            git commit -m "NBA Edge Analysis: ${{ env.RUN_DATE }} ($COMMIT_TIME)"
+
+            # Get current branch
+            BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+
+            # Push changes (use force-with-lease as a safer option)
+            git push origin $BRANCH_NAME
+            echo "Successfully pushed changes to $BRANCH_NAME"
+          else
+            echo "No changes to commit"
+          fi
+
+      # Notify on errors via a service like Slack, Discord, or email
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::warning::Workflow run failed. Consider setting up notifications to a messaging platform here."
+          # Example for webhook-based notification:
+          # curl -X POST -H "Content-Type: application/json" \
+          #   -d '{"text":"NBA Betting Analysis workflow failed on ${{ env.RUN_DATE }}"}' \
+          #   ${{ secrets.WEBHOOK_URL }}
+
+      # Run a webhook to trigger site rebuild if using a static site service
+      - name: Update website
+        if: steps.check_files.outputs.analysis_exists == 'true'
+        run: |
+          echo "Running website update job"
+          # Add webhook trigger code here if you have a separate website
+          # curl -X POST ${{ secrets.DEPLOY_WEBHOOK_URL }}
+
+  # Optional cleanup job that runs weekly to keep the repository size reasonable
+  cleanup:
+    runs-on: ubuntu-latest
+    needs: analyze
+    if: github.event_name == 'schedule' && github.event.schedule == '0 9 * * 0'  # Run only on Sunday at 9 AM UTC
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Pull latest changes
+      - name: Clean old files
         run: |
-          # Get current branch name
-          BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
-          echo "Current branch: $BRANCH_NAME"
+          # Set date for 30 days ago
+          CLEANUP_DATE=$(date -d "30 days ago" +%Y-%m-%d)
 
-          # Pull with rebase to handle conflicts
-          git pull --rebase origin $BRANCH_NAME || true
+          # Find directories older than cleanup date
+          OLD_DIRS=$(find reports -type d -name "????-??-??" | grep -v "latest" | sort | grep -B 1000 $CLEANUP_DATE | head -n -1 || echo "")
 
-          # If there are conflicts, prefer our changes
-          if git status | grep -q "rebase in progress"; then
-            git rebase --abort
-            # Try merge strategy instead
-            git pull --strategy-option theirs
-          fi
+          if [ -n "$OLD_DIRS" ]; then
+            echo "Cleaning up directories older than $CLEANUP_DATE"
+            for dir in $OLD_DIRS; do
+              echo "Removing $dir"
+              rm -rf "$dir"
+            done
 
-      - name: Commit and Push
-        run: |
-          # Add only report files
-          git add reports/
-
-          # Check if there are changes to commit
-          if ! git diff --cached --quiet; then
-            # Create a nice commit message with the date
-            COMMIT_DATE=$(date +'%Y-%m-%d')
-            git commit -m "NBA Edge Analysis: $COMMIT_DATE"
-
-            # Get current branch name again (in case it changed)
-            BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
-
-            # Force push with lease (safer than force push)
-            git push --force-with-lease origin $BRANCH_NAME
-            echo "Successfully pushed changes to $BRANCH_NAME"
+            # Commit cleanup
+            git add reports/
+            git commit -m "Cleanup: Remove analysis reports older than 30 days"
+            git push origin $(git rev-parse --abbrev-ref HEAD)
+            echo "Cleanup complete"
           else
-            echo "No changes to commit"
+            echo "No old directories to clean up"
           fi
-
-      # Optional: Build and deploy a static site with the reports
-      - name: Create site directory
-        if: false  # Disabled for now, enable this step when ready
-        run: |
-          mkdir -p site/reports
-          cp -R reports/* site/reports/
-
-          # Create index.html
-          node -e '
-            const fs = require("fs");
-            const path = require("path");
-
-            function createIndexHtml() {
-              try {
-                const reportsDir = "./reports";
-                const dates = fs.readdirSync(reportsDir).filter(file =>
-                  fs.statSync(path.join(reportsDir, file)).isDirectory()
-                );
-
-                // Sort dates in descending order (newest first)
-                dates.sort((a, b) => b.localeCompare(a));
-
-                let html = `
-                  <!DOCTYPE html>
-                  <html>
-                  <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>NBA Betting Analysis Reports</title>
-                    <style>
-                      body {
-                        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-                        line-height: 1.6;
-                        max-width: 1200px;
-                        margin: 0 auto;
-                        padding: 20px;
-                        color: #333;
-                      }
-                      h1, h2, h3 {
-                        color: #222;
-                      }
-                      a {
-                        color: #0366d6;
-                        text-decoration: none;
-                      }
-                      a:hover {
-                        text-decoration: underline;
-                      }
-                      .date-section {
-                        margin-bottom: 30px;
-                        border-bottom: 1px solid #eee;
-                        padding-bottom: 20px;
-                      }
-                      .report-list {
-                        list-style-type: none;
-                        padding-left: 20px;
-                      }
-                      .report-list li {
-                        margin-bottom: 10px;
-                      }
-                    </style>
-                  </head>
-                  <body>
-                    <h1>NBA Betting Analysis Reports</h1>
-                    <p>Daily betting analysis and recommendations generated with Claude 3.7 Sonnet.</p>
-                `;
-
-                dates.forEach(date => {
-                  const dateDir = path.join(reportsDir, date);
-                  const files = fs.readdirSync(dateDir);
-
-                  // Group files by type
-                  const analysis = files.filter(f => f.includes("nba_edge_analysis"));
-                  const mdRecommendations = files.filter(f => f.includes("recommended_bets") && f.endsWith(".md"));
-                  const htmlRecommendations = files.filter(f => f.includes("recommended_bets") && f.endsWith(".html"));
-
-                  if (analysis.length > 0 || mdRecommendations.length > 0 || htmlRecommendations.length > 0) {
-                    html += `
-                      <div class="date-section">
-                        <h2>${formatDate(date)}</h2>
-                        <ul class="report-list">
-                    `;
-
-                    // Add HTML recommendations first
-                    htmlRecommendations.forEach(file => {
-                      html += `
-                        <li>
-                          <a href="reports/${date}/${file}">Betting Recommendations (HTML)</a>
-                        </li>
-                      `;
-                    });
-
-                    // Add markdown recommendations
-                    mdRecommendations.forEach(file => {
-                      html += `
-                        <li>
-                          <a href="reports/${date}/${file}">Betting Recommendations (Markdown)</a>
-                        </li>
-                      `;
-                    });
-
-                    // Add full analysis
-                    analysis.forEach(file => {
-                      html += `
-                        <li>
-                          <a href="reports/${date}/${file}">Full Analysis</a>
-                        </li>
-                      `;
-                    });
-
-                    html += `
-                        </ul>
-                      </div>
-                    `;
-                  }
-                });
-
-                html += `
-                    <footer>
-                      <p>Generated using NBA Edge Detection System with Claude Extended Thinking</p>
-                    </footer>
-                  </body>
-                  </html>
-                `;
-
-                fs.writeFileSync("./site/index.html", html);
-                console.log("Created index.html");
-              } catch (error) {
-                console.error("Error creating index.html:", error);
-              }
-            }
-
-            // Helper function to format date
-            function formatDate(dateStr) {
-              try {
-                const date = new Date(dateStr);
-                return date.toLocaleDateString("en-US", {
-                  weekday: "long",
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric"
-                });
-              } catch (error) {
-                console.error("Error formatting date:", error);
-                return dateStr;
-              }
-            }
-
-            // Create the index.html file
-            createIndexHtml();
-          '
-
-      - name: Deploy to GitHub Pages
-        if: false  # Disabled for now, enable this step when ready
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site

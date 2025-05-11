@@ -1,0 +1,126 @@
+{
+  "lastRun": "2025-05-11T17-00-15-815Z",
+  "runs": [
+    {
+      "timestamp": "2025-05-11T17-00-15-815Z",
+      "bettingMode": "pregame",
+      "numGames": 4,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-05-11/nba_edge_analysis_2025-05-11T17-00-15-815Z.md",
+        "bets": "reports/2025-05-11/recommended_bets_2025-05-11T17-00-15-815Z.md",
+        "html": "reports/2025-05-11/recommended_bets_2025-05-11T17-00-15-815Z.html",
+        "prompt": "prompts/2025-05-11/claude_prompt_2025-05-11T17-00-15-815Z.md",
+        "thinking": "reports/2025-05-11/claude_reasoning_2025-05-11T17-00-15-815Z.md"
+      }
+    },
+    {
+      "timestamp": "2025-05-11T16-49-03-824Z",
+      "bettingMode": "pregame",
+      "numGames": 4,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-05-11/nba_edge_analysis_2025-05-11T16-49-03-824Z.md",
+        "bets": "reports/2025-05-11/recommended_bets_2025-05-11T16-49-03-824Z.md",
+        "html": "reports/2025-05-11/recommended_bets_2025-05-11T16-49-03-824Z.html",
+        "prompt": "prompts/2025-05-11/claude_prompt_2025-05-11T16-49-03-824Z.md",
+        "thinking": "reports/2025-05-11/claude_reasoning_2025-05-11T16-49-03-824Z.md"
+      }
+    },
+    {
+      "timestamp": "2025-05-11T16-46-17-344Z",
+      "bettingMode": "pregame",
+      "error": "oddsData is not defined",
+      "stack": "ReferenceError: oddsData is not defined\n    at /Users/THarpool/Downloads/edges/index.js:474:21\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+      "success": false
+    },
+    {
+      "timestamp": "2025-05-10T21-44-11-601Z",
+      "bettingMode": "pregame",
+      "error": "oddsData is not defined",
+      "stack": "ReferenceError: oddsData is not defined\n    at /Users/THarpool/Downloads/edges/index.js:474:21\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+      "success": false
+    },
+    {
+      "timestamp": "2025-05-10T21-35-55-370Z",
+      "error": "result is not defined",
+      "stack": "ReferenceError: result is not defined\n    at analyzeBettingOpportunities (/Users/THarpool/Downloads/edges/index.js:143:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /Users/THarpool/Downloads/edges/index.js:249:20",
+      "success": false
+    },
+    {
+      "timestamp": "2025-05-10T21-26-55-456Z",
+      "numGames": 0,
+      "betsFound": true,
+      "numBets": 20,
+      "files": {
+        "analysis": "reports/2025-05-10/nba_edge_analysis_2025-05-10T21-26-55-456Z.md",
+        "bets": "reports/2025-05-10/recommended_bets_2025-05-10T21-26-55-456Z.md",
+        "html": "reports/2025-05-10/recommended_bets_2025-05-10T21-26-55-456Z.html",
+        "prompt": "prompts/2025-05-10/claude_prompt_2025-05-10T21-26-55-456Z.md",
+        "thinking": "reports/2025-05-10/claude_reasoning_2025-05-10T21-26-55-456Z.md"
+      }
+    },
+    {
+      "timestamp": "2025-05-10T21-23-47-099Z",
+      "numGames": 0,
+      "betsFound": true,
+      "numBets": 20,
+      "files": {
+        "analysis": "reports/2025-05-10/nba_edge_analysis_2025-05-10T21-23-47-099Z.md",
+        "bets": "reports/2025-05-10/recommended_bets_2025-05-10T21-23-47-099Z.md",
+        "html": "reports/2025-05-10/recommended_bets_2025-05-10T21-23-47-099Z.html",
+        "prompt": "prompts/2025-05-10/claude_prompt_2025-05-10T21-23-47-099Z.md",
+        "thinking": "reports/2025-05-10/claude_reasoning_2025-05-10T21-23-47-099Z.md"
+      }
+    },
+    {
+      "timestamp": "2025-05-10T21-19-48-235Z",
+      "numGames": 0,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-05-10/nba_edge_analysis_2025-05-10T21-19-48-235Z.md",
+        "bets": "reports/2025-05-10/recommended_bets_2025-05-10T21-19-48-235Z.md",
+        "html": "reports/2025-05-10/recommended_bets_2025-05-10T21-19-48-235Z.html",
+        "prompt": "prompts/2025-05-10/claude_prompt_2025-05-10T21-19-48-235Z.md",
+        "thinking": "reports/2025-05-10/claude_reasoning_2025-05-10T21-19-48-235Z.md"
+      }
+    },
+    {
+      "timestamp": "2025-05-10T21-17-12-099Z",
+      "numGames": 0,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-05-10/nba_edge_analysis_2025-05-10T21-17-12-099Z.md",
+        "bets": "reports/2025-05-10/recommended_bets_2025-05-10T21-17-12-099Z.md",
+        "html": "reports/2025-05-10/recommended_bets_2025-05-10T21-17-12-099Z.html",
+        "prompt": "prompts/2025-05-10/claude_prompt_2025-05-10T21-17-12-099Z.md",
+        "thinking": "reports/2025-05-10/claude_reasoning_2025-05-10T21-17-12-099Z.md"
+      }
+    },
+    {
+      "timestamp": "2025-05-10T21-14-24-911Z",
+      "numGames": 0,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-05-10/nba_edge_analysis_2025-05-10T21-14-24-911Z.md",
+        "bets": "reports/2025-05-10/recommended_bets_2025-05-10T21-14-24-911Z.md",
+        "html": "reports/2025-05-10/recommended_bets_2025-05-10T21-14-24-911Z.html",
+        "prompt": "prompts/2025-05-10/claude_prompt_2025-05-10T21-14-24-911Z.md",
+        "thinking": "reports/2025-05-10/claude_reasoning_2025-05-10T21-14-24-911Z.md"
+      }
+    }
+  ],
+  "timestamp": "2025-05-11T17-00-15-815Z",
+  "bettingMode": "pregame",
+  "numGames": 4,
+  "betsFound": true,
+  "numBets": 23,
+  "error": "oddsData is not defined",
+  "stack": "ReferenceError: oddsData is not defined\n    at /Users/THarpool/Downloads/edges/index.js:474:21\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "success": false
+}
