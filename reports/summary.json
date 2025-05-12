@@ -1,6 +1,20 @@
 {
-  "lastRun": "2025-05-12T02-34-57-305Z",
+  "lastRun": "2025-05-12T05-05-42-066Z",
   "runs": [
+    {
+      "timestamp": "2025-05-12T05-05-42-066Z",
+      "bettingMode": "live",
+      "numGames": 4,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-05-12/nba_edge_analysis-live_2025-05-12T05-05-42-066Z.md",
+        "bets": "reports/2025-05-12/recommended_bets-live_2025-05-12T05-05-42-066Z.md",
+        "html": "reports/2025-05-12/recommended_bets-live_2025-05-12T05-05-42-066Z.html",
+        "prompt": "prompts/2025-05-12/claude_prompt-live_2025-05-12T05-05-42-066Z.md",
+        "thinking": "reports/2025-05-12/claude_reasoning-live_2025-05-12T05-05-42-066Z.md"
+      }
+    },
     {
       "timestamp": "2025-05-12T02-34-57-305Z",
       "bettingMode": "live",
@@ -213,9 +227,9 @@
       }
     }
   ],
-  "timestamp": "2025-05-12T02-34-57-305Z",
+  "timestamp": "2025-05-12T05-05-42-066Z",
   "bettingMode": "live",
-  "numGames": 5,
+  "numGames": 4,
   "betsFound": true,
   "numBets": 23,
   "error": "oddsData is not defined",
