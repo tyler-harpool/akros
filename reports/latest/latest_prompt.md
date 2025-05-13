@@ -41,7 +41,7 @@ Game Start: 5/14/2025, 1:35:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -440 | 340 |
-| FanDuel | -450 | 350 |
+| FanDuel | -460 | 360 |
 | BetMGM | -450 | 340 |
 
 ### Spread Odds
