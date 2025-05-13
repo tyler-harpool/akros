@@ -1,6 +1,13 @@
 {
-  "lastRun": "2025-05-13T09-07-28-033Z",
+  "lastRun": "2025-05-13T15-04-00-488Z",
   "runs": [
+    {
+      "timestamp": "2025-05-13T15-04-00-488Z",
+      "bettingMode": "pregame",
+      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
+      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+      "success": false
+    },
     {
       "timestamp": "2025-05-13T09-07-28-033Z",
       "bettingMode": "pregame",
@@ -209,22 +216,9 @@
       "error": "result is not defined",
       "stack": "ReferenceError: result is not defined\n    at analyzeBettingOpportunities (/Users/THarpool/Downloads/edges/index.js:143:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /Users/THarpool/Downloads/edges/index.js:249:20",
       "success": false
-    },
-    {
-      "timestamp": "2025-05-10T21-26-55-456Z",
-      "numGames": 0,
-      "betsFound": true,
-      "numBets": 20,
-      "files": {
-        "analysis": "reports/2025-05-10/nba_edge_analysis_2025-05-10T21-26-55-456Z.md",
-        "bets": "reports/2025-05-10/recommended_bets_2025-05-10T21-26-55-456Z.md",
-        "html": "reports/2025-05-10/recommended_bets_2025-05-10T21-26-55-456Z.html",
-        "prompt": "prompts/2025-05-10/claude_prompt_2025-05-10T21-26-55-456Z.md",
-        "thinking": "reports/2025-05-10/claude_reasoning_2025-05-10T21-26-55-456Z.md"
-      }
     }
   ],
-  "timestamp": "2025-05-13T09-07-28-033Z",
+  "timestamp": "2025-05-13T15-04-00-488Z",
   "bettingMode": "pregame",
   "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
   "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
