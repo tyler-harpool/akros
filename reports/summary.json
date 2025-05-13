@@ -1,6 +1,13 @@
 {
-  "lastRun": "2025-05-13T15-04-00-488Z",
+  "lastRun": "2025-05-13T21-45-07-761Z",
   "runs": [
+    {
+      "timestamp": "2025-05-13T21-45-07-761Z",
+      "bettingMode": "pregame",
+      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
+      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+      "success": false
+    },
     {
       "timestamp": "2025-05-13T15-04-00-488Z",
       "bettingMode": "pregame",
@@ -210,15 +217,9 @@
       "error": "oddsData is not defined",
       "stack": "ReferenceError: oddsData is not defined\n    at /Users/THarpool/Downloads/edges/index.js:474:21\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
       "success": false
-    },
-    {
-      "timestamp": "2025-05-10T21-35-55-370Z",
-      "error": "result is not defined",
-      "stack": "ReferenceError: result is not defined\n    at analyzeBettingOpportunities (/Users/THarpool/Downloads/edges/index.js:143:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /Users/THarpool/Downloads/edges/index.js:249:20",
-      "success": false
     }
   ],
-  "timestamp": "2025-05-13T15-04-00-488Z",
+  "timestamp": "2025-05-13T21-45-07-761Z",
   "bettingMode": "pregame",
   "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
   "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
