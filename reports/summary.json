@@ -1,6 +1,20 @@
 {
-  "lastRun": "2025-05-13T21-45-07-761Z",
+  "lastRun": "2025-05-13T21-53-56-307Z",
   "runs": [
+    {
+      "timestamp": "2025-05-13T21-53-56-307Z",
+      "bettingMode": "pregame",
+      "numGames": 4,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-05-13/nba_edge_analysis_2025-05-13T21-53-56-307Z.md",
+        "bets": "reports/2025-05-13/recommended_bets_2025-05-13T21-53-56-307Z.md",
+        "html": "reports/2025-05-13/recommended_bets_2025-05-13T21-53-56-307Z.html",
+        "prompt": "prompts/2025-05-13/claude_prompt_2025-05-13T21-53-56-307Z.md",
+        "thinking": "reports/2025-05-13/claude_reasoning_2025-05-13T21-53-56-307Z.md"
+      }
+    },
     {
       "timestamp": "2025-05-13T21-45-07-761Z",
       "bettingMode": "pregame",
@@ -210,21 +224,14 @@
       "error": "oddsData is not defined",
       "stack": "ReferenceError: oddsData is not defined\n    at /Users/THarpool/Downloads/edges/index.js:474:21\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
       "success": false
-    },
-    {
-      "timestamp": "2025-05-10T21-44-11-601Z",
-      "bettingMode": "pregame",
-      "error": "oddsData is not defined",
-      "stack": "ReferenceError: oddsData is not defined\n    at /Users/THarpool/Downloads/edges/index.js:474:21\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
-      "success": false
     }
   ],
-  "timestamp": "2025-05-13T21-45-07-761Z",
+  "timestamp": "2025-05-13T21-53-56-307Z",
   "bettingMode": "pregame",
-  "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
-  "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
-  "success": false,
   "numGames": 4,
   "betsFound": true,
-  "numBets": 23
+  "numBets": 23,
+  "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
+  "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "success": false
 }
