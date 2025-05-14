@@ -1,49 +1,12 @@
 # LIVE IN-GAME NBA Betting Analysis for Wednesday, May 14, 2025
 
-## Live Betting Context
-
-Some or all games in this analysis are currently in progress. When analyzing live betting opportunities:
-
-1. Consider the current game state and how it affects odds
-2. Look for overreactions to recent events (scoring runs, injuries, foul trouble)
-3. Pay special attention to momentum shifts that bookmakers might not have fully adjusted for
-4. Be more selective with recommendations, as live markets can be more efficient
-5. Consider game pace and time remaining when evaluating totals
-
 ## Games Being Analyzed
 
-- Oklahoma City Thunder vs Denver Nuggets (5/14/2025, 1:47:52 AM) (IN PROGRESS)
 - Boston Celtics vs New York Knicks (5/14/2025, 11:05:00 PM)
 - Minnesota Timberwolves vs Golden State Warriors (5/15/2025, 1:35:00 AM)
+- Denver Nuggets vs Oklahoma City Thunder (5/16/2025, 12:40:00 AM)
 
 # Available NBA Betting Lines
-
-> **LIVE BETTING ANALYSIS**: Some or all of these games are currently in progress. Odds are being actively updated based on game events.
-
-## Oklahoma City Thunder vs Denver Nuggets (IN PROGRESS)
-Game Start: 5/14/2025, 1:47:52 AM
-
-### Moneyline Odds
-| Bookmaker | Home Team | Away Team |
-|-----------|-----------|----------|
-| DraftKings | -154 | 120 |
-| FanDuel | -164 | 128 |
-| BetMGM | -160 | 125 |
-
-### Spread Odds
-| Bookmaker | Home Team | Away Team |
-|-----------|-----------|----------|
-| DraftKings | -3.5 (-115) | 3.5 (-115) |
-| FanDuel | -2.5 (-125) | 2.5 (-106) |
-| BetMGM | -3.5 (-110) | 3.5 (-115) |
-
-### Totals (Over/Under)
-| Bookmaker | Points | Over | Under |
-|-----------|--------|------|-------|
-| DraftKings | 213.5 | -120 | -110 |
-| FanDuel | 214.5 | -112 | -118 |
-| BetMGM | 215.5 | -110 | -118 |
-
 
 ## Boston Celtics vs New York Knicks
 Game Start: 5/14/2025, 11:05:00 PM
@@ -52,7 +15,7 @@ Game Start: 5/14/2025, 11:05:00 PM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -185 | 154 |
-| FanDuel | -184 | 154 |
+| FanDuel | -178 | 150 |
 | BetMGM | -190 | 155 |
 
 ### Spread Odds
@@ -77,7 +40,7 @@ Game Start: 5/15/2025, 1:35:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -600 | 440 |
-| FanDuel | -670 | 490 |
+| FanDuel | -620 | 460 |
 | BetMGM | -625 | 450 |
 
 ### Spread Odds
@@ -92,42 +55,39 @@ Game Start: 5/15/2025, 1:35:00 AM
 |-----------|--------|------|-------|
 | DraftKings | 203.5 | -108 | -112 |
 | FanDuel | 204 | -110 | -110 |
-| BetMGM | 203.5 | -115 | -105 |
+| BetMGM | 203.5 | -110 | -110 |
+
+
+## Denver Nuggets vs Oklahoma City Thunder
+Game Start: 5/16/2025, 12:40:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | 154 | -185 |
+| BetMGM | 155 | -190 |
+| FanDuel | 168 | -200 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | 4.5 (-110) | -4.5 (-110) |
+| BetMGM | 4.5 (-110) | -4.5 (-110) |
+| FanDuel | 5 (-114) | -5 (-106) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 219.5 | -110 | -110 |
+| BetMGM | 219.5 | -105 | -115 |
+| FanDuel | 218.5 | -108 | -112 |
 
 
 # Betting Edge Analysis
 
-> Note: Edge detection for live games may be less reliable due to rapidly changing odds. Use additional caution.
-
 No significant edges detected in the current betting markets.
 
 # Current Team Lineups
-
-## Denver Nuggets @ Oklahoma City Thunder
-Game starts at 9:30 PM ET
-**CONFIRMED LINEUP**
-
-### Nuggets Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | Jamal Murray | ✓ |
-| SG | C. Braun | ✓ |
-| SF | M. Porter | ✓ |
-| PF | Aaron Gordon | ✓ |
-| C | Nikola Jokic | ✓ |
-| C | D. Holmes |  |
-| F | H. Tyson |  |
-
-### Thunder Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | S. Gilgeous-Alexander | ✓ |
-| SG | Luguentz Dort | ✓ |
-| SF | J. Williams | ✓ |
-| PF | Chet Holmgren | ✓ |
-| C | I. Hartenstein | ✓ |
-| G | N. Topic |  |
-
 
 ## New York Knicks @ Boston Celtics
 Game starts at 5/14/2025, 11:05:00 PM
@@ -151,6 +111,17 @@ No lineup data available for this team.
 No lineup data available for this team.
 
 
+## Oklahoma City Thunder @ Denver Nuggets
+Game starts at 5/16/2025, 12:40:00 AM
+*Projected Lineup*
+
+### Oklahoma City Thunder Lineup
+No lineup data available for this team.
+
+### Denver Nuggets Lineup
+No lineup data available for this team.
+
+
 
 ## Key Injuries
 
@@ -159,10 +130,10 @@ No lineup data available for this team.
 
 Please analyze the provided betting opportunities, focusing on the following:
 
-1. Evaluate the live betting opportunities, considering current game state
-2. Look for odds that haven't fully adjusted to game flow and momentum shifts
-3. Consider how fatigue and foul trouble may impact the remainder of the game
-4. Focus on total points markets that might not account for pace changes
-5. Be selective and only recommend high-confidence live opportunities
+1. Evaluate the statistical edges identified in the analysis
+2. Consider starting lineups and how they might affect each game's dynamics
+3. Factor in how injuries might impact these betting edges
+4. Consider any playoff or tournament dynamics if applicable
+5. Identify which markets (moneyline, spread, totals) show the greatest inefficiencies
 
-IMPORTANT: After your analysis, provide exactly 3-5 concrete bet recommendations in a section called "RECOMMENDED BETS". Format these recommendations as a markdown table with these exact columns: Game/Series, Bet Type, Selection, Odds, Stake (1-5 units), and Reasoning. Include REAL ODDS from the data (not placeholders). For each bet, provide a short but clear explanation of why this specific bet has value. For live bets, be sure to note that these are IN-GAME recommendations in the Reasoning column.
+IMPORTANT: After your analysis, provide exactly 3-5 concrete bet recommendations in a section called "RECOMMENDED BETS". Format these recommendations as a markdown table with these exact columns: Game/Series, Bet Type, Selection, Odds, Stake (1-5 units), and Reasoning. Include REAL ODDS from the data (not placeholders). For each bet, provide a short but clear explanation of why this specific bet has value.
