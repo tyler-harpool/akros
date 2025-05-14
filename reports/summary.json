@@ -1,6 +1,20 @@
 {
-  "lastRun": "2025-05-13T23-30-24-292Z",
+  "lastRun": "2025-05-13T23-59-40-791Z",
   "runs": [
+    {
+      "timestamp": "2025-05-13T23-59-40-791Z",
+      "bettingMode": "all",
+      "numGames": 4,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-05-14/nba_edge_analysis-all_2025-05-13T23-59-40-791Z.md",
+        "bets": "reports/2025-05-14/recommended_bets-all_2025-05-13T23-59-40-791Z.md",
+        "html": "reports/2025-05-14/recommended_bets-all_2025-05-13T23-59-40-791Z.html",
+        "prompt": "prompts/2025-05-13/claude_prompt-all_2025-05-13T23-59-40-791Z.md",
+        "thinking": "reports/2025-05-13/claude_reasoning-all_2025-05-13T23-59-40-791Z.md"
+      }
+    },
     {
       "timestamp": "2025-05-13T23-30-24-292Z",
       "bettingMode": "all",
@@ -217,27 +231,13 @@
         "prompt": "prompts/2025-05-11/claude_prompt_2025-05-11T17-06-37-784Z.md",
         "thinking": "reports/2025-05-11/claude_reasoning_2025-05-11T17-06-37-784Z.md"
       }
-    },
-    {
-      "timestamp": "2025-05-11T17-00-15-815Z",
-      "bettingMode": "pregame",
-      "numGames": 4,
-      "betsFound": true,
-      "numBets": 23,
-      "files": {
-        "analysis": "reports/2025-05-11/nba_edge_analysis_2025-05-11T17-00-15-815Z.md",
-        "bets": "reports/2025-05-11/recommended_bets_2025-05-11T17-00-15-815Z.md",
-        "html": "reports/2025-05-11/recommended_bets_2025-05-11T17-00-15-815Z.html",
-        "prompt": "prompts/2025-05-11/claude_prompt_2025-05-11T17-00-15-815Z.md",
-        "thinking": "reports/2025-05-11/claude_reasoning_2025-05-11T17-00-15-815Z.md"
-      }
     }
   ],
-  "timestamp": "2025-05-13T23-30-24-292Z",
+  "timestamp": "2025-05-13T23-59-40-791Z",
   "bettingMode": "all",
   "numGames": 4,
   "betsFound": true,
-  "numBets": 20,
+  "numBets": 23,
   "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
   "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
   "success": false

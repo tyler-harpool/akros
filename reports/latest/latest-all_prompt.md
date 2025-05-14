@@ -27,23 +27,23 @@ Game Start: 5/13/2025, 11:06:37 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -590 | 390 |
-| DraftKings | -580 | 380 |
-| BetMGM | -650 | 425 |
+| FanDuel | -1400 | 680 |
+| DraftKings | -810 | 500 |
+| BetMGM | -2000 | 825 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -12.5 (-104) | 12.5 (-128) |
-| DraftKings | -11.5 (-110) | 11.5 (-120) |
-| BetMGM | -11.5 (-105) | 11.5 (-125) |
+| FanDuel | -14.5 (-132) | 14.5 (100) |
+| DraftKings | -13.5 (-120) | 13.5 (-110) |
+| BetMGM | -14.5 (-115) | 14.5 (-115) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| FanDuel | 220.5 | -122 | -108 |
-| DraftKings | 221.5 | -115 | -115 |
-| BetMGM | 221.5 | -115 | -115 |
+| FanDuel | 226.5 | -122 | -108 |
+| DraftKings | 226.5 | -115 | -115 |
+| BetMGM | 226.5 | -118 | -110 |
 
 
 ## Oklahoma City Thunder vs Denver Nuggets
@@ -53,7 +53,7 @@ Game Start: 5/14/2025, 1:35:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -440 | 340 |
-| FanDuel | -460 | 360 |
+| FanDuel | -450 | 350 |
 | BetMGM | -450 | 340 |
 
 ### Spread Odds
@@ -66,9 +66,9 @@ Game Start: 5/14/2025, 1:35:00 AM
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 221 | -110 | -110 |
-| FanDuel | 221.5 | -108 | -112 |
-| BetMGM | 220.5 | -115 | -105 |
+| DraftKings | 222 | -110 | -110 |
+| FanDuel | 222 | -112 | -108 |
+| BetMGM | 222.5 | -110 | -110 |
 
 
 ## Boston Celtics vs New York Knicks
