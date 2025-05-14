@@ -1,4 +1,4 @@
-# COMBINED (PRE-GAME & LIVE) NBA Betting Analysis for Tuesday, May 13, 2025
+# COMBINED (PRE-GAME & LIVE) NBA Betting Analysis for Wednesday, May 14, 2025
 
 ## Live Betting Context
 
@@ -27,23 +27,23 @@ Game Start: 5/13/2025, 11:06:37 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -1400 | 680 |
-| DraftKings | -810 | 500 |
-| BetMGM | -2000 | 825 |
+| FanDuel | -188 | 146 |
+| DraftKings | -175 | 135 |
+| BetMGM | -175 | 135 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -14.5 (-132) | 14.5 (100) |
-| DraftKings | -13.5 (-120) | 13.5 (-110) |
-| BetMGM | -14.5 (-115) | 14.5 (-115) |
+| FanDuel | -3.5 (-118) | 3.5 (-112) |
+| DraftKings | -3.5 (-120) | 3.5 (-110) |
+| BetMGM | -3.5 (-105) | 3.5 (-125) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| FanDuel | 226.5 | -122 | -108 |
-| DraftKings | 226.5 | -115 | -115 |
-| BetMGM | 226.5 | -118 | -110 |
+| FanDuel | 222.5 | -125 | -106 |
+| DraftKings | 223.5 | -115 | -115 |
+| BetMGM | 223.5 | -115 | -115 |
 
 
 ## Oklahoma City Thunder vs Denver Nuggets
@@ -60,15 +60,15 @@ Game Start: 5/14/2025, 1:35:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -10 (-110) | 10 (-110) |
-| FanDuel | -10 (-112) | 10 (-108) |
+| FanDuel | -10 (-110) | 10 (-110) |
 | BetMGM | -9.5 (-115) | 9.5 (-105) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | DraftKings | 222 | -110 | -110 |
-| FanDuel | 222 | -112 | -108 |
-| BetMGM | 222.5 | -110 | -110 |
+| FanDuel | 221.5 | -112 | -108 |
+| BetMGM | 221.5 | -115 | -105 |
 
 
 ## Boston Celtics vs New York Knicks
@@ -103,7 +103,7 @@ Game Start: 5/15/2025, 1:35:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -600 | 440 |
-| FanDuel | -620 | 460 |
+| FanDuel | -670 | 490 |
 | BetMGM | -650 | 475 |
 
 ### Spread Odds
