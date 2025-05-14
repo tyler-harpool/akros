@@ -1,6 +1,20 @@
 {
-  "lastRun": "2025-05-14T00-47-22-353Z",
+  "lastRun": "2025-05-14T02-11-00-571Z",
   "runs": [
+    {
+      "timestamp": "2025-05-14T02-11-00-571Z",
+      "bettingMode": "live",
+      "numGames": 3,
+      "betsFound": true,
+      "numBets": 20,
+      "files": {
+        "analysis": "reports/2025-05-14/nba_edge_analysis-live_2025-05-14T02-11-00-571Z.md",
+        "bets": "reports/2025-05-14/recommended_bets-live_2025-05-14T02-11-00-571Z.md",
+        "html": "reports/2025-05-14/recommended_bets-live_2025-05-14T02-11-00-571Z.html",
+        "prompt": "prompts/2025-05-14/claude_prompt-live_2025-05-14T02-11-00-571Z.md",
+        "thinking": "reports/2025-05-14/claude_reasoning-live_2025-05-14T02-11-00-571Z.md"
+      }
+    },
     {
       "timestamp": "2025-05-14T00-47-22-353Z",
       "bettingMode": "all",
@@ -217,27 +231,13 @@
         "prompt": "prompts/2025-05-11/claude_prompt_2025-05-11T20-56-51-349Z.md",
         "thinking": "reports/2025-05-11/claude_reasoning_2025-05-11T20-56-51-349Z.md"
       }
-    },
-    {
-      "timestamp": "2025-05-11T20-26-30-398Z",
-      "bettingMode": "pregame",
-      "numGames": 4,
-      "betsFound": true,
-      "numBets": 23,
-      "files": {
-        "analysis": "reports/2025-05-11/nba_edge_analysis_2025-05-11T20-26-30-398Z.md",
-        "bets": "reports/2025-05-11/recommended_bets_2025-05-11T20-26-30-398Z.md",
-        "html": "reports/2025-05-11/recommended_bets_2025-05-11T20-26-30-398Z.html",
-        "prompt": "prompts/2025-05-11/claude_prompt_2025-05-11T20-26-30-398Z.md",
-        "thinking": "reports/2025-05-11/claude_reasoning_2025-05-11T20-26-30-398Z.md"
-      }
     }
   ],
-  "timestamp": "2025-05-14T00-47-22-353Z",
-  "bettingMode": "all",
-  "numGames": 4,
+  "timestamp": "2025-05-14T02-11-00-571Z",
+  "bettingMode": "live",
+  "numGames": 3,
   "betsFound": true,
-  "numBets": 23,
+  "numBets": 20,
   "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
   "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
   "success": false
