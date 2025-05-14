@@ -14,16 +14,16 @@ Game Start: 5/14/2025, 11:05:00 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -175 | 145 |
-| FanDuel | -180 | 152 |
-| BetMGM | -185 | 150 |
+| DraftKings | -198 | 164 |
+| FanDuel | -196 | 164 |
+| BetMGM | -200 | 165 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -4.5 (-108) | 4.5 (-112) |
-| FanDuel | -4.5 (-110) | 4.5 (-110) |
-| BetMGM | -4.5 (-110) | 4.5 (-110) |
+| DraftKings | -5 (-112) | 5 (-108) |
+| FanDuel | -5 (-110) | 5 (-110) |
+| BetMGM | -5.5 (-110) | 5.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
@@ -40,21 +40,21 @@ Game Start: 5/15/2025, 1:35:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -485 | 370 |
-| FanDuel | -560 | 420 |
-| BetMGM | -550 | 400 |
+| FanDuel | -500 | 385 |
+| BetMGM | -500 | 375 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -11 (-112) | 11 (-108) |
-| FanDuel | -11 (-108) | 11 (-112) |
+| DraftKings | -10.5 (-110) | 10.5 (-110) |
+| FanDuel | -10.5 (-110) | 10.5 (-110) |
 | BetMGM | -10.5 (-110) | 10.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 202 | -110 | -110 |
-| FanDuel | 202.5 | -110 | -110 |
+| DraftKings | 202.5 | -110 | -110 |
+| FanDuel | 203 | -114 | -106 |
 | BetMGM | 202.5 | -115 | -105 |
 
 
@@ -65,22 +65,22 @@ Game Start: 5/16/2025, 12:40:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | 164 | -198 |
-| BetMGM | 155 | -190 |
+| BetMGM | 165 | -200 |
 | FanDuel | 160 | -190 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 4.5 (-105) | -4.5 (-115) |
+| DraftKings | 4.5 (-110) | -4.5 (-110) |
 | BetMGM | 4.5 (-110) | -4.5 (-110) |
-| FanDuel | 4.5 (-110) | -4.5 (-110) |
+| FanDuel | 4.5 (-108) | -4.5 (-112) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 218 | -110 | -110 |
-| BetMGM | 217.5 | -115 | -105 |
-| FanDuel | 218.5 | -114 | -106 |
+| DraftKings | 216.5 | -110 | -110 |
+| BetMGM | 216.5 | -110 | -110 |
+| FanDuel | 216.5 | -110 | -110 |
 
 
 # Betting Edge Analysis
