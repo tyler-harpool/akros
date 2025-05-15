@@ -13,23 +13,23 @@ Game Start: 5/16/2025, 12:40:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 150 | -180 |
-| BetMGM | 150 | -185 |
-| FanDuel | 160 | -190 |
+| DraftKings | 164 | -198 |
+| BetMGM | 165 | -200 |
+| FanDuel | 168 | -200 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 4.5 (-112) | -4.5 (-108) |
-| BetMGM | 4.5 (-110) | -4.5 (-110) |
-| FanDuel | 4.5 (-110) | -4.5 (-110) |
+| DraftKings | 5 (-108) | -5 (-112) |
+| BetMGM | 5.5 (-110) | -5.5 (-110) |
+| FanDuel | 5 (-105) | -5 (-115) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 217.5 | -108 | -112 |
-| BetMGM | 217.5 | -105 | -115 |
-| FanDuel | 217.5 | -108 | -112 |
+| DraftKings | 216 | -110 | -110 |
+| BetMGM | 215.5 | -115 | -105 |
+| FanDuel | 216.5 | -108 | -112 |
 
 
 ## New York Knicks vs Boston Celtics
@@ -39,14 +39,14 @@ Game Start: 5/17/2025, 12:00:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -135 | 114 |
-| FanDuel | -136 | 116 |
+| FanDuel | -146 | 124 |
 | BetMGM | -140 | 115 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -2.5 (-110) | 2.5 (-110) |
-| FanDuel | -2 (-110) | 2 (-110) |
+| FanDuel | -2.5 (-110) | 2.5 (-110) |
 | BetMGM | -2.5 (-105) | 2.5 (-115) |
 
 ### Totals (Over/Under)
@@ -80,12 +80,13 @@ Game starts at 8:30 PM ET
 ### Nuggets Lineup
 | Position | Player | Starter |
 |----------|--------|--------|
-| PG | Jamal Murray | ✓ |
+| PG | J. Murray | ✓ |
 | SG | C. Braun | ✓ |
 | SF | M. Porter | ✓ |
 | PF | Aaron Gordon | ✓ |
 | C | Nikola Jokic | ✓ |
 | C | D. Holmes |  |
+| G | J. Murray |  |
 | F | H. Tyson |  |
 
 
