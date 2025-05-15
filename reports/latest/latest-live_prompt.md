@@ -1,61 +1,48 @@
-# LIVE IN-GAME NBA Betting Analysis for Wednesday, May 14, 2025
+# LIVE IN-GAME NBA Betting Analysis for Thursday, May 15, 2025
+
+## Live Betting Context
+
+Some or all games in this analysis are currently in progress. When analyzing live betting opportunities:
+
+1. Consider the current game state and how it affects odds
+2. Look for overreactions to recent events (scoring runs, injuries, foul trouble)
+3. Pay special attention to momentum shifts that bookmakers might not have fully adjusted for
+4. Be more selective with recommendations, as live markets can be more efficient
+5. Consider game pace and time remaining when evaluating totals
 
 ## Games Being Analyzed
 
-- Boston Celtics vs New York Knicks (5/14/2025, 11:05:00 PM)
-- Minnesota Timberwolves vs Golden State Warriors (5/15/2025, 1:35:00 AM)
+- Minnesota Timberwolves vs Golden State Warriors (5/15/2025, 1:49:19 AM) (IN PROGRESS)
 - Denver Nuggets vs Oklahoma City Thunder (5/16/2025, 12:40:00 AM)
+- New York Knicks vs Boston Celtics (5/17/2025, 12:00:00 AM)
 
 # Available NBA Betting Lines
 
-## Boston Celtics vs New York Knicks
-Game Start: 5/14/2025, 11:05:00 PM
+> **LIVE BETTING ANALYSIS**: Some or all of these games are currently in progress. Odds are being actively updated based on game events.
+
+## Minnesota Timberwolves vs Golden State Warriors (IN PROGRESS)
+Game Start: 5/15/2025, 1:49:19 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -185 | 154 |
-| FanDuel | -178 | 150 |
-| BetMGM | -190 | 155 |
+| DraftKings | -500 | 340 |
+| FanDuel | -460 | 320 |
+| BetMGM | -525 | 350 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -4.5 (-108) | 4.5 (-112) |
-| FanDuel | -4.5 (-112) | 4.5 (-108) |
-| BetMGM | -4.5 (-110) | 4.5 (-110) |
+| DraftKings | -8.5 (-120) | 8.5 (-110) |
+| FanDuel | -9.5 (106) | 9.5 (-140) |
+| BetMGM | -9.5 (-105) | 9.5 (-125) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 207.5 | -110 | -110 |
-| FanDuel | 208.5 | -108 | -112 |
-| BetMGM | 207.5 | -115 | -105 |
-
-
-## Minnesota Timberwolves vs Golden State Warriors
-Game Start: 5/15/2025, 1:35:00 AM
-
-### Moneyline Odds
-| Bookmaker | Home Team | Away Team |
-|-----------|-----------|----------|
-| DraftKings | -600 | 440 |
-| FanDuel | -620 | 460 |
-| BetMGM | -625 | 450 |
-
-### Spread Odds
-| Bookmaker | Home Team | Away Team |
-|-----------|-----------|----------|
-| DraftKings | -11.5 (-108) | 11.5 (-112) |
-| FanDuel | -11.5 (-108) | 11.5 (-112) |
-| BetMGM | -11.5 (-105) | 11.5 (-115) |
-
-### Totals (Over/Under)
-| Bookmaker | Points | Over | Under |
-|-----------|--------|------|-------|
-| DraftKings | 203.5 | -108 | -112 |
-| FanDuel | 204 | -110 | -110 |
-| BetMGM | 203.5 | -110 | -110 |
+| DraftKings | 211.5 | -110 | -120 |
+| FanDuel | 209.5 | -120 | -110 |
+| BetMGM | 211.5 | -110 | -118 |
 
 
 ## Denver Nuggets vs Oklahoma City Thunder
@@ -64,44 +51,60 @@ Game Start: 5/16/2025, 12:40:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 154 | -185 |
-| BetMGM | 155 | -190 |
-| FanDuel | 168 | -200 |
+| DraftKings | 170 | -205 |
+| BetMGM | 165 | -200 |
+| FanDuel | 156 | -186 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 4.5 (-110) | -4.5 (-110) |
-| BetMGM | 4.5 (-110) | -4.5 (-110) |
-| FanDuel | 5 (-114) | -5 (-106) |
+| DraftKings | 5 (-110) | -5 (-110) |
+| BetMGM | 5.5 (-118) | -5.5 (-102) |
+| FanDuel | 4.5 (-108) | -4.5 (-112) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 219.5 | -110 | -110 |
-| BetMGM | 219.5 | -105 | -115 |
-| FanDuel | 218.5 | -108 | -112 |
+| DraftKings | 216.5 | -110 | -110 |
+| BetMGM | 216.5 | -110 | -110 |
+| FanDuel | 216.5 | -110 | -110 |
+
+
+## New York Knicks vs Boston Celtics
+Game Start: 5/17/2025, 12:00:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -130 | 110 |
+| FanDuel | -126 | 108 |
+| BetMGM | -140 | 115 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -2 (-110) | 2 (-110) |
+| FanDuel | -1.5 (-112) | 1.5 (-108) |
+| BetMGM | -2.5 (-105) | 2.5 (-115) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 209 | -108 | -112 |
+| FanDuel | 209.5 | -110 | -110 |
+| BetMGM | 210.5 | -105 | -115 |
 
 
 # Betting Edge Analysis
+
+> Note: Edge detection for live games may be less reliable due to rapidly changing odds. Use additional caution.
 
 No significant edges detected in the current betting markets.
 
 # Current Team Lineups
 
-## New York Knicks @ Boston Celtics
-Game starts at 5/14/2025, 11:05:00 PM
-*Projected Lineup*
-
-### New York Knicks Lineup
-No lineup data available for this team.
-
-### Boston Celtics Lineup
-No lineup data available for this team.
-
-
 ## Golden State Warriors @ Minnesota Timberwolves
-Game starts at 5/15/2025, 1:35:00 AM
+Game starts at 5/15/2025, 1:49:19 AM
 *Projected Lineup*
 
 ### Golden State Warriors Lineup
@@ -122,6 +125,17 @@ No lineup data available for this team.
 No lineup data available for this team.
 
 
+## Boston Celtics @ New York Knicks
+Game starts at 5/17/2025, 12:00:00 AM
+*Projected Lineup*
+
+### Boston Celtics Lineup
+No lineup data available for this team.
+
+### New York Knicks Lineup
+No lineup data available for this team.
+
+
 
 ## Key Injuries
 
@@ -130,10 +144,10 @@ No lineup data available for this team.
 
 Please analyze the provided betting opportunities, focusing on the following:
 
-1. Evaluate the statistical edges identified in the analysis
-2. Consider starting lineups and how they might affect each game's dynamics
-3. Factor in how injuries might impact these betting edges
-4. Consider any playoff or tournament dynamics if applicable
-5. Identify which markets (moneyline, spread, totals) show the greatest inefficiencies
+1. Evaluate the live betting opportunities, considering current game state
+2. Look for odds that haven't fully adjusted to game flow and momentum shifts
+3. Consider how fatigue and foul trouble may impact the remainder of the game
+4. Focus on total points markets that might not account for pace changes
+5. Be selective and only recommend high-confidence live opportunities
 
-IMPORTANT: After your analysis, provide exactly 3-5 concrete bet recommendations in a section called "RECOMMENDED BETS". Format these recommendations as a markdown table with these exact columns: Game/Series, Bet Type, Selection, Odds, Stake (1-5 units), and Reasoning. Include REAL ODDS from the data (not placeholders). For each bet, provide a short but clear explanation of why this specific bet has value.
+IMPORTANT: After your analysis, provide exactly 3-5 concrete bet recommendations in a section called "RECOMMENDED BETS". Format these recommendations as a markdown table with these exact columns: Game/Series, Bet Type, Selection, Odds, Stake (1-5 units), and Reasoning. Include REAL ODDS from the data (not placeholders). For each bet, provide a short but clear explanation of why this specific bet has value. For live bets, be sure to note that these are IN-GAME recommendations in the Reasoning column.
