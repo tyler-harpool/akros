@@ -13,23 +13,23 @@ Game Start: 5/16/2025, 12:40:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 154 | -185 |
-| BetMGM | 155 | -190 |
-| FanDuel | 168 | -200 |
+| DraftKings | 150 | -180 |
+| BetMGM | 150 | -185 |
+| FanDuel | 160 | -190 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 4.5 (-105) | -4.5 (-115) |
-| BetMGM | 4.5 (-105) | -4.5 (-115) |
-| FanDuel | 5 (-112) | -5 (-108) |
+| DraftKings | 4.5 (-112) | -4.5 (-108) |
+| BetMGM | 4.5 (-110) | -4.5 (-110) |
+| FanDuel | 4.5 (-110) | -4.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 216 | -112 | -108 |
-| BetMGM | 215.5 | -115 | -105 |
-| FanDuel | 215.5 | -110 | -110 |
+| DraftKings | 217.5 | -108 | -112 |
+| BetMGM | 217.5 | -105 | -115 |
+| FanDuel | 217.5 | -108 | -112 |
 
 
 ## New York Knicks vs Boston Celtics
@@ -52,7 +52,7 @@ Game Start: 5/17/2025, 12:00:00 AM
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 209 | -108 | -112 |
+| DraftKings | 209.5 | -110 | -110 |
 | FanDuel | 209.5 | -110 | -110 |
 | BetMGM | 210.5 | -105 | -115 |
 
