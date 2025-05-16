@@ -2,34 +2,34 @@
 
 ## Games Being Analyzed
 
-- New York Knicks vs Boston Celtics (5/17/2025, 12:00:00 AM)
+- New York Knicks vs Boston Celtics (5/17/2025, 12:05:00 AM)
 - Oklahoma City Thunder vs Denver Nuggets (5/18/2025, 7:40:00 PM)
 
 # Available NBA Betting Lines
 
 ## New York Knicks vs Boston Celtics
-Game Start: 5/17/2025, 12:00:00 AM
+Game Start: 5/17/2025, 12:05:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -142 | 120 |
-| FanDuel | -148 | 126 |
-| BetMGM | -145 | 120 |
+| FanDuel | -142 | 120 |
+| BetMGM | -145 | 118 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -2.5 (-110) | 2.5 (-110) |
+| DraftKings | -2.5 (-112) | 2.5 (-108) |
 | FanDuel | -2.5 (-114) | 2.5 (-106) |
 | BetMGM | -2.5 (-110) | 2.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 211 | -108 | -112 |
-| FanDuel | 210 | -112 | -108 |
-| BetMGM | 210.5 | -110 | -110 |
+| DraftKings | 211.5 | -110 | -110 |
+| FanDuel | 210.5 | -110 | -110 |
+| BetMGM | 211.5 | -105 | -115 |
 
 
 ## Oklahoma City Thunder vs Denver Nuggets
@@ -38,21 +38,22 @@ Game Start: 5/18/2025, 7:40:00 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -295 | 240 |
+| FanDuel | -310 | 250 |
 | DraftKings | -278 | 225 |
+| BetMGM | -325 | 240 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -7.5 (-110) | 7.5 (-110) |
+| FanDuel | -7.5 (-114) | 7.5 (-106) |
 | DraftKings | -7 (-110) | 7 (-110) |
 | BetMGM | -7.5 (-110) | 7.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| FanDuel | 212 | -114 | -106 |
-| DraftKings | 212 | -108 | -112 |
+| FanDuel | 213.5 | -112 | -108 |
+| DraftKings | 212.5 | -112 | -108 |
 | BetMGM | 212.5 | -110 | -110 |
 
 
@@ -63,7 +64,7 @@ No significant edges detected in the current betting markets.
 # Current Team Lineups
 
 ## Boston Celtics @ New York Knicks
-Game starts at 5/17/2025, 12:00:00 AM
+Game starts at 5/17/2025, 12:05:00 AM
 *Projected Lineup*
 
 ### Boston Celtics Lineup
