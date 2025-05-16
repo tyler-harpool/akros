@@ -1,36 +1,11 @@
-# NBA Betting Analysis for Thursday, May 15, 2025
+# NBA Betting Analysis for Friday, May 16, 2025
 
 ## Games Being Analyzed
 
-- Denver Nuggets vs Oklahoma City Thunder (5/16/2025, 12:40:00 AM)
 - New York Knicks vs Boston Celtics (5/17/2025, 12:00:00 AM)
+- Oklahoma City Thunder vs Denver Nuggets (5/18/2025, 7:40:00 PM)
 
 # Available NBA Betting Lines
-
-## Denver Nuggets vs Oklahoma City Thunder
-Game Start: 5/16/2025, 12:40:00 AM
-
-### Moneyline Odds
-| Bookmaker | Home Team | Away Team |
-|-----------|-----------|----------|
-| DraftKings | 164 | -198 |
-| BetMGM | 165 | -200 |
-| FanDuel | 168 | -200 |
-
-### Spread Odds
-| Bookmaker | Home Team | Away Team |
-|-----------|-----------|----------|
-| DraftKings | 5 (-108) | -5 (-112) |
-| BetMGM | 5.5 (-110) | -5.5 (-110) |
-| FanDuel | 5 (-105) | -5 (-115) |
-
-### Totals (Over/Under)
-| Bookmaker | Points | Over | Under |
-|-----------|--------|------|-------|
-| DraftKings | 216 | -110 | -110 |
-| BetMGM | 215.5 | -115 | -105 |
-| FanDuel | 216.5 | -108 | -112 |
-
 
 ## New York Knicks vs Boston Celtics
 Game Start: 5/17/2025, 12:00:00 AM
@@ -38,23 +13,47 @@ Game Start: 5/17/2025, 12:00:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -135 | 114 |
-| FanDuel | -146 | 124 |
-| BetMGM | -140 | 115 |
+| DraftKings | -142 | 120 |
+| FanDuel | -148 | 126 |
+| BetMGM | -145 | 120 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -2.5 (-110) | 2.5 (-110) |
-| FanDuel | -2.5 (-110) | 2.5 (-110) |
-| BetMGM | -2.5 (-105) | 2.5 (-115) |
+| FanDuel | -2.5 (-114) | 2.5 (-106) |
+| BetMGM | -2.5 (-110) | 2.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 209.5 | -110 | -110 |
-| FanDuel | 209.5 | -110 | -110 |
-| BetMGM | 210.5 | -105 | -115 |
+| DraftKings | 211 | -108 | -112 |
+| FanDuel | 210 | -112 | -108 |
+| BetMGM | 210.5 | -110 | -110 |
+
+
+## Oklahoma City Thunder vs Denver Nuggets
+Game Start: 5/18/2025, 7:40:00 PM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| FanDuel | -295 | 240 |
+| DraftKings | -278 | 225 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| FanDuel | -7.5 (-110) | 7.5 (-110) |
+| DraftKings | -7 (-110) | 7 (-110) |
+| BetMGM | -7.5 (-110) | 7.5 (-110) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| FanDuel | 212 | -114 | -106 |
+| DraftKings | 212 | -108 | -112 |
+| BetMGM | 212.5 | -110 | -110 |
 
 
 # Betting Edge Analysis
@@ -62,33 +61,6 @@ Game Start: 5/17/2025, 12:00:00 AM
 No significant edges detected in the current betting markets.
 
 # Current Team Lineups
-
-## Oklahoma City Thunder @ Denver Nuggets
-Game starts at 8:30 PM ET
-*Projected Lineup*
-
-### Thunder Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | S. Gilgeous-Alexander | ✓ |
-| SG | Luguentz Dort | ✓ |
-| SF | J. Williams | ✓ |
-| PF | Chet Holmgren | ✓ |
-| C | I. Hartenstein | ✓ |
-| G | N. Topic |  |
-
-### Nuggets Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | J. Murray | ✓ |
-| SG | C. Braun | ✓ |
-| SF | M. Porter | ✓ |
-| PF | Aaron Gordon | ✓ |
-| C | Nikola Jokic | ✓ |
-| C | D. Holmes |  |
-| G | J. Murray |  |
-| F | H. Tyson |  |
-
 
 ## Boston Celtics @ New York Knicks
 Game starts at 5/17/2025, 12:00:00 AM
@@ -98,6 +70,17 @@ Game starts at 5/17/2025, 12:00:00 AM
 No lineup data available for this team.
 
 ### New York Knicks Lineup
+No lineup data available for this team.
+
+
+## Denver Nuggets @ Oklahoma City Thunder
+Game starts at 5/18/2025, 7:40:00 PM
+*Projected Lineup*
+
+### Denver Nuggets Lineup
+No lineup data available for this team.
+
+### Oklahoma City Thunder Lineup
 No lineup data available for this team.
 
 
