@@ -14,7 +14,7 @@ Game Start: 5/17/2025, 12:05:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -142 | 120 |
-| FanDuel | -142 | 120 |
+| FanDuel | -148 | 126 |
 | BetMGM | -145 | 118 |
 
 ### Spread Odds
@@ -28,8 +28,8 @@ Game Start: 5/17/2025, 12:05:00 AM
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | DraftKings | 211.5 | -110 | -110 |
-| FanDuel | 210.5 | -110 | -110 |
-| BetMGM | 211.5 | -105 | -115 |
+| FanDuel | 211.5 | -110 | -110 |
+| BetMGM | 211.5 | -110 | -110 |
 
 
 ## Oklahoma City Thunder vs Denver Nuggets
@@ -38,9 +38,9 @@ Game Start: 5/18/2025, 7:40:00 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -310 | 250 |
-| DraftKings | -278 | 225 |
-| BetMGM | -325 | 240 |
+| FanDuel | -295 | 240 |
+| DraftKings | -290 | 235 |
+| BetMGM | -300 | 240 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
@@ -52,9 +52,9 @@ Game Start: 5/18/2025, 7:40:00 PM
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| FanDuel | 213.5 | -112 | -108 |
+| FanDuel | 213 | -110 | -110 |
 | DraftKings | 212.5 | -112 | -108 |
-| BetMGM | 212.5 | -110 | -110 |
+| BetMGM | 212.5 | -115 | -105 |
 
 
 # Betting Edge Analysis
