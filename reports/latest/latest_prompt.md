@@ -13,23 +13,23 @@ Game Start: 5/18/2025, 7:40:00 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -335 | 270 |
-| DraftKings | -325 | 260 |
-| BetMGM | -350 | 280 |
+| FanDuel | -320 | 260 |
+| DraftKings | -310 | 250 |
+| BetMGM | -325 | 260 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -8.5 (-114) | 8.5 (-106) |
-| DraftKings | -8 (-110) | 8 (-110) |
-| BetMGM | -8.5 (-110) | 8.5 (-110) |
+| FanDuel | -8.5 (-108) | 8.5 (-112) |
+| DraftKings | -8 (-108) | 8 (-112) |
+| BetMGM | -8.5 (-105) | 8.5 (-115) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | FanDuel | 213.5 | -112 | -108 |
-| DraftKings | 213 | -110 | -110 |
-| BetMGM | 212.5 | -115 | -105 |
+| DraftKings | 213.5 | -112 | -108 |
+| BetMGM | 213.5 | -110 | -110 |
 
 
 ## New York Knicks vs Indiana Pacers
@@ -38,20 +38,23 @@ Game Start: 5/22/2025, 12:05:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -180 | 150 |
-| FanDuel | -178 | 150 |
+| DraftKings | -175 | 145 |
+| FanDuel | -184 | 154 |
+| BetMGM | -185 | 150 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -3.5 (-112) | 3.5 (-108) |
+| DraftKings | -4 (-110) | 4 (-110) |
 | FanDuel | -4 (-112) | 4 (-108) |
+| BetMGM | -4.5 (-110) | 4.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 222.5 | -108 | -112 |
-| FanDuel | 222.5 | -108 | -112 |
+| DraftKings | 223 | -110 | -110 |
+| FanDuel | 223 | -110 | -110 |
+| BetMGM | 222.5 | -115 | -105 |
 
 
 # Betting Edge Analysis
