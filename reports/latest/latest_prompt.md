@@ -1,4 +1,4 @@
-# NBA Betting Analysis for Saturday, May 17, 2025
+# NBA Betting Analysis for Sunday, May 18, 2025
 
 ## Games Being Analyzed
 
@@ -13,14 +13,14 @@ Game Start: 5/18/2025, 7:40:00 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -335 | 270 |
-| DraftKings | -325 | 260 |
+| FanDuel | -330 | 265 |
+| DraftKings | -310 | 250 |
 | BetMGM | -325 | 260 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -8.5 (-108) | 8.5 (-112) |
+| FanDuel | -8.5 (-110) | 8.5 (-110) |
 | DraftKings | -8 (-112) | 8 (-108) |
 | BetMGM | -8.5 (-105) | 8.5 (-115) |
 
@@ -38,8 +38,8 @@ Game Start: 5/22/2025, 12:05:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -175 | 145 |
-| FanDuel | -190 | 160 |
+| DraftKings | -180 | 150 |
+| FanDuel | -184 | 154 |
 | BetMGM | -185 | 150 |
 
 ### Spread Odds
@@ -64,14 +64,32 @@ No significant edges detected in the current betting markets.
 # Current Team Lineups
 
 ## Denver Nuggets @ Oklahoma City Thunder
-Game starts at 5/18/2025, 7:40:00 PM
+Game starts at 3:30 PM ET
 *Projected Lineup*
 
-### Denver Nuggets Lineup
-No lineup data available for this team.
+### Nuggets Lineup
+| Position | Player | Starter |
+|----------|--------|--------|
+| PG | J. Murray | ✓ |
+| SG | C. Braun | ✓ |
+| SF | M. Porter | ✓ |
+| PF | A. Gordon | ✓ |
+| C | Nikola Jokic | ✓ |
+| C | D. Holmes |  |
+| G | J. Murray |  |
+| G | R. Westbrook |  |
+| F | A. Gordon |  |
+| F | H. Tyson |  |
 
-### Oklahoma City Thunder Lineup
-No lineup data available for this team.
+### Thunder Lineup
+| Position | Player | Starter |
+|----------|--------|--------|
+| PG | S. Gilgeous-Alexander | ✓ |
+| SG | Luguentz Dort | ✓ |
+| SF | J. Williams | ✓ |
+| PF | Chet Holmgren | ✓ |
+| C | I. Hartenstein | ✓ |
+| G | N. Topic |  |
 
 
 ## Indiana Pacers @ New York Knicks
