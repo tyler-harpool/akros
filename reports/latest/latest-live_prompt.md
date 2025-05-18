@@ -13,7 +13,7 @@ Game Start: 5/18/2025, 7:40:00 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -335 | 270 |
+| FanDuel | -340 | 275 |
 | DraftKings | -325 | 260 |
 | BetMGM | -325 | 260 |
 
