@@ -2,18 +2,18 @@
 
 ## Games Being Analyzed
 
-- Oklahoma City Thunder vs Minnesota Timberwolves (5/21/2025, 12:30:00 AM)
+- Oklahoma City Thunder vs Minnesota Timberwolves (5/21/2025, 12:40:00 AM)
 - New York Knicks vs Indiana Pacers (5/22/2025, 12:05:00 AM)
 
 # Available NBA Betting Lines
 
 ## Oklahoma City Thunder vs Minnesota Timberwolves
-Game Start: 5/21/2025, 12:30:00 AM
+Game Start: 5/21/2025, 12:40:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -295 | 240 |
+| FanDuel | -300 | 245 |
 | DraftKings | -290 | 235 |
 | BetMGM | -300 | 240 |
 
@@ -39,7 +39,7 @@ Game Start: 5/22/2025, 12:05:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -180 | 150 |
-| FanDuel | -180 | 152 |
+| FanDuel | -180 | 154 |
 | BetMGM | -185 | 150 |
 
 ### Spread Odds
@@ -64,7 +64,7 @@ No significant edges detected in the current betting markets.
 # Current Team Lineups
 
 ## Minnesota Timberwolves @ Oklahoma City Thunder
-Game starts at 5/21/2025, 12:30:00 AM
+Game starts at 5/21/2025, 12:40:00 AM
 *Projected Lineup*
 
 ### Minnesota Timberwolves Lineup
