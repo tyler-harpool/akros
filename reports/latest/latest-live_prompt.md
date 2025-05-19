@@ -1,35 +1,35 @@
-# LIVE IN-GAME NBA Betting Analysis for Sunday, May 18, 2025
+# LIVE IN-GAME NBA Betting Analysis for Monday, May 19, 2025
 
 ## Games Being Analyzed
 
-- Oklahoma City Thunder vs Denver Nuggets (5/18/2025, 7:40:00 PM)
+- Oklahoma City Thunder vs Minnesota Timberwolves (5/21/2025, 12:30:00 AM)
 - New York Knicks vs Indiana Pacers (5/22/2025, 12:05:00 AM)
 
 # Available NBA Betting Lines
 
-## Oklahoma City Thunder vs Denver Nuggets
-Game Start: 5/18/2025, 7:40:00 PM
+## Oklahoma City Thunder vs Minnesota Timberwolves
+Game Start: 5/21/2025, 12:30:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -340 | 275 |
-| DraftKings | -325 | 260 |
-| BetMGM | -325 | 260 |
+| FanDuel | -295 | 240 |
+| DraftKings | -290 | 235 |
+| BetMGM | -300 | 240 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -8.5 (-110) | 8.5 (-110) |
-| DraftKings | -8 (-112) | 8 (-108) |
-| BetMGM | -8.5 (-105) | 8.5 (-115) |
+| FanDuel | -7.5 (-110) | 7.5 (-110) |
+| DraftKings | -7.5 (-112) | 7.5 (-108) |
+| BetMGM | -7.5 (-110) | 7.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| FanDuel | 213.5 | -110 | -110 |
-| DraftKings | 213.5 | -112 | -108 |
-| BetMGM | 213.5 | -110 | -110 |
+| FanDuel | 214.5 | -110 | -110 |
+| DraftKings | 214 | -112 | -108 |
+| BetMGM | 214.5 | -115 | -105 |
 
 
 ## New York Knicks vs Indiana Pacers
@@ -38,15 +38,15 @@ Game Start: 5/22/2025, 12:05:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -175 | 145 |
-| FanDuel | -184 | 154 |
+| DraftKings | -180 | 150 |
+| FanDuel | -180 | 152 |
 | BetMGM | -185 | 150 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -4 (-110) | 4 (-110) |
-| FanDuel | -4.5 (-106) | 4.5 (-114) |
+| FanDuel | -4 (-114) | 4 (-106) |
 | BetMGM | -4.5 (-105) | 4.5 (-115) |
 
 ### Totals (Over/Under)
@@ -63,11 +63,11 @@ No significant edges detected in the current betting markets.
 
 # Current Team Lineups
 
-## Denver Nuggets @ Oklahoma City Thunder
-Game starts at 5/18/2025, 7:40:00 PM
+## Minnesota Timberwolves @ Oklahoma City Thunder
+Game starts at 5/21/2025, 12:30:00 AM
 *Projected Lineup*
 
-### Denver Nuggets Lineup
+### Minnesota Timberwolves Lineup
 No lineup data available for this team.
 
 ### Oklahoma City Thunder Lineup
