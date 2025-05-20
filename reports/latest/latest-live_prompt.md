@@ -1,4 +1,4 @@
-# LIVE IN-GAME NBA Betting Analysis for Monday, May 19, 2025
+# LIVE IN-GAME NBA Betting Analysis for Tuesday, May 20, 2025
 
 ## Games Being Analyzed
 
@@ -14,22 +14,22 @@ Game Start: 5/21/2025, 12:40:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | FanDuel | -300 | 245 |
-| DraftKings | -290 | 235 |
-| BetMGM | -300 | 240 |
+| DraftKings | -305 | 245 |
+| BetMGM | -325 | 260 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | FanDuel | -7.5 (-110) | 7.5 (-110) |
-| DraftKings | -7.5 (-112) | 7.5 (-108) |
-| BetMGM | -7.5 (-110) | 7.5 (-110) |
+| DraftKings | -7.5 (-110) | 7.5 (-110) |
+| BetMGM | -7.5 (-105) | 7.5 (-115) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| FanDuel | 214.5 | -110 | -110 |
-| DraftKings | 214 | -112 | -108 |
-| BetMGM | 214.5 | -115 | -105 |
+| FanDuel | 215.5 | -112 | -108 |
+| DraftKings | 215.5 | -110 | -110 |
+| BetMGM | 216.5 | -105 | -115 |
 
 
 ## New York Knicks vs Indiana Pacers
@@ -39,22 +39,22 @@ Game Start: 5/22/2025, 12:05:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -180 | 150 |
-| FanDuel | -180 | 154 |
-| BetMGM | -185 | 150 |
+| FanDuel | -180 | 152 |
+| BetMGM | -190 | 155 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -4 (-110) | 4 (-110) |
-| FanDuel | -4 (-114) | 4 (-106) |
-| BetMGM | -4.5 (-105) | 4.5 (-115) |
+| DraftKings | -4.5 (-110) | 4.5 (-110) |
+| FanDuel | -4 (-110) | 4 (-110) |
+| BetMGM | -4.5 (-110) | 4.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 223 | -110 | -110 |
-| FanDuel | 223 | -110 | -110 |
-| BetMGM | 222.5 | -115 | -105 |
+| DraftKings | 223.5 | -110 | -110 |
+| FanDuel | 223.5 | -108 | -112 |
+| BetMGM | 223.5 | -110 | -110 |
 
 
 # Betting Edge Analysis
