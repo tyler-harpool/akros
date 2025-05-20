@@ -1,4 +1,4 @@
-# NBA Betting Analysis for Monday, May 19, 2025
+# NBA Betting Analysis for Tuesday, May 20, 2025
 
 ## Games Being Analyzed
 
@@ -13,7 +13,7 @@ Game Start: 5/21/2025, 12:40:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -295 | 240 |
+| FanDuel | -320 | 260 |
 | DraftKings | -305 | 245 |
 | BetMGM | -325 | 260 |
 
@@ -28,8 +28,8 @@ Game Start: 5/21/2025, 12:40:00 AM
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | FanDuel | 215.5 | -112 | -108 |
-| DraftKings | 215.5 | -110 | -110 |
-| BetMGM | 215.5 | -110 | -110 |
+| DraftKings | 215.5 | -112 | -108 |
+| BetMGM | 216.5 | -105 | -115 |
 
 
 ## New York Knicks vs Indiana Pacers
@@ -39,21 +39,21 @@ Game Start: 5/22/2025, 12:05:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -180 | 150 |
-| FanDuel | -188 | 158 |
-| BetMGM | -185 | 150 |
+| FanDuel | -194 | 162 |
+| BetMGM | -190 | 155 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -4.5 (-110) | 4.5 (-110) |
-| FanDuel | -4 (-114) | 4 (-106) |
+| FanDuel | -4.5 (-106) | 4.5 (-114) |
 | BetMGM | -4.5 (-110) | 4.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 223.5 | -110 | -110 |
-| FanDuel | 223 | -110 | -110 |
+| DraftKings | 223 | -110 | -110 |
+| FanDuel | 223.5 | -108 | -112 |
 | BetMGM | 223.5 | -110 | -110 |
 
 
@@ -64,14 +64,27 @@ No significant edges detected in the current betting markets.
 # Current Team Lineups
 
 ## Minnesota Timberwolves @ Oklahoma City Thunder
-Game starts at 5/21/2025, 12:40:00 AM
+Game starts at 8:30 PM ET
 *Projected Lineup*
 
-### Minnesota Timberwolves Lineup
-No lineup data available for this team.
+### Timberwolves Lineup
+| Position | Player | Starter |
+|----------|--------|--------|
+| PG | Mike Conley | ✓ |
+| SG | A. Edwards | ✓ |
+| SF | J. McDaniels | ✓ |
+| PF | Julius Randle | ✓ |
+| C | Rudy Gobert | ✓ |
 
-### Oklahoma City Thunder Lineup
-No lineup data available for this team.
+### Thunder Lineup
+| Position | Player | Starter |
+|----------|--------|--------|
+| PG | S. Gilgeous-Alexander | ✓ |
+| SG | Luguentz Dort | ✓ |
+| SF | J. Williams | ✓ |
+| PF | Chet Holmgren | ✓ |
+| C | I. Hartenstein | ✓ |
+| G | N. Topic |  |
 
 
 ## Indiana Pacers @ New York Knicks
