@@ -14,22 +14,22 @@ Game Start: 5/22/2025, 12:05:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -180 | 150 |
-| FanDuel | -190 | 160 |
+| FanDuel | -196 | 164 |
 | BetMGM | -190 | 155 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -4.5 (-110) | 4.5 (-110) |
-| FanDuel | -4.5 (-106) | 4.5 (-114) |
+| FanDuel | -4.5 (-112) | 4.5 (-108) |
 | BetMGM | -4.5 (-110) | 4.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 223.5 | -108 | -112 |
-| FanDuel | 224 | -110 | -110 |
-| BetMGM | 224.5 | -105 | -115 |
+| DraftKings | 222.5 | -110 | -110 |
+| FanDuel | 223.5 | -110 | -110 |
+| BetMGM | 222.5 | -115 | -105 |
 
 
 ## Oklahoma City Thunder vs Minnesota Timberwolves
@@ -39,22 +39,22 @@ Game Start: 5/23/2025, 12:40:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -325 | 260 |
-| FanDuel | -310 | 250 |
+| FanDuel | -320 | 260 |
 | BetMGM | -325 | 260 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -7.5 (-110) | 7.5 (-110) |
-| FanDuel | -7.5 (-112) | 7.5 (-108) |
-| BetMGM | -7.5 (-115) | 7.5 (-105) |
+| DraftKings | -7.5 (-115) | 7.5 (-105) |
+| FanDuel | -7.5 (-114) | 7.5 (-106) |
+| BetMGM | -7.5 (-110) | 7.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 214 | -110 | -110 |
+| DraftKings | 214.5 | -110 | -110 |
 | FanDuel | 214 | -112 | -108 |
-| BetMGM | 213.5 | -115 | -105 |
+| BetMGM | 214.5 | -110 | -110 |
 
 
 # Betting Edge Analysis
