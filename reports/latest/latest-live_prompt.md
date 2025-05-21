@@ -1,35 +1,47 @@
-# LIVE IN-GAME NBA Betting Analysis for Tuesday, May 20, 2025
+# LIVE IN-GAME NBA Betting Analysis for Wednesday, May 21, 2025
+
+## Live Betting Context
+
+Some or all games in this analysis are currently in progress. When analyzing live betting opportunities:
+
+1. Consider the current game state and how it affects odds
+2. Look for overreactions to recent events (scoring runs, injuries, foul trouble)
+3. Pay special attention to momentum shifts that bookmakers might not have fully adjusted for
+4. Be more selective with recommendations, as live markets can be more efficient
+5. Consider game pace and time remaining when evaluating totals
 
 ## Games Being Analyzed
 
-- Oklahoma City Thunder vs Minnesota Timberwolves (5/21/2025, 12:40:00 AM)
+- Oklahoma City Thunder vs Minnesota Timberwolves (5/21/2025, 12:44:14 AM) (IN PROGRESS)
 - New York Knicks vs Indiana Pacers (5/22/2025, 12:05:00 AM)
 
 # Available NBA Betting Lines
 
-## Oklahoma City Thunder vs Minnesota Timberwolves
-Game Start: 5/21/2025, 12:40:00 AM
+> **LIVE BETTING ANALYSIS**: Some or all of these games are currently in progress. Odds are being actively updated based on game events.
+
+## Oklahoma City Thunder vs Minnesota Timberwolves (IN PROGRESS)
+Game Start: 5/21/2025, 12:44:14 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -310 | 250 |
-| DraftKings | -305 | 245 |
-| BetMGM | -325 | 260 |
+| FanDuel | -1450 | 700 |
+| DraftKings | -1150 | 650 |
+| BetMGM | -1200 | 650 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -7.5 (-110) | 7.5 (-110) |
-| DraftKings | -7.5 (-110) | 7.5 (-110) |
-| BetMGM | -7.5 (-105) | 7.5 (-115) |
+| FanDuel | -10.5 (-130) | 10.5 (-102) |
+| DraftKings | -10.5 (-115) | 10.5 (-115) |
+| BetMGM | -10.5 (-125) | 10.5 (-105) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| FanDuel | 215.5 | -112 | -108 |
-| DraftKings | 215.5 | -110 | -110 |
-| BetMGM | 216.5 | -105 | -115 |
+| FanDuel | 195.5 | -104 | -128 |
+| DraftKings | 196.5 | -115 | -115 |
+| BetMGM | 196.5 | -125 | -105 |
 
 
 ## New York Knicks vs Indiana Pacers
@@ -39,7 +51,7 @@ Game Start: 5/22/2025, 12:05:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -180 | 150 |
-| FanDuel | -194 | 162 |
+| FanDuel | -186 | 156 |
 | BetMGM | -190 | 155 |
 
 ### Spread Odds
@@ -52,26 +64,41 @@ Game Start: 5/22/2025, 12:05:00 AM
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 223.5 | -110 | -110 |
-| FanDuel | 223.5 | -108 | -112 |
-| BetMGM | 223.5 | -110 | -110 |
+| DraftKings | 224 | -110 | -110 |
+| FanDuel | 224 | -110 | -110 |
+| BetMGM | 224.5 | -110 | -110 |
 
 
 # Betting Edge Analysis
+
+> Note: Edge detection for live games may be less reliable due to rapidly changing odds. Use additional caution.
 
 No significant edges detected in the current betting markets.
 
 # Current Team Lineups
 
 ## Minnesota Timberwolves @ Oklahoma City Thunder
-Game starts at 5/21/2025, 12:40:00 AM
-*Projected Lineup*
+Game starts at 8:30 PM ET
+**CONFIRMED LINEUP**
 
-### Minnesota Timberwolves Lineup
-No lineup data available for this team.
+### Timberwolves Lineup
+| Position | Player | Starter |
+|----------|--------|--------|
+| PG | Mike Conley | ✓ |
+| SG | A. Edwards | ✓ |
+| SF | J. McDaniels | ✓ |
+| PF | Julius Randle | ✓ |
+| C | Rudy Gobert | ✓ |
 
-### Oklahoma City Thunder Lineup
-No lineup data available for this team.
+### Thunder Lineup
+| Position | Player | Starter |
+|----------|--------|--------|
+| PG | S. Gilgeous-Alexander | ✓ |
+| SG | Luguentz Dort | ✓ |
+| SF | J. Williams | ✓ |
+| PF | Chet Holmgren | ✓ |
+| C | I. Hartenstein | ✓ |
+| G | N. Topic |  |
 
 
 ## Indiana Pacers @ New York Knicks
@@ -93,10 +120,10 @@ No lineup data available for this team.
 
 Please analyze the provided betting opportunities, focusing on the following:
 
-1. Evaluate the statistical edges identified in the analysis
-2. Consider starting lineups and how they might affect each game's dynamics
-3. Factor in how injuries might impact these betting edges
-4. Consider any playoff or tournament dynamics if applicable
-5. Identify which markets (moneyline, spread, totals) show the greatest inefficiencies
+1. Evaluate the live betting opportunities, considering current game state
+2. Look for odds that haven't fully adjusted to game flow and momentum shifts
+3. Consider how fatigue and foul trouble may impact the remainder of the game
+4. Focus on total points markets that might not account for pace changes
+5. Be selective and only recommend high-confidence live opportunities
 
-IMPORTANT: After your analysis, provide exactly 3-5 concrete bet recommendations in a section called "RECOMMENDED BETS". Format these recommendations as a markdown table with these exact columns: Game/Series, Bet Type, Selection, Odds, Stake (1-5 units), and Reasoning. Include REAL ODDS from the data (not placeholders). For each bet, provide a short but clear explanation of why this specific bet has value.
+IMPORTANT: After your analysis, provide exactly 3-5 concrete bet recommendations in a section called "RECOMMENDED BETS". Format these recommendations as a markdown table with these exact columns: Game/Series, Bet Type, Selection, Odds, Stake (1-5 units), and Reasoning. Include REAL ODDS from the data (not placeholders). For each bet, provide a short but clear explanation of why this specific bet has value. For live bets, be sure to note that these are IN-GAME recommendations in the Reasoning column.
