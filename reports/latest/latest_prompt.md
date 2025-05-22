@@ -3,7 +3,7 @@
 ## Games Being Analyzed
 
 - Oklahoma City Thunder vs Minnesota Timberwolves (5/23/2025, 12:40:00 AM)
-- New York Knicks vs Indiana Pacers (5/24/2025, 12:00:00 AM)
+- New York Knicks vs Indiana Pacers (5/24/2025, 12:05:00 AM)
 
 # Available NBA Betting Lines
 
@@ -13,48 +13,48 @@ Game Start: 5/23/2025, 12:40:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -290 | 235 |
-| FanDuel | -295 | 240 |
-| BetMGM | -295 | 230 |
+| DraftKings | -305 | 245 |
+| FanDuel | -320 | 260 |
+| BetMGM | -325 | 260 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -7.5 (-108) | 7.5 (-112) |
-| FanDuel | -7.5 (-108) | 7.5 (-112) |
-| BetMGM | -7.5 (-105) | 7.5 (-115) |
+| DraftKings | -8 (-108) | 8 (-112) |
+| FanDuel | -8 (-110) | 8 (-110) |
+| BetMGM | -8.5 (-105) | 8.5 (-115) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 216.5 | -110 | -110 |
-| FanDuel | 216.5 | -112 | -108 |
-| BetMGM | 217.5 | -110 | -110 |
+| DraftKings | 217 | -110 | -110 |
+| FanDuel | 217 | -110 | -110 |
+| BetMGM | 217.5 | -105 | -115 |
 
 
 ## New York Knicks vs Indiana Pacers
-Game Start: 5/24/2025, 12:00:00 AM
+Game Start: 5/24/2025, 12:05:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -225 | 185 |
-| FanDuel | -230 | 190 |
-| BetMGM | -235 | 190 |
+| DraftKings | -230 | 190 |
+| FanDuel | -255 | 210 |
+| BetMGM | -235 | 195 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -5.5 (-110) | 5.5 (-110) |
-| FanDuel | -5.5 (-112) | 5.5 (-108) |
-| BetMGM | -5.5 (-110) | 5.5 (-110) |
+| DraftKings | -5.5 (-112) | 5.5 (-108) |
+| FanDuel | -6 (-110) | 6 (-110) |
+| BetMGM | -5.5 (-115) | 5.5 (-105) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 227 | -110 | -110 |
-| FanDuel | 227 | -110 | -110 |
-| BetMGM | 226.5 | -115 | -105 |
+| DraftKings | 226.5 | -110 | -110 |
+| FanDuel | 226 | -110 | -110 |
+| BetMGM | 225.5 | -110 | -110 |
 
 
 # Betting Edge Analysis
@@ -88,7 +88,7 @@ Game starts at 8:30 PM ET
 
 
 ## Indiana Pacers @ New York Knicks
-Game starts at 5/24/2025, 12:00:00 AM
+Game starts at 5/24/2025, 12:05:00 AM
 *Projected Lineup*
 
 ### Indiana Pacers Lineup
