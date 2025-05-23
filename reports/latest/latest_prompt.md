@@ -1,36 +1,11 @@
-# NBA Betting Analysis for Thursday, May 22, 2025
+# NBA Betting Analysis for Friday, May 23, 2025
 
 ## Games Being Analyzed
 
-- Oklahoma City Thunder vs Minnesota Timberwolves (5/23/2025, 12:40:00 AM)
 - New York Knicks vs Indiana Pacers (5/24/2025, 12:05:00 AM)
+- Minnesota Timberwolves vs Oklahoma City Thunder (5/25/2025, 12:30:00 AM)
 
 # Available NBA Betting Lines
-
-## Oklahoma City Thunder vs Minnesota Timberwolves
-Game Start: 5/23/2025, 12:40:00 AM
-
-### Moneyline Odds
-| Bookmaker | Home Team | Away Team |
-|-----------|-----------|----------|
-| DraftKings | -305 | 245 |
-| FanDuel | -320 | 260 |
-| BetMGM | -325 | 260 |
-
-### Spread Odds
-| Bookmaker | Home Team | Away Team |
-|-----------|-----------|----------|
-| DraftKings | -8 (-108) | 8 (-112) |
-| FanDuel | -8 (-110) | 8 (-110) |
-| BetMGM | -8.5 (-105) | 8.5 (-115) |
-
-### Totals (Over/Under)
-| Bookmaker | Points | Over | Under |
-|-----------|--------|------|-------|
-| DraftKings | 217 | -110 | -110 |
-| FanDuel | 217 | -110 | -110 |
-| BetMGM | 217.5 | -105 | -115 |
-
 
 ## New York Knicks vs Indiana Pacers
 Game Start: 5/24/2025, 12:05:00 AM
@@ -38,23 +13,48 @@ Game Start: 5/24/2025, 12:05:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -230 | 190 |
+| DraftKings | -258 | 210 |
 | FanDuel | -255 | 210 |
-| BetMGM | -235 | 195 |
+| BetMGM | -250 | 200 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -5.5 (-112) | 5.5 (-108) |
-| FanDuel | -6 (-110) | 6 (-110) |
-| BetMGM | -5.5 (-115) | 5.5 (-105) |
+| DraftKings | -6 (-110) | 6 (-110) |
+| FanDuel | -6 (-112) | 6 (-108) |
+| BetMGM | -6.5 (-102) | 6.5 (-118) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 226.5 | -110 | -110 |
+| DraftKings | 225.5 | -112 | -108 |
 | FanDuel | 226 | -110 | -110 |
 | BetMGM | 225.5 | -110 | -110 |
+
+
+## Minnesota Timberwolves vs Oklahoma City Thunder
+Game Start: 5/25/2025, 12:30:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| FanDuel | 138 | -164 |
+| DraftKings | 136 | -162 |
+| BetMGM | 125 | -150 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| FanDuel | 3.5 (-110) | -3.5 (-110) |
+| DraftKings | 3.5 (-110) | -3.5 (-110) |
+| BetMGM | 3.5 (-115) | -3.5 (-105) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| FanDuel | 218 | -110 | -110 |
+| DraftKings | 217.5 | -112 | -108 |
+| BetMGM | 217.5 | -115 | -105 |
 
 
 # Betting Edge Analysis
@@ -62,30 +62,6 @@ Game Start: 5/24/2025, 12:05:00 AM
 No significant edges detected in the current betting markets.
 
 # Current Team Lineups
-
-## Minnesota Timberwolves @ Oklahoma City Thunder
-Game starts at 8:30 PM ET
-*Projected Lineup*
-
-### Timberwolves Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | Mike Conley | ✓ |
-| SG | A. Edwards | ✓ |
-| SF | J. McDaniels | ✓ |
-| PF | Julius Randle | ✓ |
-| C | Rudy Gobert | ✓ |
-
-### Thunder Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | S. Gilgeous-Alexander | ✓ |
-| SG | Luguentz Dort | ✓ |
-| SF | J. Williams | ✓ |
-| PF | Chet Holmgren | ✓ |
-| C | I. Hartenstein | ✓ |
-| G | N. Topic |  |
-
 
 ## Indiana Pacers @ New York Knicks
 Game starts at 5/24/2025, 12:05:00 AM
@@ -95,6 +71,17 @@ Game starts at 5/24/2025, 12:05:00 AM
 No lineup data available for this team.
 
 ### New York Knicks Lineup
+No lineup data available for this team.
+
+
+## Oklahoma City Thunder @ Minnesota Timberwolves
+Game starts at 5/25/2025, 12:30:00 AM
+*Projected Lineup*
+
+### Oklahoma City Thunder Lineup
+No lineup data available for this team.
+
+### Minnesota Timberwolves Lineup
 No lineup data available for this team.
 
 
