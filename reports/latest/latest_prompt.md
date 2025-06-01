@@ -1,60 +1,28 @@
-# NBA Betting Analysis for Friday, May 23, 2025
+# NBA Betting Analysis for Sunday, June 1, 2025
 
 ## Games Being Analyzed
 
-- New York Knicks vs Indiana Pacers (5/24/2025, 12:05:00 AM)
-- Minnesota Timberwolves vs Oklahoma City Thunder (5/25/2025, 12:30:00 AM)
+- Oklahoma City Thunder vs Indiana Pacers (6/6/2025, 12:30:00 AM)
 
 # Available NBA Betting Lines
 
-## New York Knicks vs Indiana Pacers
-Game Start: 5/24/2025, 12:05:00 AM
+## Oklahoma City Thunder vs Indiana Pacers
+Game Start: 6/6/2025, 12:30:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -258 | 210 |
-| FanDuel | -250 | 205 |
-| BetMGM | -250 | 200 |
+| DraftKings | -395 | 310 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -6 (-110) | 6 (-110) |
-| FanDuel | -6 (-110) | 6 (-110) |
-| BetMGM | -5.5 (-115) | 5.5 (-105) |
+| DraftKings | -9 (-110) | 9 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 224.5 | -112 | -108 |
-| FanDuel | 224.5 | -112 | -108 |
-| BetMGM | 224.5 | -110 | -110 |
-
-
-## Minnesota Timberwolves vs Oklahoma City Thunder
-Game Start: 5/25/2025, 12:30:00 AM
-
-### Moneyline Odds
-| Bookmaker | Home Team | Away Team |
-|-----------|-----------|----------|
-| FanDuel | 120 | -142 |
-| DraftKings | 120 | -142 |
-| BetMGM | 118 | -145 |
-
-### Spread Odds
-| Bookmaker | Home Team | Away Team |
-|-----------|-----------|----------|
-| FanDuel | 2.5 (-110) | -2.5 (-110) |
-| DraftKings | 2.5 (-108) | -2.5 (-112) |
-| BetMGM | 2.5 (-110) | -2.5 (-110) |
-
-### Totals (Over/Under)
-| Bookmaker | Points | Over | Under |
-|-----------|--------|------|-------|
-| FanDuel | 218 | -110 | -110 |
-| DraftKings | 218 | -112 | -108 |
-| BetMGM | 217.5 | -115 | -105 |
+| DraftKings | 230.5 | -108 | -112 |
 
 
 # Betting Edge Analysis
@@ -63,25 +31,14 @@ No significant edges detected in the current betting markets.
 
 # Current Team Lineups
 
-## Indiana Pacers @ New York Knicks
-Game starts at 5/24/2025, 12:05:00 AM
+## Indiana Pacers @ Oklahoma City Thunder
+Game starts at 6/6/2025, 12:30:00 AM
 *Projected Lineup*
 
 ### Indiana Pacers Lineup
 No lineup data available for this team.
 
-### New York Knicks Lineup
-No lineup data available for this team.
-
-
-## Oklahoma City Thunder @ Minnesota Timberwolves
-Game starts at 5/25/2025, 12:30:00 AM
-*Projected Lineup*
-
 ### Oklahoma City Thunder Lineup
-No lineup data available for this team.
-
-### Minnesota Timberwolves Lineup
 No lineup data available for this team.
 
 
