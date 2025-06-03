@@ -1,4 +1,4 @@
-# NBA Betting Analysis for Monday, June 2, 2025
+# NBA Betting Analysis for Tuesday, June 3, 2025
 
 ## Games Being Analyzed
 
