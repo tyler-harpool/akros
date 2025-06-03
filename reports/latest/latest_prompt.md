@@ -25,7 +25,7 @@ Game Start: 6/6/2025, 12:30:00 AM
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | FanDuel | 231.5 | -108 | -112 |
-| DraftKings | 230.5 | -112 | -108 |
+| DraftKings | 231 | -112 | -108 |
 
 
 # Betting Edge Analysis
