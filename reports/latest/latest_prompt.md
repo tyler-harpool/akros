@@ -1,4 +1,4 @@
-# NBA Betting Analysis for Tuesday, June 3, 2025
+# NBA Betting Analysis for Wednesday, June 4, 2025
 
 ## Games Being Analyzed
 
@@ -12,14 +12,14 @@ Game Start: 6/6/2025, 12:30:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -420 | 330 |
+| FanDuel | -405 | 320 |
 | DraftKings | -410 | 320 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | FanDuel | -9.5 (-108) | 9.5 (-112) |
-| DraftKings | -9 (-112) | 9 (-108) |
+| DraftKings | -9 (-115) | 9 (-105) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
