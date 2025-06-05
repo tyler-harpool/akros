@@ -12,20 +12,20 @@ Game Start: 6/6/2025, 12:30:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -420 | 330 |
-| DraftKings | -410 | 320 |
+| FanDuel | -450 | 350 |
+| DraftKings | -440 | 340 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -9.5 (-108) | 9.5 (-112) |
-| DraftKings | -9.5 (-108) | 9.5 (-112) |
+| FanDuel | -9.5 (-112) | 9.5 (-108) |
+| DraftKings | -10 (-105) | 10 (-115) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| FanDuel | 230.5 | -110 | -110 |
-| DraftKings | 231 | -112 | -108 |
+| FanDuel | 230.5 | -106 | -114 |
+| DraftKings | 230 | -108 | -112 |
 
 
 # Betting Edge Analysis
@@ -46,8 +46,8 @@ Game starts at 8:30 PM ET
 | SF | Aaron Nesmith | ✓ |
 | PF | Pascal Siakam | ✓ |
 | C | Myles Turner | ✓ |
-| C | T. Bradley |  |
 | C | I. Jackson |  |
+| C | T. Bradley |  |
 | F | J. Walker |  |
 
 ### Thunder Lineup
