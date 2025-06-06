@@ -1,31 +1,31 @@
-# NBA Betting Analysis for Thursday, June 5, 2025
+# NBA Betting Analysis for Friday, June 6, 2025
 
 ## Games Being Analyzed
 
-- Oklahoma City Thunder vs Indiana Pacers (6/6/2025, 12:30:00 AM)
+- Oklahoma City Thunder vs Indiana Pacers (6/9/2025, 12:05:00 AM)
 
 # Available NBA Betting Lines
 
 ## Oklahoma City Thunder vs Indiana Pacers
-Game Start: 6/6/2025, 12:30:00 AM
+Game Start: 6/9/2025, 12:05:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -460 | 360 |
-| DraftKings | -455 | 350 |
+| DraftKings | -520 | 390 |
+| FanDuel | -590 | 440 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -9.5 (-114) | 9.5 (-106) |
-| DraftKings | -10 (-108) | 10 (-112) |
+| DraftKings | -11 (-112) | 11 (-108) |
+| FanDuel | -11 (-110) | 11 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| FanDuel | 230 | -110 | -110 |
-| DraftKings | 230.5 | -112 | -108 |
+| DraftKings | 227 | -108 | -112 |
+| FanDuel | 227.5 | -112 | -108 |
 
 
 # Betting Edge Analysis
@@ -35,30 +35,14 @@ No significant edges detected in the current betting markets.
 # Current Team Lineups
 
 ## Indiana Pacers @ Oklahoma City Thunder
-Game starts at 8:30 PM ET
+Game starts at 6/9/2025, 12:05:00 AM
 *Projected Lineup*
 
-### Pacers Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | T. Haliburton | ✓ |
-| SG | A. Nembhard | ✓ |
-| SF | Aaron Nesmith | ✓ |
-| PF | Pascal Siakam | ✓ |
-| C | Myles Turner | ✓ |
-| C | I. Jackson |  |
-| C | T. Bradley |  |
-| F | J. Walker |  |
+### Indiana Pacers Lineup
+No lineup data available for this team.
 
-### Thunder Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | S. Gilgeous-Alexander | ✓ |
-| SG | Luguentz Dort | ✓ |
-| SF | J. Williams | ✓ |
-| PF | Chet Holmgren | ✓ |
-| C | I. Hartenstein | ✓ |
-| G | N. Topic |  |
+### Oklahoma City Thunder Lineup
+No lineup data available for this team.
 
 
 
