@@ -2,18 +2,18 @@
 
 ## Games Being Analyzed
 
-- Oklahoma City Thunder vs Indiana Pacers (6/9/2025, 12:05:00 AM)
+- Oklahoma City Thunder vs Indiana Pacers (6/9/2025, 12:00:00 AM)
 
 # Available NBA Betting Lines
 
 ## Oklahoma City Thunder vs Indiana Pacers
-Game Start: 6/9/2025, 12:05:00 AM
+Game Start: 6/9/2025, 12:00:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -520 | 390 |
-| FanDuel | -590 | 440 |
+| FanDuel | -590 | 430 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
@@ -24,7 +24,7 @@ Game Start: 6/9/2025, 12:05:00 AM
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 227 | -108 | -112 |
+| DraftKings | 227.5 | -110 | -110 |
 | FanDuel | 227.5 | -112 | -108 |
 
 
@@ -35,7 +35,7 @@ No significant edges detected in the current betting markets.
 # Current Team Lineups
 
 ## Indiana Pacers @ Oklahoma City Thunder
-Game starts at 6/9/2025, 12:05:00 AM
+Game starts at 6/9/2025, 12:00:00 AM
 *Projected Lineup*
 
 ### Indiana Pacers Lineup
