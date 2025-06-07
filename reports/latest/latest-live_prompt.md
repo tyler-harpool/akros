@@ -1,31 +1,31 @@
-# LIVE IN-GAME NBA Betting Analysis for Friday, June 6, 2025
+# LIVE IN-GAME NBA Betting Analysis for Saturday, June 7, 2025
 
 ## Games Being Analyzed
 
-- Oklahoma City Thunder vs Indiana Pacers (6/9/2025, 12:05:00 AM)
+- Oklahoma City Thunder vs Indiana Pacers (6/9/2025, 12:00:00 AM)
 
 # Available NBA Betting Lines
 
 ## Oklahoma City Thunder vs Indiana Pacers
-Game Start: 6/9/2025, 12:05:00 AM
+Game Start: 6/9/2025, 12:00:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -520 | 390 |
-| FanDuel | -590 | 440 |
+| FanDuel | -590 | 430 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -11 (-112) | 11 (-108) |
-| FanDuel | -11 (-110) | 11 (-110) |
+| FanDuel | -11 (-108) | 11 (-112) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 227 | -108 | -112 |
-| FanDuel | 227.5 | -112 | -108 |
+| DraftKings | 227.5 | -108 | -112 |
+| FanDuel | 227.5 | -114 | -106 |
 
 
 # Betting Edge Analysis
@@ -35,29 +35,14 @@ No significant edges detected in the current betting markets.
 # Current Team Lineups
 
 ## Indiana Pacers @ Oklahoma City Thunder
-Game starts at 8:30 PM ET
-**CONFIRMED LINEUP**
+Game starts at 6/9/2025, 12:00:00 AM
+*Projected Lineup*
 
-### Pacers Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | T. Haliburton | ✓ |
-| SG | A. Nembhard | ✓ |
-| SF | Aaron Nesmith | ✓ |
-| PF | Pascal Siakam | ✓ |
-| C | Myles Turner | ✓ |
-| C | I. Jackson |  |
-| F | J. Walker |  |
+### Indiana Pacers Lineup
+No lineup data available for this team.
 
-### Thunder Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | S. Gilgeous-Alexander | ✓ |
-| SG | Cason Wallace | ✓ |
-| SF | Luguentz Dort | ✓ |
-| PF | J. Williams | ✓ |
-| C | Chet Holmgren | ✓ |
-| G | N. Topic |  |
+### Oklahoma City Thunder Lineup
+No lineup data available for this team.
 
 
 
