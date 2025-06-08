@@ -12,8 +12,8 @@ Game Start: 6/9/2025, 12:00:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -520 | 390 |
-| FanDuel | -550 | 420 |
+| DraftKings | -535 | 400 |
+| FanDuel | -550 | 410 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
@@ -25,7 +25,7 @@ Game Start: 6/9/2025, 12:00:00 AM
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | DraftKings | 228.5 | -112 | -108 |
-| FanDuel | 228.5 | -112 | -108 |
+| FanDuel | 228.5 | -114 | -106 |
 
 
 # Betting Edge Analysis
