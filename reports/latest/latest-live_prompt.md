@@ -1,4 +1,4 @@
-# LIVE IN-GAME NBA Betting Analysis for Saturday, June 7, 2025
+# LIVE IN-GAME NBA Betting Analysis for Sunday, June 8, 2025
 
 ## Games Being Analyzed
 
@@ -13,19 +13,19 @@ Game Start: 6/9/2025, 12:00:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -520 | 390 |
-| FanDuel | -590 | 440 |
+| FanDuel | -560 | 420 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -11 (-112) | 11 (-108) |
+| DraftKings | -11 (-108) | 11 (-112) |
 | FanDuel | -11 (-108) | 11 (-112) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 227.5 | -108 | -112 |
-| FanDuel | 227.5 | -114 | -106 |
+| DraftKings | 228.5 | -112 | -108 |
+| FanDuel | 228.5 | -112 | -108 |
 
 
 # Betting Edge Analysis
