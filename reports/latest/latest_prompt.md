@@ -1,31 +1,31 @@
-# NBA Betting Analysis for Sunday, June 8, 2025
+# NBA Betting Analysis for Monday, June 9, 2025
 
 ## Games Being Analyzed
 
-- Oklahoma City Thunder vs Indiana Pacers (6/9/2025, 12:00:00 AM)
+- Indiana Pacers vs Oklahoma City Thunder (6/12/2025, 12:35:00 AM)
 
 # Available NBA Betting Lines
 
-## Oklahoma City Thunder vs Indiana Pacers
-Game Start: 6/9/2025, 12:00:00 AM
+## Indiana Pacers vs Oklahoma City Thunder
+Game Start: 6/12/2025, 12:35:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -520 | 390 |
-| FanDuel | -590 | 440 |
+| DraftKings | 180 | -218 |
+| FanDuel | 168 | -200 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -11 (-110) | 11 (-110) |
-| FanDuel | -11.5 (-110) | 11.5 (-110) |
+| DraftKings | 5.5 (-112) | -5.5 (-108) |
+| FanDuel | 4.5 (-106) | -4.5 (-114) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 228.5 | -112 | -108 |
-| FanDuel | 228.5 | -108 | -112 |
+| DraftKings | 228.5 | -110 | -110 |
+| FanDuel | 228.5 | -110 | -110 |
 
 
 # Betting Edge Analysis
@@ -34,30 +34,15 @@ No significant edges detected in the current betting markets.
 
 # Current Team Lineups
 
-## Indiana Pacers @ Oklahoma City Thunder
-Game starts at 8:00 PM ET
+## Oklahoma City Thunder @ Indiana Pacers
+Game starts at 6/12/2025, 12:35:00 AM
 *Projected Lineup*
 
-### Pacers Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | T. Haliburton | ✓ |
-| SG | A. Nembhard | ✓ |
-| SF | Aaron Nesmith | ✓ |
-| PF | Pascal Siakam | ✓ |
-| C | Myles Turner | ✓ |
-| C | I. Jackson |  |
-| F | J. Walker |  |
+### Oklahoma City Thunder Lineup
+No lineup data available for this team.
 
-### Thunder Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | S. Gilgeous-Alexander | ✓ |
-| SG | Cason Wallace | ✓ |
-| SF | Luguentz Dort | ✓ |
-| PF | J. Williams | ✓ |
-| C | Chet Holmgren | ✓ |
-| G | N. Topic |  |
+### Indiana Pacers Lineup
+No lineup data available for this team.
 
 
 
