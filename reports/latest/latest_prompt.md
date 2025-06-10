@@ -1,4 +1,4 @@
-# NBA Betting Analysis for Monday, June 9, 2025
+# NBA Betting Analysis for Tuesday, June 10, 2025
 
 ## Games Being Analyzed
 
@@ -24,7 +24,7 @@ Game Start: 6/12/2025, 12:35:00 AM
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 228 | -112 | -108 |
+| DraftKings | 228 | -110 | -110 |
 | FanDuel | 228.5 | -110 | -110 |
 
 
