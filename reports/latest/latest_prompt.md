@@ -24,7 +24,7 @@ Game Start: 6/12/2025, 12:35:00 AM
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 228 | -110 | -110 |
+| DraftKings | 228 | -112 | -108 |
 | FanDuel | 228.5 | -110 | -110 |
 
 
