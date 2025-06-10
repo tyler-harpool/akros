@@ -1,4 +1,4 @@
-# LIVE IN-GAME NBA Betting Analysis for Monday, June 9, 2025
+# LIVE IN-GAME NBA Betting Analysis for Tuesday, June 10, 2025
 
 ## Games Being Analyzed
 
@@ -12,19 +12,19 @@ Game Start: 6/12/2025, 12:35:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 164 | -198 |
-| FanDuel | 176 | -210 |
+| DraftKings | 180 | -218 |
+| FanDuel | 180 | -215 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 5 (-110) | -5 (-110) |
-| FanDuel | 4.5 (-106) | -4.5 (-114) |
+| DraftKings | 5.5 (-112) | -5.5 (-108) |
+| FanDuel | 5 (-106) | -5 (-114) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 228 | -110 | -110 |
+| DraftKings | 228.5 | -108 | -112 |
 | FanDuel | 228.5 | -110 | -110 |
 
 
