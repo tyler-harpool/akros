@@ -13,12 +13,12 @@ Game Start: 6/12/2025, 12:35:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | 180 | -218 |
-| FanDuel | 184 | -220 |
+| FanDuel | 190 | -230 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 5 (-105) | -5 (-115) |
+| DraftKings | 5.5 (-115) | -5.5 (-105) |
 | FanDuel | 5 (-106) | -5 (-114) |
 
 ### Totals (Over/Under)
