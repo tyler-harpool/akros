@@ -1,4 +1,4 @@
-# LIVE IN-GAME NBA Betting Analysis for Thursday, June 12, 2025
+# LIVE IN-GAME NBA Betting Analysis for Friday, June 13, 2025
 
 ## Games Being Analyzed
 
@@ -12,20 +12,20 @@ Game Start: 6/14/2025, 12:30:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | 198 | -240 |
-| DraftKings | 190 | -230 |
+| FanDuel | 190 | -230 |
+| DraftKings | 180 | -218 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | 6 (-108) | -6 (-112) |
+| FanDuel | 6 (-112) | -6 (-108) |
 | DraftKings | 6 (-110) | -6 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| FanDuel | 225.5 | -108 | -112 |
-| DraftKings | 225.5 | -110 | -110 |
+| FanDuel | 225.5 | -112 | -108 |
+| DraftKings | 225.5 | -112 | -108 |
 
 
 # Betting Edge Analysis
@@ -35,30 +35,14 @@ No significant edges detected in the current betting markets.
 # Current Team Lineups
 
 ## Oklahoma City Thunder @ Indiana Pacers
-Game starts at 8:30 PM ET
-**CONFIRMED LINEUP**
+Game starts at 6/14/2025, 12:30:00 AM
+*Projected Lineup*
 
-### Thunder Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | S. Gilgeous-Alexander | ✓ |
-| SG | Cason Wallace | ✓ |
-| SF | Luguentz Dort | ✓ |
-| PF | J. Williams | ✓ |
-| C | Chet Holmgren | ✓ |
-| G | N. Topic |  |
+### Oklahoma City Thunder Lineup
+No lineup data available for this team.
 
-### Pacers Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | T. Haliburton | ✓ |
-| SG | A. Nembhard | ✓ |
-| SF | Aaron Nesmith | ✓ |
-| PF | Pascal Siakam | ✓ |
-| C | M. Turner | ✓ |
-| C | M. Turner |  |
-| C | I. Jackson |  |
-| F | J. Walker |  |
+### Indiana Pacers Lineup
+No lineup data available for this team.
 
 
 
