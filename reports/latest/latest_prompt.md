@@ -1,4 +1,4 @@
-# NBA Betting Analysis for Saturday, June 14, 2025
+# NBA Betting Analysis for Sunday, June 15, 2025
 
 ## Games Being Analyzed
 
@@ -12,15 +12,15 @@ Game Start: 6/17/2025, 12:35:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -425 | 330 |
-| FanDuel | -405 | 320 |
+| DraftKings | -395 | 310 |
+| FanDuel | -400 | 315 |
 | BetMGM | -450 | 333 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -9.5 (-110) | 9.5 (-110) |
-| FanDuel | -9.5 (-112) | 9.5 (-108) |
+| DraftKings | -9.5 (-108) | 9.5 (-112) |
+| FanDuel | -9.5 (-110) | 9.5 (-110) |
 | BetMGM | -9.5 (-110) | 9.5 (-110) |
 
 ### Totals (Over/Under)
