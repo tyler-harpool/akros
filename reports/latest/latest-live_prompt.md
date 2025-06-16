@@ -13,7 +13,7 @@ Game Start: 6/17/2025, 12:35:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -380 | 300 |
-| FanDuel | -405 | 320 |
+| FanDuel | -400 | 315 |
 | BetMGM | -450 | 333 |
 
 ### Spread Odds
@@ -28,7 +28,7 @@ Game Start: 6/17/2025, 12:35:00 AM
 |-----------|--------|------|-------|
 | DraftKings | 223.5 | -110 | -110 |
 | FanDuel | 224 | -110 | -110 |
-| BetMGM | 223.5 | -115 | -105 |
+| BetMGM | 224.5 | -110 | -110 |
 
 
 # Betting Edge Analysis
