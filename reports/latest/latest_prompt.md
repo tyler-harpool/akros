@@ -1,33 +1,33 @@
-# NBA Betting Analysis for Monday, June 16, 2025
+# NBA Betting Analysis for Tuesday, June 17, 2025
 
 ## Games Being Analyzed
 
-- Oklahoma City Thunder vs Indiana Pacers (6/17/2025, 12:35:00 AM)
+- Indiana Pacers vs Oklahoma City Thunder (6/20/2025, 12:35:00 AM)
 
 # Available NBA Betting Lines
 
-## Oklahoma City Thunder vs Indiana Pacers
-Game Start: 6/17/2025, 12:35:00 AM
+## Indiana Pacers vs Oklahoma City Thunder
+Game Start: 6/20/2025, 12:35:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -410 | 320 |
-| FanDuel | -400 | 315 |
-| BetMGM | -450 | 340 |
+| DraftKings | 164 | -198 |
+| FanDuel | 168 | -200 |
+| BetMGM | 155 | -190 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -9.5 (-105) | 9.5 (-115) |
-| FanDuel | -9.5 (-108) | 9.5 (-112) |
-| BetMGM | -9.5 (-105) | 9.5 (-115) |
+| DraftKings | 5 (-110) | -5 (-110) |
+| FanDuel | 5 (-112) | -5 (-108) |
+| BetMGM | 4.5 (-110) | -4.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 224.5 | -108 | -112 |
-| FanDuel | 224.5 | -110 | -110 |
+| DraftKings | 225 | -110 | -110 |
+| FanDuel | 224 | -110 | -110 |
 | BetMGM | 224.5 | -110 | -110 |
 
 
@@ -37,30 +37,15 @@ No significant edges detected in the current betting markets.
 
 # Current Team Lineups
 
-## Indiana Pacers @ Oklahoma City Thunder
-Game starts at 8:30 PM ET
+## Oklahoma City Thunder @ Indiana Pacers
+Game starts at 6/20/2025, 12:35:00 AM
 *Projected Lineup*
 
-### Pacers Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | T. Haliburton | ✓ |
-| SG | A. Nembhard | ✓ |
-| SF | Aaron Nesmith | ✓ |
-| PF | Pascal Siakam | ✓ |
-| C | Myles Turner | ✓ |
-| C | I. Jackson |  |
-| F | J. Walker |  |
+### Oklahoma City Thunder Lineup
+No lineup data available for this team.
 
-### Thunder Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | S. Gilgeous-Alexander | ✓ |
-| SG | Luguentz Dort | ✓ |
-| SF | J. Williams | ✓ |
-| PF | Chet Holmgren | ✓ |
-| C | I. Hartenstein | ✓ |
-| G | N. Topic |  |
+### Indiana Pacers Lineup
+No lineup data available for this team.
 
 
 
