@@ -1,4 +1,4 @@
-# NBA Betting Analysis for Tuesday, June 17, 2025
+# NBA Betting Analysis for Wednesday, June 18, 2025
 
 ## Games Being Analyzed
 
@@ -14,13 +14,13 @@ Game Start: 6/20/2025, 12:35:00 AM
 |-----------|-----------|----------|
 | DraftKings | 210 | -258 |
 | FanDuel | 215 | -260 |
-| BetMGM | 220 | -275 |
+| BetMGM | 200 | -250 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | 6.5 (-108) | -6.5 (-112) |
-| FanDuel | 6.5 (-114) | -6.5 (-106) |
+| FanDuel | 6.5 (-112) | -6.5 (-108) |
 | BetMGM | 6.5 (-110) | -6.5 (-110) |
 
 ### Totals (Over/Under)
