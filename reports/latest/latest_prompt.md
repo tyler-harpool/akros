@@ -1,34 +1,34 @@
-# NBA Betting Analysis for Thursday, June 19, 2025
+# NBA Betting Analysis for Friday, June 20, 2025
 
 ## Games Being Analyzed
 
-- Indiana Pacers vs Oklahoma City Thunder (6/20/2025, 12:35:00 AM)
+- Oklahoma City Thunder vs Indiana Pacers (6/23/2025, 12:00:00 AM)
 
 # Available NBA Betting Lines
 
-## Indiana Pacers vs Oklahoma City Thunder
-Game Start: 6/20/2025, 12:35:00 AM
+## Oklahoma City Thunder vs Indiana Pacers
+Game Start: 6/23/2025, 12:00:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 185 | -225 |
-| FanDuel | 184 | -220 |
-| BetMGM | 185 | -225 |
+| FanDuel | -330 | 265 |
+| DraftKings | -325 | 260 |
+| BetMGM | -375 | 290 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 6 (-112) | -6 (-108) |
-| FanDuel | 6 (-110) | -6 (-110) |
-| BetMGM | 5.5 (-102) | -5.5 (-118) |
+| FanDuel | -8.5 (-106) | 8.5 (-114) |
+| DraftKings | -8.5 (-108) | 8.5 (-112) |
+| BetMGM | -8.5 (-110) | 8.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| DraftKings | 222.5 | -110 | -110 |
-| FanDuel | 222.5 | -110 | -110 |
-| BetMGM | 222.5 | -110 | -110 |
+| FanDuel | 215 | -108 | -112 |
+| DraftKings | 215 | -108 | -112 |
+| BetMGM | 215.5 | -110 | -110 |
 
 
 # Betting Edge Analysis
@@ -37,31 +37,15 @@ No significant edges detected in the current betting markets.
 
 # Current Team Lineups
 
-## Oklahoma City Thunder @ Indiana Pacers
-Game starts at 8:30 PM ET
+## Indiana Pacers @ Oklahoma City Thunder
+Game starts at 6/23/2025, 12:00:00 AM
 *Projected Lineup*
 
-### Thunder Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | S. Gilgeous-Alexander | ✓ |
-| SG | Luguentz Dort | ✓ |
-| SF | J. Williams | ✓ |
-| PF | Chet Holmgren | ✓ |
-| C | I. Hartenstein | ✓ |
-| G | N. Topic |  |
+### Indiana Pacers Lineup
+No lineup data available for this team.
 
-### Pacers Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | T. Haliburton | ✓ |
-| SG | A. Nembhard | ✓ |
-| SF | Aaron Nesmith | ✓ |
-| PF | Pascal Siakam | ✓ |
-| C | Myles Turner | ✓ |
-| C | I. Jackson |  |
-| G | T. Haliburton |  |
-| F | J. Walker |  |
+### Oklahoma City Thunder Lineup
+No lineup data available for this team.
 
 
 
