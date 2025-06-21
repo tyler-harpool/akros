@@ -1,6 +1,20 @@
 {
-  "lastRun": "2025-06-21T09-06-15-695Z",
+  "lastRun": "2025-06-21T15-03-46-069Z",
   "runs": [
+    {
+      "timestamp": "2025-06-21T15-03-46-069Z",
+      "bettingMode": "pregame",
+      "numGames": 1,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-06-21/nba_edge_analysis_2025-06-21T15-03-46-069Z.md",
+        "bets": "reports/2025-06-21/recommended_bets_2025-06-21T15-03-46-069Z.md",
+        "html": "reports/2025-06-21/recommended_bets_2025-06-21T15-03-46-069Z.html",
+        "prompt": "prompts/2025-06-21/claude_prompt_2025-06-21T15-03-46-069Z.md",
+        "thinking": "reports/2025-06-21/claude_reasoning_2025-06-21T15-03-46-069Z.md"
+      }
+    },
     {
       "timestamp": "2025-06-21T09-06-15-695Z",
       "bettingMode": "pregame",
@@ -266,27 +280,13 @@
         "prompt": "prompts/2025-06-17/claude_prompt_2025-06-17T22-02-35-754Z.md",
         "thinking": "reports/2025-06-17/claude_reasoning_2025-06-17T22-02-35-754Z.md"
       }
-    },
-    {
-      "timestamp": "2025-06-17T15-04-25-279Z",
-      "bettingMode": "pregame",
-      "numGames": 1,
-      "betsFound": true,
-      "numBets": 20,
-      "files": {
-        "analysis": "reports/2025-06-17/nba_edge_analysis_2025-06-17T15-04-25-279Z.md",
-        "bets": "reports/2025-06-17/recommended_bets_2025-06-17T15-04-25-279Z.md",
-        "html": "reports/2025-06-17/recommended_bets_2025-06-17T15-04-25-279Z.html",
-        "prompt": "prompts/2025-06-17/claude_prompt_2025-06-17T15-04-25-279Z.md",
-        "thinking": "reports/2025-06-17/claude_reasoning_2025-06-17T15-04-25-279Z.md"
-      }
     }
   ],
-  "timestamp": "2025-06-21T09-06-15-695Z",
+  "timestamp": "2025-06-21T15-03-46-069Z",
   "bettingMode": "pregame",
   "numGames": 1,
   "betsFound": true,
-  "numBets": 20,
+  "numBets": 23,
   "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
   "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
   "success": false
