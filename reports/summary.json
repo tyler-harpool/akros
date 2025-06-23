@@ -1,6 +1,13 @@
 {
-  "lastRun": "2025-06-23T02-41-30-926Z",
+  "lastRun": "2025-06-23T05-06-52-524Z",
   "runs": [
+    {
+      "timestamp": "2025-06-23T05-06-52-524Z",
+      "bettingMode": "live",
+      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
+      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+      "success": false
+    },
     {
       "timestamp": "2025-06-23T02-41-30-926Z",
       "bettingMode": "live",
@@ -266,28 +273,14 @@
         "prompt": "prompts/2025-06-19/claude_prompt_2025-06-19T09-07-33-357Z.md",
         "thinking": "reports/2025-06-19/claude_reasoning_2025-06-19T09-07-33-357Z.md"
       }
-    },
-    {
-      "timestamp": "2025-06-19T05-05-30-233Z",
-      "bettingMode": "live",
-      "numGames": 1,
-      "betsFound": true,
-      "numBets": 20,
-      "files": {
-        "analysis": "reports/2025-06-19/nba_edge_analysis-live_2025-06-19T05-05-30-233Z.md",
-        "bets": "reports/2025-06-19/recommended_bets-live_2025-06-19T05-05-30-233Z.md",
-        "html": "reports/2025-06-19/recommended_bets-live_2025-06-19T05-05-30-233Z.html",
-        "prompt": "prompts/2025-06-19/claude_prompt-live_2025-06-19T05-05-30-233Z.md",
-        "thinking": "reports/2025-06-19/claude_reasoning-live_2025-06-19T05-05-30-233Z.md"
-      }
     }
   ],
-  "timestamp": "2025-06-23T02-41-30-926Z",
+  "timestamp": "2025-06-23T05-06-52-524Z",
   "bettingMode": "live",
-  "numGames": 1,
-  "betsFound": true,
-  "numBets": 20,
   "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
   "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
-  "success": false
+  "success": false,
+  "numGames": 1,
+  "betsFound": true,
+  "numBets": 20
 }
