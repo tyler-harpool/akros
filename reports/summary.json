@@ -1,6 +1,13 @@
 {
-  "lastRun": "2025-06-24T05-06-44-614Z",
+  "lastRun": "2025-06-24T09-08-12-866Z",
   "runs": [
+    {
+      "timestamp": "2025-06-24T09-08-12-866Z",
+      "bettingMode": "pregame",
+      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
+      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+      "success": false
+    },
     {
       "timestamp": "2025-06-24T05-06-44-614Z",
       "bettingMode": "live",
@@ -224,24 +231,10 @@
         "prompt": "prompts/2025-06-20/claude_prompt_2025-06-20T15-04-03-682Z.md",
         "thinking": "reports/2025-06-20/claude_reasoning_2025-06-20T15-04-03-682Z.md"
       }
-    },
-    {
-      "timestamp": "2025-06-20T09-07-19-735Z",
-      "bettingMode": "pregame",
-      "numGames": 1,
-      "betsFound": true,
-      "numBets": 20,
-      "files": {
-        "analysis": "reports/2025-06-20/nba_edge_analysis_2025-06-20T09-07-19-735Z.md",
-        "bets": "reports/2025-06-20/recommended_bets_2025-06-20T09-07-19-735Z.md",
-        "html": "reports/2025-06-20/recommended_bets_2025-06-20T09-07-19-735Z.html",
-        "prompt": "prompts/2025-06-20/claude_prompt_2025-06-20T09-07-19-735Z.md",
-        "thinking": "reports/2025-06-20/claude_reasoning_2025-06-20T09-07-19-735Z.md"
-      }
     }
   ],
-  "timestamp": "2025-06-24T05-06-44-614Z",
-  "bettingMode": "live",
+  "timestamp": "2025-06-24T09-08-12-866Z",
+  "bettingMode": "pregame",
   "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
   "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
   "success": false,
