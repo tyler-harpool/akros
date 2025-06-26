@@ -1,6 +1,13 @@
 {
-  "lastRun": "2025-06-26T02-36-14-958Z",
+  "lastRun": "2025-06-26T05-05-53-573Z",
   "runs": [
+    {
+      "timestamp": "2025-06-26T05-05-53-573Z",
+      "bettingMode": "live",
+      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
+      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+      "success": false
+    },
     {
       "timestamp": "2025-06-26T02-36-14-958Z",
       "bettingMode": "live",
@@ -161,23 +168,9 @@
         "prompt": "prompts/2025-06-22/claude_prompt_2025-06-22T09-06-25-053Z.md",
         "thinking": "reports/2025-06-22/claude_reasoning_2025-06-22T09-06-25-053Z.md"
       }
-    },
-    {
-      "timestamp": "2025-06-22T05-05-47-528Z",
-      "bettingMode": "live",
-      "numGames": 1,
-      "betsFound": true,
-      "numBets": 20,
-      "files": {
-        "analysis": "reports/2025-06-22/nba_edge_analysis-live_2025-06-22T05-05-47-528Z.md",
-        "bets": "reports/2025-06-22/recommended_bets-live_2025-06-22T05-05-47-528Z.md",
-        "html": "reports/2025-06-22/recommended_bets-live_2025-06-22T05-05-47-528Z.html",
-        "prompt": "prompts/2025-06-22/claude_prompt-live_2025-06-22T05-05-47-528Z.md",
-        "thinking": "reports/2025-06-22/claude_reasoning-live_2025-06-22T05-05-47-528Z.md"
-      }
     }
   ],
-  "timestamp": "2025-06-26T02-36-14-958Z",
+  "timestamp": "2025-06-26T05-05-53-573Z",
   "bettingMode": "live",
   "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
   "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
