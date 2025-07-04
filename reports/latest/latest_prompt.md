@@ -1,34 +1,76 @@
-# NBA Betting Analysis for Sunday, June 22, 2025
+# NBA Betting Analysis for Friday, July 4, 2025
 
 ## Games Being Analyzed
 
-- Oklahoma City Thunder vs Indiana Pacers (6/23/2025, 12:00:00 AM)
+- Miami Heat vs San Antonio Spurs (7/5/2025, 8:30:00 PM)
+- Golden State Warriors vs Los Angeles Lakers (7/5/2025, 10:30:00 PM)
+- Oklahoma City Thunder vs Memphis Grizzlies (7/5/2025, 11:00:00 PM)
+- Utah Jazz vs Philadelphia 76ers (7/6/2025, 1:00:00 AM)
 
 # Available NBA Betting Lines
 
-## Oklahoma City Thunder vs Indiana Pacers
-Game Start: 6/23/2025, 12:00:00 AM
+## Miami Heat vs San Antonio Spurs
+Game Start: 7/5/2025, 8:30:00 PM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -270 | 220 |
-| DraftKings | -265 | 215 |
-| BetMGM | -275 | 225 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| FanDuel | -7 (-110) | 7 (-110) |
-| DraftKings | -7 (-115) | 7 (-105) |
-| BetMGM | -6.5 (-118) | 6.5 (-102) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
-| FanDuel | 214.5 | -110 | -110 |
-| DraftKings | 215 | -108 | -112 |
-| BetMGM | 214.5 | -110 | -110 |
+
+
+## Golden State Warriors vs Los Angeles Lakers
+Game Start: 7/5/2025, 10:30:00 PM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+
+
+## Oklahoma City Thunder vs Memphis Grizzlies
+Game Start: 7/5/2025, 11:00:00 PM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+
+
+## Utah Jazz vs Philadelphia 76ers
+Game Start: 7/6/2025, 1:00:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
 
 
 # Betting Edge Analysis
@@ -37,31 +79,48 @@ No significant edges detected in the current betting markets.
 
 # Current Team Lineups
 
-## Indiana Pacers @ Oklahoma City Thunder
-Game starts at 8:00 PM ET
+## San Antonio Spurs @ Miami Heat
+Game starts at 7/5/2025, 8:30:00 PM
 *Projected Lineup*
 
-### Pacers Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | T. Haliburton | ✓ |
-| SG | A. Nembhard | ✓ |
-| SF | Aaron Nesmith | ✓ |
-| PF | Pascal Siakam | ✓ |
-| C | Myles Turner | ✓ |
-| C | I. Jackson |  |
-| G | T. Haliburton |  |
-| F | J. Walker |  |
+### San Antonio Spurs Lineup
+No lineup data available for this team.
 
-### Thunder Lineup
-| Position | Player | Starter |
-|----------|--------|--------|
-| PG | S. Gilgeous-Alexander | ✓ |
-| SG | Luguentz Dort | ✓ |
-| SF | J. Williams | ✓ |
-| PF | Chet Holmgren | ✓ |
-| C | I. Hartenstein | ✓ |
-| G | N. Topic |  |
+### Miami Heat Lineup
+No lineup data available for this team.
+
+
+## Los Angeles Lakers @ Golden State Warriors
+Game starts at 7/5/2025, 10:30:00 PM
+*Projected Lineup*
+
+### Los Angeles Lakers Lineup
+No lineup data available for this team.
+
+### Golden State Warriors Lineup
+No lineup data available for this team.
+
+
+## Memphis Grizzlies @ Oklahoma City Thunder
+Game starts at 7/5/2025, 11:00:00 PM
+*Projected Lineup*
+
+### Memphis Grizzlies Lineup
+No lineup data available for this team.
+
+### Oklahoma City Thunder Lineup
+No lineup data available for this team.
+
+
+## Philadelphia 76ers @ Utah Jazz
+Game starts at 7/6/2025, 1:00:00 AM
+*Projected Lineup*
+
+### Philadelphia 76ers Lineup
+No lineup data available for this team.
+
+### Utah Jazz Lineup
+No lineup data available for this team.
 
 
 
