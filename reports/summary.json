@@ -1,6 +1,13 @@
 {
-  "lastRun": "2025-07-07T15-03-47-786Z",
+  "lastRun": "2025-07-07T22-02-55-126Z",
   "runs": [
+    {
+      "timestamp": "2025-07-07T22-02-55-126Z",
+      "bettingMode": "pregame",
+      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
+      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+      "success": false
+    },
     {
       "timestamp": "2025-07-07T15-03-47-786Z",
       "bettingMode": "pregame",
@@ -150,16 +157,9 @@
         "prompt": "prompts/2025-07-04/claude_prompt-live_2025-07-04T02-36-18-193Z.md",
         "thinking": "reports/2025-07-04/claude_reasoning-live_2025-07-04T02-36-18-193Z.md"
       }
-    },
-    {
-      "timestamp": "2025-07-03T22-02-33-105Z",
-      "bettingMode": "pregame",
-      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
-      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
-      "success": false
     }
   ],
-  "timestamp": "2025-07-07T15-03-47-786Z",
+  "timestamp": "2025-07-07T22-02-55-126Z",
   "bettingMode": "pregame",
   "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
   "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
