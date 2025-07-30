@@ -1,6 +1,13 @@
 {
-  "lastRun": "2025-07-29T22-03-00-874Z",
+  "lastRun": "2025-07-30T02-45-29-556Z",
   "runs": [
+    {
+      "timestamp": "2025-07-30T02-45-29-556Z",
+      "bettingMode": "live",
+      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
+      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+      "success": false
+    },
     {
       "timestamp": "2025-07-29T22-03-00-874Z",
       "bettingMode": "pregame",
@@ -133,17 +140,10 @@
       "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
       "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
       "success": false
-    },
-    {
-      "timestamp": "2025-07-26T02-39-04-826Z",
-      "bettingMode": "live",
-      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
-      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
-      "success": false
     }
   ],
-  "timestamp": "2025-07-29T22-03-00-874Z",
-  "bettingMode": "pregame",
+  "timestamp": "2025-07-30T02-45-29-556Z",
+  "bettingMode": "live",
   "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
   "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
   "success": false,
