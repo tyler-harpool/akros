@@ -1,76 +1,148 @@
-# LIVE IN-GAME NBA Betting Analysis for Friday, July 4, 2025
+# LIVE IN-GAME NBA Betting Analysis for Saturday, August 9, 2025
 
 ## Games Being Analyzed
 
-- Miami Heat vs San Antonio Spurs (7/5/2025, 8:30:00 PM)
-- Golden State Warriors vs Los Angeles Lakers (7/5/2025, 10:30:00 PM)
-- Oklahoma City Thunder vs Memphis Grizzlies (7/5/2025, 11:00:00 PM)
-- Utah Jazz vs Philadelphia 76ers (7/6/2025, 1:00:00 AM)
+- Oklahoma City Thunder vs Houston Rockets (10/22/2025, 12:30:00 AM)
+- Los Angeles Lakers vs Golden State Warriors (10/22/2025, 3:00:00 AM)
+- New York Knicks vs Cleveland Cavaliers (12/26/2025, 12:00:00 AM)
+- Golden State Warriors vs Dallas Mavericks (12/26/2025, 12:00:00 AM)
+- Denver Nuggets vs Minnesota Timberwolves (12/26/2025, 12:00:00 AM)
+- Los Angeles Lakers vs Houston Rockets (12/26/2025, 12:00:00 AM)
+- Oklahoma City Thunder vs San Antonio Spurs (12/26/2025, 12:00:00 AM)
 
 # Available NBA Betting Lines
 
-## Miami Heat vs San Antonio Spurs
-Game Start: 7/5/2025, 8:30:00 PM
+## Oklahoma City Thunder vs Houston Rockets
+Game Start: 10/22/2025, 12:30:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
+| DraftKings | -265 | 215 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
+| DraftKings | -6.5 (-110) | 6.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
+| DraftKings | 224.5 | -110 | -110 |
 
 
-## Golden State Warriors vs Los Angeles Lakers
-Game Start: 7/5/2025, 10:30:00 PM
+## Los Angeles Lakers vs Golden State Warriors
+Game Start: 10/22/2025, 3:00:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
+| DraftKings | -162 | 136 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
+| DraftKings | -3.5 (-110) | 3.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
+| DraftKings | 225.5 | -110 | -110 |
 
 
-## Oklahoma City Thunder vs Memphis Grizzlies
-Game Start: 7/5/2025, 11:00:00 PM
+## New York Knicks vs Cleveland Cavaliers
+Game Start: 12/26/2025, 12:00:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
+| DraftKings | -155 | 130 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
+| DraftKings | -3 (-112) | 3 (-108) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
+| DraftKings | 229.5 | -112 | -108 |
 
 
-## Utah Jazz vs Philadelphia 76ers
-Game Start: 7/6/2025, 1:00:00 AM
+## Golden State Warriors vs Dallas Mavericks
+Game Start: 12/26/2025, 12:00:00 AM
 
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
+| DraftKings | -166 | 140 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
+| DraftKings | -3.5 (-112) | 3.5 (-108) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
+| DraftKings | 225.5 | -110 | -110 |
+
+
+## Denver Nuggets vs Minnesota Timberwolves
+Game Start: 12/26/2025, 12:00:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -205 | 170 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -5 (-115) | 5 (-105) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 229 | -110 | -110 |
+
+
+## Los Angeles Lakers vs Houston Rockets
+Game Start: 12/26/2025, 12:00:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -118 | -102 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -1 (-112) | 1 (-108) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 224.5 | -110 | -110 |
+
+
+## Oklahoma City Thunder vs San Antonio Spurs
+Game Start: 12/26/2025, 12:00:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -455 | 350 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -9.5 (-115) | 9.5 (-105) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 227 | -112 | -108 |
 
 
 # Betting Edge Analysis
@@ -79,47 +151,80 @@ No significant edges detected in the current betting markets.
 
 # Current Team Lineups
 
-## San Antonio Spurs @ Miami Heat
-Game starts at 7/5/2025, 8:30:00 PM
+## Houston Rockets @ Oklahoma City Thunder
+Game starts at 10/22/2025, 12:30:00 AM
 *Projected Lineup*
 
-### San Antonio Spurs Lineup
-No lineup data available for this team.
-
-### Miami Heat Lineup
-No lineup data available for this team.
-
-
-## Los Angeles Lakers @ Golden State Warriors
-Game starts at 7/5/2025, 10:30:00 PM
-*Projected Lineup*
-
-### Los Angeles Lakers Lineup
-No lineup data available for this team.
-
-### Golden State Warriors Lineup
-No lineup data available for this team.
-
-
-## Memphis Grizzlies @ Oklahoma City Thunder
-Game starts at 7/5/2025, 11:00:00 PM
-*Projected Lineup*
-
-### Memphis Grizzlies Lineup
+### Houston Rockets Lineup
 No lineup data available for this team.
 
 ### Oklahoma City Thunder Lineup
 No lineup data available for this team.
 
 
-## Philadelphia 76ers @ Utah Jazz
-Game starts at 7/6/2025, 1:00:00 AM
+## Golden State Warriors @ Los Angeles Lakers
+Game starts at 10/22/2025, 3:00:00 AM
 *Projected Lineup*
 
-### Philadelphia 76ers Lineup
+### Golden State Warriors Lineup
 No lineup data available for this team.
 
-### Utah Jazz Lineup
+### Los Angeles Lakers Lineup
+No lineup data available for this team.
+
+
+## Cleveland Cavaliers @ New York Knicks
+Game starts at 12/26/2025, 12:00:00 AM
+*Projected Lineup*
+
+### Cleveland Cavaliers Lineup
+No lineup data available for this team.
+
+### New York Knicks Lineup
+No lineup data available for this team.
+
+
+## Dallas Mavericks @ Golden State Warriors
+Game starts at 12/26/2025, 12:00:00 AM
+*Projected Lineup*
+
+### Dallas Mavericks Lineup
+No lineup data available for this team.
+
+### Golden State Warriors Lineup
+No lineup data available for this team.
+
+
+## Minnesota Timberwolves @ Denver Nuggets
+Game starts at 12/26/2025, 12:00:00 AM
+*Projected Lineup*
+
+### Minnesota Timberwolves Lineup
+No lineup data available for this team.
+
+### Denver Nuggets Lineup
+No lineup data available for this team.
+
+
+## Houston Rockets @ Los Angeles Lakers
+Game starts at 12/26/2025, 12:00:00 AM
+*Projected Lineup*
+
+### Houston Rockets Lineup
+No lineup data available for this team.
+
+### Los Angeles Lakers Lineup
+No lineup data available for this team.
+
+
+## San Antonio Spurs @ Oklahoma City Thunder
+Game starts at 12/26/2025, 12:00:00 AM
+*Projected Lineup*
+
+### San Antonio Spurs Lineup
+No lineup data available for this team.
+
+### Oklahoma City Thunder Lineup
 No lineup data available for this team.
 
 
