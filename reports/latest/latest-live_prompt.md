@@ -1,4 +1,4 @@
-# LIVE IN-GAME NBA Betting Analysis for Saturday, August 9, 2025
+# LIVE IN-GAME NBA Betting Analysis for Sunday, August 10, 2025
 
 ## Games Being Analyzed
 
@@ -19,16 +19,19 @@ Game Start: 10/22/2025, 12:30:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -265 | 215 |
+| FanDuel | -255 | 215 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -6.5 (-110) | 6.5 (-110) |
+| FanDuel | -6.5 (-110) | 6.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | DraftKings | 224.5 | -110 | -110 |
+| FanDuel | 225.5 | -110 | -110 |
 
 
 ## Los Angeles Lakers vs Golden State Warriors
@@ -38,16 +41,19 @@ Game Start: 10/22/2025, 3:00:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -162 | 136 |
+| FanDuel | -166 | 140 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -3.5 (-110) | 3.5 (-110) |
+| FanDuel | -3.5 (-114) | 3.5 (-106) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | DraftKings | 225.5 | -110 | -110 |
+| FanDuel | 224.5 | -110 | -110 |
 
 
 ## New York Knicks vs Cleveland Cavaliers
@@ -57,16 +63,19 @@ Game Start: 12/26/2025, 12:00:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -155 | 130 |
+| FanDuel | -142 | 120 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -3 (-112) | 3 (-108) |
+| FanDuel | -2.5 (-108) | 2.5 (-112) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | DraftKings | 229.5 | -112 | -108 |
+| FanDuel | 229.5 | -110 | -110 |
 
 
 ## Golden State Warriors vs Dallas Mavericks
@@ -76,16 +85,19 @@ Game Start: 12/26/2025, 12:00:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -166 | 140 |
+| FanDuel | -198 | 166 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -3.5 (-112) | 3.5 (-108) |
+| FanDuel | -4.5 (-112) | 4.5 (-108) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | DraftKings | 225.5 | -110 | -110 |
+| FanDuel | 226.5 | -110 | -110 |
 
 
 ## Denver Nuggets vs Minnesota Timberwolves
@@ -95,16 +107,19 @@ Game Start: 12/26/2025, 12:00:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -205 | 170 |
+| FanDuel | -190 | 160 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -5 (-115) | 5 (-105) |
+| FanDuel | -4.5 (-108) | 4.5 (-112) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | DraftKings | 229 | -110 | -110 |
+| FanDuel | 230.5 | -110 | -110 |
 
 
 ## Los Angeles Lakers vs Houston Rockets
@@ -114,16 +129,19 @@ Game Start: 12/26/2025, 12:00:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -118 | -102 |
+| FanDuel | -122 | 104 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -1 (-112) | 1 (-108) |
+| FanDuel | -1.5 (-108) | 1.5 (-112) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | DraftKings | 224.5 | -110 | -110 |
+| FanDuel | 223.5 | -110 | -110 |
 
 
 ## Oklahoma City Thunder vs San Antonio Spurs
@@ -133,16 +151,19 @@ Game Start: 12/26/2025, 12:00:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -455 | 350 |
+| FanDuel | -405 | 320 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -9.5 (-115) | 9.5 (-105) |
+| FanDuel | -9.5 (-110) | 9.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | DraftKings | 227 | -112 | -108 |
+| FanDuel | 228.5 | -110 | -110 |
 
 
 # Betting Edge Analysis
