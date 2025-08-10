@@ -1,6 +1,20 @@
 {
-  "lastRun": "2025-08-10T09-06-53-335Z",
+  "lastRun": "2025-08-10T15-03-46-683Z",
   "runs": [
+    {
+      "timestamp": "2025-08-10T15-03-46-683Z",
+      "bettingMode": "pregame",
+      "numGames": 7,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-08-10/nba_edge_analysis_2025-08-10T15-03-46-683Z.md",
+        "bets": "reports/2025-08-10/recommended_bets_2025-08-10T15-03-46-683Z.md",
+        "html": "reports/2025-08-10/recommended_bets_2025-08-10T15-03-46-683Z.html",
+        "prompt": "prompts/2025-08-10/claude_prompt_2025-08-10T15-03-46-683Z.md",
+        "thinking": "reports/2025-08-10/claude_reasoning_2025-08-10T15-03-46-683Z.md"
+      }
+    },
     {
       "timestamp": "2025-08-10T09-06-53-335Z",
       "bettingMode": "pregame",
@@ -182,16 +196,9 @@
       "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
       "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
       "success": false
-    },
-    {
-      "timestamp": "2025-08-06T15-05-54-196Z",
-      "bettingMode": "pregame",
-      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
-      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
-      "success": false
     }
   ],
-  "timestamp": "2025-08-10T09-06-53-335Z",
+  "timestamp": "2025-08-10T15-03-46-683Z",
   "bettingMode": "pregame",
   "numGames": 7,
   "betsFound": true,
