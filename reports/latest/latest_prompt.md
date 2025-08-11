@@ -84,13 +84,13 @@ Game Start: 12/26/2025, 12:00:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -166 | 140 |
+| DraftKings | -198 | 164 |
 | FanDuel | -198 | 166 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -3.5 (-112) | 3.5 (-108) |
+| DraftKings | -4.5 (-112) | 4.5 (-108) |
 | FanDuel | -4.5 (-112) | 4.5 (-108) |
 
 ### Totals (Over/Under)
