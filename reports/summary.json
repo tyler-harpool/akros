@@ -1,6 +1,20 @@
 {
-  "lastRun": "2025-08-11T09-10-12-899Z",
+  "lastRun": "2025-08-11T15-04-41-829Z",
   "runs": [
+    {
+      "timestamp": "2025-08-11T15-04-41-829Z",
+      "bettingMode": "pregame",
+      "numGames": 7,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-08-11/nba_edge_analysis_2025-08-11T15-04-41-829Z.md",
+        "bets": "reports/2025-08-11/recommended_bets_2025-08-11T15-04-41-829Z.md",
+        "html": "reports/2025-08-11/recommended_bets_2025-08-11T15-04-41-829Z.html",
+        "prompt": "prompts/2025-08-11/claude_prompt_2025-08-11T15-04-41-829Z.md",
+        "thinking": "reports/2025-08-11/claude_reasoning_2025-08-11T15-04-41-829Z.md"
+      }
+    },
     {
       "timestamp": "2025-08-11T09-10-12-899Z",
       "bettingMode": "pregame",
@@ -217,16 +231,9 @@
       "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
       "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
       "success": false
-    },
-    {
-      "timestamp": "2025-08-07T15-05-09-341Z",
-      "bettingMode": "pregame",
-      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
-      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
-      "success": false
     }
   ],
-  "timestamp": "2025-08-11T09-10-12-899Z",
+  "timestamp": "2025-08-11T15-04-41-829Z",
   "bettingMode": "pregame",
   "numGames": 7,
   "betsFound": true,
