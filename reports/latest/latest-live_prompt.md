@@ -1,4 +1,4 @@
-# LIVE IN-GAME NBA Betting Analysis for Sunday, August 10, 2025
+# LIVE IN-GAME NBA Betting Analysis for Monday, August 11, 2025
 
 ## Games Being Analyzed
 

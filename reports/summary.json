@@ -1,6 +1,20 @@
 {
-  "lastRun": "2025-08-10T22-02-35-964Z",
+  "lastRun": "2025-08-11T02-45-52-686Z",
   "runs": [
+    {
+      "timestamp": "2025-08-11T02-45-52-686Z",
+      "bettingMode": "live",
+      "numGames": 7,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-08-11/nba_edge_analysis-live_2025-08-11T02-45-52-686Z.md",
+        "bets": "reports/2025-08-11/recommended_bets-live_2025-08-11T02-45-52-686Z.md",
+        "html": "reports/2025-08-11/recommended_bets-live_2025-08-11T02-45-52-686Z.html",
+        "prompt": "prompts/2025-08-11/claude_prompt-live_2025-08-11T02-45-52-686Z.md",
+        "thinking": "reports/2025-08-11/claude_reasoning-live_2025-08-11T02-45-52-686Z.md"
+      }
+    },
     {
       "timestamp": "2025-08-10T22-02-35-964Z",
       "bettingMode": "pregame",
@@ -196,17 +210,10 @@
       "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
       "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
       "success": false
-    },
-    {
-      "timestamp": "2025-08-07T02-46-06-252Z",
-      "bettingMode": "live",
-      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
-      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2376:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
-      "success": false
     }
   ],
-  "timestamp": "2025-08-10T22-02-35-964Z",
-  "bettingMode": "pregame",
+  "timestamp": "2025-08-11T02-45-52-686Z",
+  "bettingMode": "live",
   "numGames": 7,
   "betsFound": true,
   "numBets": 23,
