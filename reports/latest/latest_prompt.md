@@ -1,4 +1,4 @@
-# NBA Betting Analysis for Monday, August 11, 2025
+# NBA Betting Analysis for Tuesday, August 12, 2025
 
 ## Games Being Analyzed
 
