@@ -4,8 +4,18 @@
 
 - Oklahoma City Thunder vs Houston Rockets (10/21/2025, 11:30:00 PM)
 - Los Angeles Lakers vs Golden State Warriors (10/22/2025, 2:00:00 AM)
+- Charlotte Hornets vs Brooklyn Nets (10/22/2025, 11:10:00 PM)
 - New York Knicks vs Cleveland Cavaliers (10/22/2025, 11:10:00 PM)
+- Orlando Magic vs Miami Heat (10/22/2025, 11:10:00 PM)
+- Atlanta Hawks vs Toronto Raptors (10/22/2025, 11:40:00 PM)
+- Boston Celtics vs Philadelphia 76ers (10/22/2025, 11:40:00 PM)
+- Chicago Bulls vs Detroit Pistons (10/23/2025, 12:10:00 AM)
+- Memphis Grizzlies vs New Orleans Pelicans (10/23/2025, 12:10:00 AM)
+- Milwaukee Bucks vs Washington Wizards (10/23/2025, 12:10:00 AM)
+- Utah Jazz vs Los Angeles Clippers (10/23/2025, 1:10:00 AM)
 - Dallas Mavericks vs San Antonio Spurs (10/23/2025, 1:40:00 AM)
+- Portland Trail Blazers vs Minnesota Timberwolves (10/23/2025, 2:10:00 AM)
+- Phoenix Suns vs Sacramento Kings (10/23/2025, 2:10:00 AM)
 - Indiana Pacers vs Oklahoma City Thunder (10/23/2025, 11:40:00 PM)
 - Golden State Warriors vs Denver Nuggets (10/24/2025, 2:10:00 AM)
 - New York Knicks vs Boston Celtics (10/24/2025, 11:30:00 PM)
@@ -83,6 +93,25 @@ Game Start: 10/22/2025, 2:00:00 AM
 | FanDuel | 224.5 | -110 | -110 |
 
 
+## Charlotte Hornets vs Brooklyn Nets
+Game Start: 10/22/2025, 11:10:00 PM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -148 | 124 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -3 (-110) | 3 (-110) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 220 | -110 | -110 |
+
+
 ## New York Knicks vs Cleveland Cavaliers
 Game Start: 10/22/2025, 11:10:00 PM
 
@@ -102,6 +131,139 @@ Game Start: 10/22/2025, 11:10:00 PM
 | DraftKings | 227.5 | -110 | -110 |
 
 
+## Orlando Magic vs Miami Heat
+Game Start: 10/22/2025, 11:10:00 PM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -310 | 250 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -7.5 (-110) | 7.5 (-110) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 207 | -110 | -110 |
+
+
+## Atlanta Hawks vs Toronto Raptors
+Game Start: 10/22/2025, 11:40:00 PM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -245 | 200 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -6 (-110) | 6 (-110) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 236.5 | -110 | -110 |
+
+
+## Boston Celtics vs Philadelphia 76ers
+Game Start: 10/22/2025, 11:40:00 PM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -130 | 110 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -2 (-110) | 2 (-110) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 222 | -110 | -110 |
+
+
+## Chicago Bulls vs Detroit Pistons
+Game Start: 10/23/2025, 12:10:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | 110 | -130 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | 2 (-110) | -2 (-110) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 236.5 | -110 | -110 |
+
+
+## Memphis Grizzlies vs New Orleans Pelicans
+Game Start: 10/23/2025, 12:10:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -258 | 210 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -6.5 (-110) | 6.5 (-110) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 238 | -110 | -110 |
+
+
+## Milwaukee Bucks vs Washington Wizards
+Game Start: 10/23/2025, 12:10:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -375 | 295 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -8.5 (-110) | 8.5 (-110) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 225 | -110 | -110 |
+
+
+## Utah Jazz vs Los Angeles Clippers
+Game Start: 10/23/2025, 1:10:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | 260 | -325 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | 8 (-112) | -8 (-108) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 227.5 | -112 | -108 |
+
+
 ## Dallas Mavericks vs San Antonio Spurs
 Game Start: 10/23/2025, 1:40:00 AM
 
@@ -119,6 +281,44 @@ Game Start: 10/23/2025, 1:40:00 AM
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | DraftKings | 226.5 | -110 | -110 |
+
+
+## Portland Trail Blazers vs Minnesota Timberwolves
+Game Start: 10/23/2025, 2:10:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | 120 | -142 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | 2.5 (-110) | -2.5 (-110) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 216 | -110 | -110 |
+
+
+## Phoenix Suns vs Sacramento Kings
+Game Start: 10/23/2025, 2:10:00 AM
+
+### Moneyline Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -118 | -102 |
+
+### Spread Odds
+| Bookmaker | Home Team | Away Team |
+|-----------|-----------|----------|
+| DraftKings | -1 (-110) | 1 (-110) |
+
+### Totals (Over/Under)
+| Bookmaker | Points | Over | Under |
+|-----------|--------|------|-------|
+| DraftKings | 229 | -110 | -110 |
 
 
 ## Indiana Pacers vs Oklahoma City Thunder
@@ -636,7 +836,7 @@ Game Start: 1/19/2026, 6:00:00 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -198 | 164 |
+| DraftKings | -205 | 170 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
@@ -734,6 +934,17 @@ No lineup data available for this team.
 No lineup data available for this team.
 
 
+## Brooklyn Nets @ Charlotte Hornets
+Game starts at 10/22/2025, 11:10:00 PM
+*Projected Lineup*
+
+### Brooklyn Nets Lineup
+No lineup data available for this team.
+
+### Charlotte Hornets Lineup
+No lineup data available for this team.
+
+
 ## Cleveland Cavaliers @ New York Knicks
 Game starts at 12/25/2025, 5:00:00 PM
 *Projected Lineup*
@@ -745,6 +956,83 @@ No lineup data available for this team.
 No lineup data available for this team.
 
 
+## Miami Heat @ Orlando Magic
+Game starts at 10/22/2025, 11:10:00 PM
+*Projected Lineup*
+
+### Miami Heat Lineup
+No lineup data available for this team.
+
+### Orlando Magic Lineup
+No lineup data available for this team.
+
+
+## Toronto Raptors @ Atlanta Hawks
+Game starts at 10/22/2025, 11:40:00 PM
+*Projected Lineup*
+
+### Toronto Raptors Lineup
+No lineup data available for this team.
+
+### Atlanta Hawks Lineup
+No lineup data available for this team.
+
+
+## Philadelphia 76ers @ Boston Celtics
+Game starts at 10/22/2025, 11:40:00 PM
+*Projected Lineup*
+
+### Philadelphia 76ers Lineup
+No lineup data available for this team.
+
+### Boston Celtics Lineup
+No lineup data available for this team.
+
+
+## Detroit Pistons @ Chicago Bulls
+Game starts at 10/23/2025, 12:10:00 AM
+*Projected Lineup*
+
+### Detroit Pistons Lineup
+No lineup data available for this team.
+
+### Chicago Bulls Lineup
+No lineup data available for this team.
+
+
+## New Orleans Pelicans @ Memphis Grizzlies
+Game starts at 10/23/2025, 12:10:00 AM
+*Projected Lineup*
+
+### New Orleans Pelicans Lineup
+No lineup data available for this team.
+
+### Memphis Grizzlies Lineup
+No lineup data available for this team.
+
+
+## Washington Wizards @ Milwaukee Bucks
+Game starts at 10/23/2025, 12:10:00 AM
+*Projected Lineup*
+
+### Washington Wizards Lineup
+No lineup data available for this team.
+
+### Milwaukee Bucks Lineup
+No lineup data available for this team.
+
+
+## Los Angeles Clippers @ Utah Jazz
+Game starts at 10/23/2025, 1:10:00 AM
+*Projected Lineup*
+
+### Los Angeles Clippers Lineup
+No lineup data available for this team.
+
+### Utah Jazz Lineup
+No lineup data available for this team.
+
+
 ## San Antonio Spurs @ Dallas Mavericks
 Game starts at 10/23/2025, 1:40:00 AM
 *Projected Lineup*
@@ -753,6 +1041,28 @@ Game starts at 10/23/2025, 1:40:00 AM
 No lineup data available for this team.
 
 ### Dallas Mavericks Lineup
+No lineup data available for this team.
+
+
+## Minnesota Timberwolves @ Portland Trail Blazers
+Game starts at 10/23/2025, 2:10:00 AM
+*Projected Lineup*
+
+### Minnesota Timberwolves Lineup
+No lineup data available for this team.
+
+### Portland Trail Blazers Lineup
+No lineup data available for this team.
+
+
+## Sacramento Kings @ Phoenix Suns
+Game starts at 10/23/2025, 2:10:00 AM
+*Projected Lineup*
+
+### Sacramento Kings Lineup
+No lineup data available for this team.
+
+### Phoenix Suns Lineup
 No lineup data available for this team.
 
 
