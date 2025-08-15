@@ -1,4 +1,4 @@
-# NBA Betting Analysis for Thursday, August 14, 2025
+# NBA Betting Analysis for Friday, August 15, 2025
 
 ## Games Being Analyzed
 
@@ -555,7 +555,7 @@ Game Start: 11/22/2025, 12:00:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -520 | 390 |
+| DraftKings | -500 | 380 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
