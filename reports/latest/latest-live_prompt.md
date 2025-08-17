@@ -1,4 +1,4 @@
-# LIVE IN-GAME NBA Betting Analysis for Saturday, August 16, 2025
+# LIVE IN-GAME NBA Betting Analysis for Sunday, August 17, 2025
 
 ## Games Being Analyzed
 
@@ -617,7 +617,7 @@ Game Start: 11/26/2025, 4:00:00 AM
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -1 (-102) | 1 (-118) |
+| DraftKings | 1 (-118) | -1 (-102) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
