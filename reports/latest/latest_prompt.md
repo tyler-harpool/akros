@@ -820,7 +820,7 @@ Game Start: 12/26/2025, 3:30:00 AM
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -5 (-112) | 5 (-108) |
+| DraftKings | -5 (-115) | 5 (-105) |
 | FanDuel | -4.5 (-108) | 4.5 (-112) |
 
 ### Totals (Over/Under)
