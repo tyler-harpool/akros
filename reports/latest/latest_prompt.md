@@ -55,7 +55,7 @@ Game Start: 10/21/2025, 11:30:00 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -265 | 215 |
+| DraftKings | -270 | 220 |
 | FanDuel | -255 | 215 |
 
 ### Spread Odds
