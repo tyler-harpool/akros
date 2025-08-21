@@ -213,7 +213,7 @@ Game Start: 10/23/2025, 12:10:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -265 | 215 |
+| DraftKings | -258 | 210 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
@@ -232,7 +232,7 @@ Game Start: 10/23/2025, 12:10:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -375 | 295 |
+| DraftKings | -360 | 285 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
@@ -308,7 +308,7 @@ Game Start: 10/23/2025, 2:10:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -115 | -105 |
+| DraftKings | -118 | -102 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
@@ -327,7 +327,7 @@ Game Start: 10/23/2025, 11:40:00 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 250 | -310 |
+| DraftKings | 245 | -305 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
@@ -555,7 +555,7 @@ Game Start: 11/22/2025, 12:00:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -500 | 380 |
+| DraftKings | -485 | 370 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
@@ -754,7 +754,7 @@ Game Start: 12/25/2025, 7:30:00 PM
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -9.5 (-115) | 9.5 (-105) |
+| DraftKings | -10 (-105) | 10 (-115) |
 | FanDuel | -9.5 (-110) | 9.5 (-110) |
 
 ### Totals (Over/Under)
@@ -874,7 +874,7 @@ Game Start: 1/19/2026, 10:00:00 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -245 | 200 |
+| DraftKings | -250 | 205 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
