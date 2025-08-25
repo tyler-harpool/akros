@@ -1,4 +1,4 @@
-# LIVE IN-GAME NBA Betting Analysis for Sunday, August 24, 2025
+# LIVE IN-GAME NBA Betting Analysis for Monday, August 25, 2025
 
 ## Games Being Analyzed
 
@@ -137,7 +137,7 @@ Game Start: 10/22/2025, 11:10:00 PM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -310 | 250 |
+| DraftKings | -325 | 260 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
@@ -251,7 +251,7 @@ Game Start: 10/23/2025, 1:10:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 270 | -340 |
+| DraftKings | 260 | -325 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
