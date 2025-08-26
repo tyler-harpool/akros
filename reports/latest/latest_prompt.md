@@ -78,13 +78,13 @@ Game Start: 10/22/2025, 2:00:00 AM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -162 | 136 |
-| FanDuel | -166 | 140 |
+| FanDuel | -164 | 138 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -3.5 (-110) | 3.5 (-110) |
-| FanDuel | -3.5 (-114) | 3.5 (-106) |
+| FanDuel | -3.5 (-112) | 3.5 (-108) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
@@ -727,13 +727,13 @@ Game Start: 12/25/2025, 5:00:00 PM
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -142 | 120 |
-| FanDuel | -142 | 120 |
+| FanDuel | -144 | 122 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
 | DraftKings | -2.5 (-110) | 2.5 (-110) |
-| FanDuel | -2.5 (-108) | 2.5 (-112) |
+| FanDuel | -2.5 (-110) | 2.5 (-110) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
