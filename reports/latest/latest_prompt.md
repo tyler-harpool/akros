@@ -1,4 +1,4 @@
-# NBA Betting Analysis for Thursday, August 28, 2025
+# NBA Betting Analysis for Friday, August 29, 2025
 
 ## Games Being Analyzed
 
