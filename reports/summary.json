@@ -1,6 +1,20 @@
 {
-  "lastRun": "2025-08-31T15-03-49-501Z",
+  "lastRun": "2025-08-31T22-02-54-102Z",
   "runs": [
+    {
+      "timestamp": "2025-08-31T22-02-54-102Z",
+      "bettingMode": "pregame",
+      "numGames": 43,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-08-31/nba_edge_analysis_2025-08-31T22-02-54-102Z.md",
+        "bets": "reports/2025-08-31/recommended_bets_2025-08-31T22-02-54-102Z.md",
+        "html": "reports/2025-08-31/recommended_bets_2025-08-31T22-02-54-102Z.html",
+        "prompt": "prompts/2025-08-31/claude_prompt_2025-08-31T22-02-54-102Z.md",
+        "thinking": "reports/2025-08-31/claude_reasoning_2025-08-31T22-02-54-102Z.md"
+      }
+    },
     {
       "timestamp": "2025-08-31T15-03-49-501Z",
       "bettingMode": "pregame",
@@ -266,25 +280,11 @@
         "prompt": "prompts/2025-08-28/claude_prompt-live_2025-08-28T02-32-11-951Z.md",
         "thinking": "reports/2025-08-28/claude_reasoning-live_2025-08-28T02-32-11-951Z.md"
       }
-    },
-    {
-      "timestamp": "2025-08-27T22-02-50-516Z",
-      "bettingMode": "pregame",
-      "numGames": 44,
-      "betsFound": true,
-      "numBets": 23,
-      "files": {
-        "analysis": "reports/2025-08-27/nba_edge_analysis_2025-08-27T22-02-50-516Z.md",
-        "bets": "reports/2025-08-27/recommended_bets_2025-08-27T22-02-50-516Z.md",
-        "html": "reports/2025-08-27/recommended_bets_2025-08-27T22-02-50-516Z.html",
-        "prompt": "prompts/2025-08-27/claude_prompt_2025-08-27T22-02-50-516Z.md",
-        "thinking": "reports/2025-08-27/claude_reasoning_2025-08-27T22-02-50-516Z.md"
-      }
     }
   ],
-  "timestamp": "2025-08-31T15-03-49-501Z",
+  "timestamp": "2025-08-31T22-02-54-102Z",
   "bettingMode": "pregame",
-  "numGames": 44,
+  "numGames": 43,
   "betsFound": true,
   "numBets": 23,
   "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",

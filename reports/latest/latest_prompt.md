@@ -12,7 +12,6 @@
 - Chicago Bulls vs Detroit Pistons (10/23/2025, 12:10:00 AM)
 - Memphis Grizzlies vs New Orleans Pelicans (10/23/2025, 12:10:00 AM)
 - Milwaukee Bucks vs Washington Wizards (10/23/2025, 12:10:00 AM)
-- Utah Jazz vs Los Angeles Clippers (10/23/2025, 1:10:00 AM)
 - Dallas Mavericks vs San Antonio Spurs (10/23/2025, 1:40:00 AM)
 - Portland Trail Blazers vs Minnesota Timberwolves (10/23/2025, 2:10:00 AM)
 - Phoenix Suns vs Sacramento Kings (10/23/2025, 2:10:00 AM)
@@ -232,7 +231,7 @@ Game Start: 10/23/2025, 12:10:00 AM
 ### Moneyline Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | -360 | 285 |
+| DraftKings | -375 | 295 |
 
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
@@ -243,25 +242,6 @@ Game Start: 10/23/2025, 12:10:00 AM
 | Bookmaker | Points | Over | Under |
 |-----------|--------|------|-------|
 | DraftKings | 225 | -110 | -110 |
-
-
-## Utah Jazz vs Los Angeles Clippers
-Game Start: 10/23/2025, 1:10:00 AM
-
-### Moneyline Odds
-| Bookmaker | Home Team | Away Team |
-|-----------|-----------|----------|
-| DraftKings | 260 | -325 |
-
-### Spread Odds
-| Bookmaker | Home Team | Away Team |
-|-----------|-----------|----------|
-| DraftKings | 8 (-108) | -8 (-112) |
-
-### Totals (Over/Under)
-| Bookmaker | Points | Over | Under |
-|-----------|--------|------|-------|
-| DraftKings | 227.5 | -112 | -108 |
 
 
 ## Dallas Mavericks vs San Antonio Spurs
@@ -617,7 +597,7 @@ Game Start: 11/26/2025, 4:00:00 AM
 ### Spread Odds
 | Bookmaker | Home Team | Away Team |
 |-----------|-----------|----------|
-| DraftKings | 1 (-118) | -1 (-102) |
+| DraftKings | -1 (-102) | 1 (-118) |
 
 ### Totals (Over/Under)
 | Bookmaker | Points | Over | Under |
@@ -1019,17 +999,6 @@ Game starts at 10/23/2025, 12:10:00 AM
 No lineup data available for this team.
 
 ### Milwaukee Bucks Lineup
-No lineup data available for this team.
-
-
-## Los Angeles Clippers @ Utah Jazz
-Game starts at 10/23/2025, 1:10:00 AM
-*Projected Lineup*
-
-### Los Angeles Clippers Lineup
-No lineup data available for this team.
-
-### Utah Jazz Lineup
 No lineup data available for this team.
 
 
