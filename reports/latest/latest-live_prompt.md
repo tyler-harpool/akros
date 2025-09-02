@@ -1,4 +1,4 @@
-# LIVE IN-GAME NBA Betting Analysis for Monday, September 1, 2025
+# LIVE IN-GAME NBA Betting Analysis for Tuesday, September 2, 2025
 
 ## Games Being Analyzed
 

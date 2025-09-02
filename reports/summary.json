@@ -1,6 +1,20 @@
 {
-  "lastRun": "2025-09-01T22-02-46-462Z",
+  "lastRun": "2025-09-02T02-33-16-769Z",
   "runs": [
+    {
+      "timestamp": "2025-09-02T02-33-16-769Z",
+      "bettingMode": "live",
+      "numGames": 43,
+      "betsFound": true,
+      "numBets": 23,
+      "files": {
+        "analysis": "reports/2025-09-02/nba_edge_analysis-live_2025-09-02T02-33-16-769Z.md",
+        "bets": "reports/2025-09-02/recommended_bets-live_2025-09-02T02-33-16-769Z.md",
+        "html": "reports/2025-09-02/recommended_bets-live_2025-09-02T02-33-16-769Z.html",
+        "prompt": "prompts/2025-09-02/claude_prompt-live_2025-09-02T02-33-16-769Z.md",
+        "thinking": "reports/2025-09-02/claude_reasoning-live_2025-09-02T02-33-16-769Z.md"
+      }
+    },
     {
       "timestamp": "2025-09-01T22-02-46-462Z",
       "bettingMode": "pregame",
@@ -266,24 +280,10 @@
         "prompt": "prompts/2025-08-29/claude_prompt-live_2025-08-29T05-05-10-356Z.md",
         "thinking": "reports/2025-08-29/claude_reasoning-live_2025-08-29T05-05-10-356Z.md"
       }
-    },
-    {
-      "timestamp": "2025-08-29T02-32-08-551Z",
-      "bettingMode": "live",
-      "numGames": 44,
-      "betsFound": true,
-      "numBets": 23,
-      "files": {
-        "analysis": "reports/2025-08-29/nba_edge_analysis-live_2025-08-29T02-32-08-551Z.md",
-        "bets": "reports/2025-08-29/recommended_bets-live_2025-08-29T02-32-08-551Z.md",
-        "html": "reports/2025-08-29/recommended_bets-live_2025-08-29T02-32-08-551Z.html",
-        "prompt": "prompts/2025-08-29/claude_prompt-live_2025-08-29T02-32-08-551Z.md",
-        "thinking": "reports/2025-08-29/claude_reasoning-live_2025-08-29T02-32-08-551Z.md"
-      }
     }
   ],
-  "timestamp": "2025-09-01T22-02-46-462Z",
-  "bettingMode": "pregame",
+  "timestamp": "2025-09-02T02-33-16-769Z",
+  "bettingMode": "live",
   "numGames": 43,
   "betsFound": true,
   "numBets": 23,
