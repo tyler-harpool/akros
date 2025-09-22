@@ -1,6 +1,18 @@
 {
-  "lastRun": "2025-09-21T22-02-37-541Z",
+  "lastRun": "2025-09-22T02-34-12-225Z",
   "runs": [
+    {
+      "timestamp": "2025-09-22T02-34-12-225Z",
+      "bettingMode": "live",
+      "numGames": 44,
+      "betsFound": false,
+      "error": "No RECOMMENDED BETS section found in analysis",
+      "files": {
+        "analysis": "reports/2025-09-22/nba_edge_analysis-live_2025-09-22T02-34-12-225Z.md",
+        "prompt": "prompts/2025-09-22/claude_prompt-live_2025-09-22T02-34-12-225Z.md",
+        "thinking": null
+      }
+    },
     {
       "timestamp": "2025-09-21T22-02-37-541Z",
       "bettingMode": "pregame",
@@ -228,22 +240,10 @@
         "prompt": "prompts/2025-09-18/claude_prompt-live_2025-09-18T05-05-13-524Z.md",
         "thinking": null
       }
-    },
-    {
-      "timestamp": "2025-09-18T02-30-16-196Z",
-      "bettingMode": "live",
-      "numGames": 44,
-      "betsFound": false,
-      "error": "No RECOMMENDED BETS section found in analysis",
-      "files": {
-        "analysis": "reports/2025-09-18/nba_edge_analysis-live_2025-09-18T02-30-16-196Z.md",
-        "prompt": "prompts/2025-09-18/claude_prompt-live_2025-09-18T02-30-16-196Z.md",
-        "thinking": null
-      }
     }
   ],
-  "timestamp": "2025-09-21T22-02-37-541Z",
-  "bettingMode": "pregame",
+  "timestamp": "2025-09-22T02-34-12-225Z",
+  "bettingMode": "live",
   "numGames": 44,
   "betsFound": false,
   "error": "No RECOMMENDED BETS section found in analysis",
