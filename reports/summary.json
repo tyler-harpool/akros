@@ -1,6 +1,18 @@
 {
-  "lastRun": "2025-12-15T09-12-57-211Z",
+  "lastRun": "2025-12-15T15-06-23-740Z",
   "runs": [
+    {
+      "timestamp": "2025-12-15T15-06-23-740Z",
+      "bettingMode": "pregame",
+      "numGames": 6,
+      "betsFound": false,
+      "error": "No RECOMMENDED BETS section found in analysis",
+      "files": {
+        "analysis": "reports/2025-12-15/nba_edge_analysis_2025-12-15T15-06-23-740Z.md",
+        "prompt": "prompts/2025-12-15/claude_prompt_2025-12-15T15-06-23-740Z.md",
+        "thinking": null
+      }
+    },
     {
       "timestamp": "2025-12-15T09-12-57-211Z",
       "bettingMode": "pregame",
@@ -228,21 +240,9 @@
         "prompt": "prompts/2025-12-11/claude_prompt_2025-12-11T22-03-03-885Z.md",
         "thinking": null
       }
-    },
-    {
-      "timestamp": "2025-12-11T15-04-42-252Z",
-      "bettingMode": "pregame",
-      "numGames": 13,
-      "betsFound": false,
-      "error": "No RECOMMENDED BETS section found in analysis",
-      "files": {
-        "analysis": "reports/2025-12-11/nba_edge_analysis_2025-12-11T15-04-42-252Z.md",
-        "prompt": "prompts/2025-12-11/claude_prompt_2025-12-11T15-04-42-252Z.md",
-        "thinking": null
-      }
     }
   ],
-  "timestamp": "2025-12-15T09-12-57-211Z",
+  "timestamp": "2025-12-15T15-06-23-740Z",
   "bettingMode": "pregame",
   "numGames": 6,
   "betsFound": false,
