@@ -1,6 +1,18 @@
 {
-  "lastRun": "2026-02-17T05-30-09-910Z",
+  "lastRun": "2026-02-17T09-22-17-697Z",
   "runs": [
+    {
+      "timestamp": "2026-02-17T09-22-17-697Z",
+      "bettingMode": "pregame",
+      "numGames": 13,
+      "betsFound": false,
+      "error": "No RECOMMENDED BETS section found in analysis",
+      "files": {
+        "analysis": "reports/2026-02-17/nba_edge_analysis_2026-02-17T09-22-17-697Z.md",
+        "prompt": "prompts/2026-02-17/claude_prompt_2026-02-17T09-22-17-697Z.md",
+        "thinking": null
+      }
+    },
     {
       "timestamp": "2026-02-17T05-30-09-910Z",
       "bettingMode": "live",
@@ -163,17 +175,10 @@
       "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
       "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2388:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
       "success": false
-    },
-    {
-      "timestamp": "2026-02-13T09-21-07-315Z",
-      "bettingMode": "pregame",
-      "error": "The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined",
-      "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2388:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
-      "success": false
     }
   ],
-  "timestamp": "2026-02-17T05-30-09-910Z",
-  "bettingMode": "live",
+  "timestamp": "2026-02-17T09-22-17-697Z",
+  "bettingMode": "pregame",
   "numGames": 13,
   "betsFound": false,
   "error": "No RECOMMENDED BETS section found in analysis",
