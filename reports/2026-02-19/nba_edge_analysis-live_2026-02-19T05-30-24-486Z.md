@@ -1,0 +1,1 @@
+Error communicating with Claude. Please check API key and connection.
