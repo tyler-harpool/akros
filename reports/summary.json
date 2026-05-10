@@ -1,6 +1,18 @@
 {
-  "lastRun": "2026-05-10T03-10-17-602Z",
+  "lastRun": "2026-05-10T06-03-02-165Z",
   "runs": [
+    {
+      "timestamp": "2026-05-10T06-03-02-165Z",
+      "bettingMode": "pregame",
+      "numGames": 4,
+      "betsFound": false,
+      "error": "No RECOMMENDED BETS section found in analysis",
+      "files": {
+        "analysis": "reports/2026-05-10/nba_edge_analysis_2026-05-10T06-03-02-165Z.md",
+        "prompt": "prompts/2026-05-10/claude_prompt_2026-05-10T06-03-02-165Z.md",
+        "thinking": null
+      }
+    },
     {
       "timestamp": "2026-05-10T03-10-17-602Z",
       "bettingMode": "live",
@@ -228,23 +240,11 @@
         "prompt": "prompts/2026-05-06/claude_prompt_2026-05-06T09-53-28-364Z.md",
         "thinking": null
       }
-    },
-    {
-      "timestamp": "2026-05-06T06-02-22-133Z",
-      "bettingMode": "pregame",
-      "numGames": 4,
-      "betsFound": false,
-      "error": "No RECOMMENDED BETS section found in analysis",
-      "files": {
-        "analysis": "reports/2026-05-06/nba_edge_analysis_2026-05-06T06-02-22-133Z.md",
-        "prompt": "prompts/2026-05-06/claude_prompt_2026-05-06T06-02-22-133Z.md",
-        "thinking": null
-      }
     }
   ],
-  "timestamp": "2026-05-10T03-10-17-602Z",
-  "bettingMode": "live",
-  "numGames": 5,
+  "timestamp": "2026-05-10T06-03-02-165Z",
+  "bettingMode": "pregame",
+  "numGames": 4,
   "betsFound": false,
   "error": "No RECOMMENDED BETS section found in analysis",
   "stack": "TypeError [ERR_INVALID_ARG_TYPE]: The \"data\" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n    at Object.writeFileSync (node:fs:2388:5)\n    at /home/runner/work/akros/akros/index.js:335:8\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
